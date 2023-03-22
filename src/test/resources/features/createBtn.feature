@@ -1,25 +1,24 @@
 Feature: Create button functionality test
 
   Background:
-    Given Verify user on the dashboard page
-
+    Given The user is on the login page
 
   Scenario: Verify Create Car" button shouldn't be displayed for the driver
-    When user log in as a driver
-    Then user should not display Create Car button
+    When When The user logs in as "driver"
+    Then user should not display "Create Car" button
 
-  Scenario Outline: Verify Create car button displayed for <"user">
-    When user logs in as a <"username"> and <"password">
-    Then user displays <"verification">
+  Scenario: Verify Create car button displayed for authorised user "salesmanager"
+    When user logs in as a "salesmanager101" with"UserUser123"
+    Then user displays "Create Car" button page
 
-    Examples:
-      | user         | username        | password    | verification |
-      | salesmanager | salesmanager101 | UserUser123 | Create car   |
-      | storemanager | storemanager51  | UserUser123 | Create car   |
+  Scenario: Verify Create car button displayed for authorised user "storemanager"
+    When user logs in as a store manager with "storemanager51" with "UserUser123" credentials
+    Then user displays "Create Car" button page
 
-    Scenario: Verify user land on the Create car page
-      When user logs in create car page after clicking crate car button
-      Then Authorised person on the create car page
+
+  Scenario: Verify user land on the Create car page
+    When user logs in create car page after clicking crate car button
+    Then After clicking Create Car button should land on Create Car page
 
 
 
