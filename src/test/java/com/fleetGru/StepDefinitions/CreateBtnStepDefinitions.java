@@ -13,6 +13,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -23,7 +26,7 @@ public class CreateBtnStepDefinitions extends BasePage {
     QuickLaunchPad quickLaunchPad = new QuickLaunchPad();
     FleetVehicles fleetVehicles = new FleetVehicles();
     Actions action = new Actions(Driver.getDriver());
-
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 
     @Given("Verify {string} on the dashboard page")
     public void verify_on_the_dashboard_page(String userType) {
@@ -108,7 +111,9 @@ public class CreateBtnStepDefinitions extends BasePage {
         fleetVehicles.hoverOverFleetMenu();
         fleetVehicles.click_vehicle.click();
         Thread.sleep(5000);
+        wait.until(ExpectedConditions.visibilityOf(fleetVehicles.createCarBtn));
         fleetVehicles.createCarBtn.click();
+
     }
 
     @Then("After clicking Create Car button should land on Create Car page")
