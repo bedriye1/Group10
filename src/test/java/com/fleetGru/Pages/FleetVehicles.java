@@ -43,6 +43,7 @@ public class FleetVehicles {
     @FindBy(xpath ="//a[@data-index='1']")
     public WebElement xlsxButton;
 
+
     @FindBy(xpath = "//a[@title='Filters']")
     public WebElement filterButton;
 
@@ -57,5 +58,26 @@ public class FleetVehicles {
 
     @FindBy(xpath = "//button[@class='btn dropdown-toggle']")
     public WebElement dropDownToggleButton;
+
+    @FindBy(xpath = "//label[@class='control-label']/../div/button")
+    public WebElement viewPerPageBtn;
+
+    @FindBy(xpath = "(//ul[@class='dropdown-menu pull-right'])[2]/li")
+    public List<WebElement> vehicleNumbers;
+
+    @FindBy(xpath ="//th[.=*]/a")
+    public List<WebElement> columnNames;
+
+    @FindBy(xpath ="(//th[.=*]/a)[2]")
+    public WebElement driverColumn;
+
+    @FindBy (xpath = "//a[@data-size='100']")
+    public WebElement vehicleNumber100;
+
+    @FindBy(xpath = "(//*[@class='fa-refresh'])[2]")
+    public WebElement resetBtn;
+
+
+
 
 }
