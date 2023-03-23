@@ -43,4 +43,13 @@ public class FleetVehicles {
     @FindBy(xpath ="//a[@data-index='1']")
     public WebElement xlsxButton;
 
+    @FindBy(xpath = "//a[@title='Filters']")
+    public WebElement filterButton;
+
+    @FindBy(xpath = "//a[.='Manage filters']")
+    public WebElement manageFilters;
+
+    @FindBy(xpath = "//ul[@class='ui-multiselect-checkboxes ui-helper-reset fixed-li']//li//label//input[@title='Tags']")
+    public WebElement tagsButton;
+
 }
