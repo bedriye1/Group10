@@ -1,8 +1,8 @@
 package com.fleetGru.StepDefinitions;
 
-import com.fleetGru.Pages.LoginPage;
-import com.fleetGru.Utilities.ConfigurationReader;
-import com.fleetGru.Utilities.Driver;
+import com.fleetGru.Pages.*;
+import com.fleetGru.Utilities.*;
+
 import io.cucumber.java.en.When;
 
 public class LoginStepDefs {
