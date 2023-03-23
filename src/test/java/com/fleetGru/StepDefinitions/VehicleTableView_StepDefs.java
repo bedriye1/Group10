@@ -1,12 +1,8 @@
 package com.fleetGru.StepDefinitions;
 
-import com.fleetGru.Pages.Dashboard;
-import com.fleetGru.Pages.FleetVehicles;
-import com.fleetGru.Pages.LoginPage;
-import com.fleetGru.Pages.QuickLaunchPad;
-import com.fleetGru.Utilities.BrowserUtils;
-import com.fleetGru.Utilities.ConfigurationReader;
-import com.fleetGru.Utilities.Driver;
+import com.fleetGru.Pages.*;
+import com.fleetGru.Utilities.*;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
