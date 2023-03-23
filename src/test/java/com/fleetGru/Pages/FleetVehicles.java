@@ -61,7 +61,7 @@ public class FleetVehicles {
     @FindBy(xpath = "(//*[@class='fa-refresh'])[2]")
     public WebElement resetBtn;
 
-    @FindBy(xpath = "//tr[@class='grid-row row-click-action']")
-    public WebElement firstRow;
+    @FindBy(xpath = "//td[.='Samuel Christiansen']")
+    public WebElement SamuelChrist;
 
 }
