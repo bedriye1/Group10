@@ -15,11 +15,11 @@ import org.junit.runner.RunWith;
 
                 },
 
-        features ="src/test/resources/features",
-        glue     ="com/fleetGru/StepDefinitions",
+        features = "src/test/resources/features",
+        glue = "com/fleetGru/StepDefinitions",
         dryRun = false,
         tags = ""
 )
 
-        public class CukesRunner {
+public class CukesRunner {
 }

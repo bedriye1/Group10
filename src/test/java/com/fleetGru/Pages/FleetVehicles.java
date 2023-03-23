@@ -46,10 +46,16 @@ public class FleetVehicles {
     @FindBy(xpath = "//a[@title='Filters']")
     public WebElement filterButton;
 
-    @FindBy(xpath = "//a[.='Manage filters']")
+    @FindBy(xpath = "//button[@type='button']//a[@class='add-filter-button']")
     public WebElement manageFilters;
 
     @FindBy(xpath = "//ul[@class='ui-multiselect-checkboxes ui-helper-reset fixed-li']//li//label//input[@title='Tags']")
     public WebElement tagsButton;
+
+    @FindBy(xpath = "//div[@class='btn filter-criteria-selector oro-drop-opener oro-dropdown-toggle filter-default-value']")
+    public WebElement tagsAll;
+
+    @FindBy(xpath = "//button[@class='btn dropdown-toggle']")
+    public WebElement dropDownToggleButton;
 
 }
