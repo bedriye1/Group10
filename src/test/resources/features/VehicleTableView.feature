@@ -28,8 +28,7 @@
     Then User can see the total page number
 
   @FLEET10-941
-  Scenario: Verify < and > buttons of the vehicle table work properly
-    When The user logs in as "driver"
+  Scenario: Verify < and > buttons of the vehicle table work propeWhen The user logs in as "driver"
     And The user navigates to QuickLaunchpad Fleet-Vehicle page
     And The user clicks on the forward ">" button
     Then Verify seeing the next page of the table
