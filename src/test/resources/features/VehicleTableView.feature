@@ -9,7 +9,7 @@
     And The user navigates to QuickLaunchpad Fleet-Vehicle page
     Then The user sees all the vehicle information in a table
 
-  @FLEET10-937
+  @FLEET10-937  @deneme
   Scenario: All user types can see vehicle table
     When The user logs in as "sales manager"
     And The user navigates to Dashboard Fleet-Vehicle page
