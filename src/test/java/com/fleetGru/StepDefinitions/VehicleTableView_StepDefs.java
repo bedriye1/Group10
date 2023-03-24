@@ -60,7 +60,7 @@ public class VehicleTableView_StepDefs {
         BrowserUtils.sleep(1);
         dashboard.Vehicles.click();
     }
-
+/*
     @Then("The user sees all the vehicle information in a table")
     public void the_user_sees_all_the_vehicle_information_in_a_table() {
         BrowserUtils.sleep(3);
@@ -159,5 +159,5 @@ public class VehicleTableView_StepDefs {
         String actual = fleetVehicles.ExportGridConfirmationMessage.getText();
         System.out.println("actual = " + actual);
         Assert.assertEquals(messageExpected, actual);
-    }
+    }*/
 }

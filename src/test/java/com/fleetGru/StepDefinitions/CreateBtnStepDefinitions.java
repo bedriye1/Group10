@@ -66,6 +66,7 @@ public class CreateBtnStepDefinitions extends BasePage {
         fleetVehicles.click_vehicle_menu();
 
         String createCar = "Create Car";
+
         List<WebElement> create = Driver.getDriver().findElements(By.xpath("//*[contains(text(),'Create Car')]"));
 
         int size = create.size();
