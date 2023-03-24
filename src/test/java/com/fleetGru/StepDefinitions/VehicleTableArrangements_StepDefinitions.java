@@ -1,8 +1,10 @@
 package com.fleetGru.StepDefinitions;
 
+import com.fleetGru.Pages.BasePage;
 import com.fleetGru.Pages.FleetVehicles;
 import com.fleetGru.Utilities.BrowserUtils;
 import com.fleetGru.Utilities.Driver;
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -14,12 +16,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VehicleTableArrangements_StepDefinitions {
+import static afu.org.checkerframework.checker.units.UnitsTools.min;
+
+public class VehicleTableArrangements_StepDefinitions extends BasePage {
 
     FleetVehicles fleetVehicles=new FleetVehicles();
 
     @When("User click the View Per Page button")
     public void user_click_the_view_per_page_button() {
+        waitUntilLoaderScreenDisappear();
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOf(fleetVehicles.viewPerPageBtn));
         fleetVehicles.viewPerPageBtn.click();
@@ -51,6 +56,7 @@ public class VehicleTableArrangements_StepDefinitions {
 
         BrowserUtils.sleep(5);
         for (WebElement header : fleetVehicles.tableHeaders) {
+
             if (header.getText().equals(string)){
                 header.click();
                 break;

@@ -6,12 +6,14 @@ import com.fleetGru.Pages.QuickLaunchPad;
 import com.fleetGru.Utilities.BrowserUtils;
 import com.fleetGru.Utilities.ConfigurationReader;
 import com.fleetGru.Utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -26,13 +28,13 @@ public class TagsFilerStepDefinitions {
     LoginPage loginPage = new LoginPage();
 
 
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
-
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
+    Actions actions = new Actions(Driver.getDriver());
+    List<WebElement> eachTagsValue = Driver.getDriver().findElements(By.xpath("//ul[@class='unstyled options']"));
 
     @Given("The user logs in with credential username {string} and password {string}")
     public void the_user_logs_in_with_credential_username_and_password(String string, String string2) {
         //Go to login page
-
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
 
         //Call the method in order to log in with credentials
@@ -103,15 +105,96 @@ public class TagsFilerStepDefinitions {
 
     // < ------------------------------------------------------- > //
 
-
-    // < ----------------------------- < METHODS > ----------------------------- > //
-    public void steps() {
-        fleetVehicles.filterButton.click();
-        fleetVehicles.manageFilters.click();
-        fleetVehicles.tagsButton.click();
-        fleetVehicles.tagsAll.click();
-        fleetVehicles.dropDownToggleButton.click();
+    @When("User selects Is Any Of method")
+    public void user_selects_is_any_of_method() {
+        steps(); // Call the method
+        BrowserUtils.sleep(2);
+        fleetVehicles.isAnyOfButton.click();
 
     }
 
+    @And("User entries {string} to search box")
+    public void user_entries_compact_to_search_box(String compact) {
+        fleetVehicles.chooseValuesInputBox.sendKeys(compact);
+        actions.moveToElement(fleetVehicles.compactOption).click().perform();
+        actions.moveToElement(fleetVehicles.updateButton).click().perform();
+    }
+
+    @Then("User able to see {string} corresponding value on the table")
+    public void user_able_to_see_corresponding_value_on_the_table(String compact) {
+        assertionInLoop(eachTagsValue, compact);
+    }
+
+    // < ------------------------------------------------------- > //
+
+    @When("User selects Is Not Any Of method")
+    public void user_selects_is_not_any_of_method() {
+        steps(); // Call the method
+        BrowserUtils.sleep(2);
+        fleetVehicles.isNotAnyOfButton.click();
+
+    }
+
+    @Then("User should not able to see {string} corresponding value on the table")
+    public void user_should_not_able_to_see_corresponding_value_on_the_table(String compact) {
+        falseAssertionInLoop(eachTagsValue, compact);
+    }
+
+    // < ------------------------------------------------------- > //
+
+
+    @Then("User should not able to see {string} and {string} corresponding value on the table")
+    public void user_should_not_able_to_see_and_corresponding_value_on_the_table(String compact, String sedan) {
+
+        List<String> tags = new ArrayList<>(Arrays.asList(compact, sedan));
+
+        falseAssertionInLoop(eachTagsValue, tags);
+    }
+
+    // < ----------------------------- < METHODS > ----------------------------- > //
+    public void steps() {
+        wait = new WebDriverWait(Driver.getDriver(), 10);
+        List<WebElement> eachClickOpt = new ArrayList<>(Arrays.asList(fleetVehicles.filterButton
+                , fleetVehicles.manageFilters
+                , fleetVehicles.tagsButton
+                , fleetVehicles.tagsAll
+                , fleetVehicles.dropDownToggleButton));
+
+        for (WebElement webElement : eachClickOpt) {
+            webElement.click();
+            BrowserUtils.sleep(1);
+        }
+    }
+
+    public void assertionInLoop(List<WebElement> takenList, String takenString) {
+        BrowserUtils.sleep(3);
+        System.out.println(takenList.size());
+
+        for (WebElement element : takenList) {
+            Assert.assertEquals(takenString.toLowerCase(), element.getText().toLowerCase());
+        }
+    }
+
+    public void falseAssertionInLoop(List<WebElement> takenList, String takenString) {
+        BrowserUtils.sleep(3);
+        System.out.println(takenList.size());
+
+        for (WebElement element : takenList) {
+            Assert.assertNotEquals(element.getText(), takenString);
+        }
+    }
+
+    public void falseAssertionInLoop(List<WebElement> takenList, List<String> takenStringList) {
+        BrowserUtils.sleep(3);
+        System.out.println(takenList.size());
+
+        for (WebElement element : takenList) {
+            Assert.assertNotEquals(element.getText(), takenStringList);
+        }
+    }
+
+
 }
+
+
+

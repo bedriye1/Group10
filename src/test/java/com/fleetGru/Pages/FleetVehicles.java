@@ -1,6 +1,10 @@
 package com.fleetGru.Pages;
 
+
 import com.fleetGru.Utilities.Driver;
+
+import com.fleetGru.Utilities.*;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -43,6 +47,22 @@ public class FleetVehicles {
     @FindBy(xpath ="//a[@data-index='1']")
     public WebElement xlsxButton;
 
+
+    @FindBy(xpath = "//a[@title='Filters']")
+    public WebElement filterButton;
+
+    @FindBy(xpath = "//button[@type='button']//a[@class='add-filter-button']")
+    public WebElement manageFilters;
+
+    @FindBy(xpath = "//ul[@class='ui-multiselect-checkboxes ui-helper-reset fixed-li']//li//label//input[@title='Tags']")
+    public WebElement tagsButton;
+
+    @FindBy(xpath = "//div[@class='btn filter-criteria-selector oro-drop-opener oro-dropdown-toggle filter-default-value']")
+    public WebElement tagsAll;
+
+    @FindBy(xpath = "//button[@class='btn dropdown-toggle']")
+    public WebElement dropDownToggleButton;
+
     @FindBy(xpath = "//label[@class='control-label']/../div/button")
     public WebElement viewPerPageBtn;
 
@@ -61,7 +81,40 @@ public class FleetVehicles {
     @FindBy(xpath = "(//*[@class='fa-refresh'])[2]")
     public WebElement resetBtn;
 
+    @FindBy(id = "s2id_autogen2")
+    public WebElement chooseValuesInputBox;
+
+    @FindBy(xpath = "//a[@class='dropdown-item choice-value' and .='is any of']")
+    public WebElement isAnyOfButton;
+
+    @FindBy(xpath = "//a[@class='dropdown-item choice-value' and .='is not any of']")
+    public WebElement isNotAnyOfButton;
+
+    @FindBy(xpath = "//ul[@class='unstyled options']")
+    public WebElement listOfTags;
+
+    @FindBy(xpath = "//button[.='Update']")
+    public WebElement updateButton;
+
+    @FindBy(xpath = "//span[.='Compact']")
+    public WebElement compactOption;
+
     @FindBy(xpath = "//td[.='Samuel Christiansen']")
     public WebElement SamuelChrist;
+
+
+    @FindBy(xpath = "//div[@class='column-manager dropdown']")
+    public WebElement gridButton;
+
+    @FindBy(xpath = "//div[@class='dropdown-menu']")
+    public WebElement gridSettingDDown;
+
+
+    @FindBy(xpath = "//label[starts-with(@for, 'column-c')]")
+    public List<WebElement> gridSettingsColumns;
+
+
+
+
 
 }

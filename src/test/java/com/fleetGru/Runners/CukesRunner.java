@@ -18,12 +18,7 @@ import org.junit.runner.RunWith;
         features ="src/test/resources/features",
         glue     ="com/fleetGru/StepDefinitions",
         dryRun = false,
-        tags = "@Wip"
-
-        features = "src/test/resources/features",
-        glue = "com/fleetGru/StepDefinitions",
-        dryRun = false,
-        tags = "@FLEET10-981"
+        tags = ""
 
 
 )
