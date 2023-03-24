@@ -59,6 +59,7 @@ public class VehicleTableView_StepDefs extends BasePage {
     @When("The user navigates to Dashboard Fleet-Vehicle page")
     public void the_user_navigates_to_dashboard_fleet_vehicle_page() {
 
+        waitUntilLoaderScreenDisappear();
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         BrowserUtils.sleep(3);
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
