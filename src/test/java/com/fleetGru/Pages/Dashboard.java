@@ -31,5 +31,4 @@ public class Dashboard {
 
     @FindBy(xpath ="//th[.=*]")
     public WebElement tableHeaders;
-
 }

@@ -12,6 +12,10 @@ public class LoginPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+
+    @FindBy(xpath = "//h3")
+    public WebElement loading;
+
     @FindBy(id ="prependedInput")
     public WebElement username;
 

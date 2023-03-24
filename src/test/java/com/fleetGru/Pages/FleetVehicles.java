@@ -1,6 +1,10 @@
 package com.fleetGru.Pages;
 
+
 import com.fleetGru.Utilities.Driver;
+
+import com.fleetGru.Utilities.*;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -91,6 +95,22 @@ public class FleetVehicles {
 
     @FindBy(xpath = "//span[.='Compact']")
     public WebElement compactOption;
+
+    @FindBy(xpath = "//td[.='Samuel Christiansen']")
+    public WebElement SamuelChrist;
+
+
+    @FindBy(xpath = "//div[@class='column-manager dropdown']")
+    public WebElement gridButton;
+
+    @FindBy(xpath = "//div[@class='dropdown-menu']")
+    public WebElement gridSettingDDown;
+
+
+    @FindBy(xpath = "//label[starts-with(@for, 'column-c')]")
+    public List<WebElement> gridSettingsColumns;
+
+
 
 
 }
