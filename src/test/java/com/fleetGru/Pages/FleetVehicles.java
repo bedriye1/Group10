@@ -81,6 +81,23 @@ public class FleetVehicles {
     @FindBy(xpath = "(//*[@class='fa-refresh'])[2]")
     public WebElement resetBtn;
 
+    @FindBy(id = "s2id_autogen2")
+    public WebElement chooseValuesInputBox;
+
+    @FindBy(xpath = "//a[@class='dropdown-item choice-value' and .='is any of']")
+    public WebElement isAnyOfButton;
+
+    @FindBy(xpath = "//a[@class='dropdown-item choice-value' and .='is not any of']")
+    public WebElement isNotAnyOfButton;
+
+    @FindBy(xpath = "//ul[@class='unstyled options']")
+    public WebElement listOfTags;
+
+    @FindBy(xpath = "//button[.='Update']")
+    public WebElement updateButton;
+
+    @FindBy(xpath = "//span[.='Compact']")
+    public WebElement compactOption;
 
     @FindBy(xpath = "//td[.='Samuel Christiansen']")
     public WebElement SamuelChrist;
@@ -95,6 +112,8 @@ public class FleetVehicles {
 
     @FindBy(xpath = "//label[starts-with(@for, 'column-c')]")
     public List<WebElement> gridSettingsColumns;
+
+
 
 
 
