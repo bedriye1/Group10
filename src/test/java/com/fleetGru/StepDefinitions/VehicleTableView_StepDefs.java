@@ -24,7 +24,7 @@ import org.junit.Assert;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VehicleTableView_StepDefs {
+public class VehicleTableView_StepDefs extends BasePage {
 
     LoginPage loginPage = new LoginPage();
     Dashboard dashboard = new Dashboard();
@@ -46,6 +46,7 @@ public class VehicleTableView_StepDefs {
     @When("The user navigates to QuickLaunchpad Fleet-Vehicle page")
     public void the_user_navigates_to_quicklaunchpad_fleet_vehicle_page() {
 
+        waitUntilLoaderScreenDisappear();
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         BrowserUtils.sleep(3);
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
