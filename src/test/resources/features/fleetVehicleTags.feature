@@ -18,3 +18,8 @@ Feature: As a user, I should be able to use "Tags" filter under 'Fleet-Vehicles'
     And User clicks Is Any Of
     Then User should able to see "Is Any Of" and "Is Not Any Of" options
 
+  @FLEET10-1012
+  Scenario: User should able to see corresponding value
+    When User selects Is Any Of method
+    And User entries "Compact" to search box
+    Then User able to see "Compact" corresponding value on the table
