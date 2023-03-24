@@ -1,6 +1,10 @@
 package com.fleetGru.Pages;
 
+
+import com.fleetGru.Utilities.Driver;
+
 import com.fleetGru.Utilities.*;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -76,6 +80,10 @@ public class FleetVehicles {
 
     @FindBy(xpath = "(//*[@class='fa-refresh'])[2]")
     public WebElement resetBtn;
+
+
+    @FindBy(xpath = "//td[.='Samuel Christiansen']")
+    public WebElement SamuelChrist;
 
 
     @FindBy(xpath = "//div[@class='column-manager dropdown']")
