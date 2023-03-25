@@ -1,5 +1,6 @@
 package com.fleetGru.StepDefinitions;
 
+
 import com.fleetGru.Pages.Dashboard;
 import com.fleetGru.Pages.FleetVehicles;
 import com.fleetGru.Pages.LoginPage;
@@ -7,6 +8,11 @@ import com.fleetGru.Pages.QuickLaunchPad;
 import com.fleetGru.Utilities.BrowserUtils;
 import com.fleetGru.Utilities.ConfigurationReader;
 import com.fleetGru.Utilities.Driver;
+
+import com.fleetGru.Pages.*;
+import com.fleetGru.Utilities.*;
+
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -18,7 +24,7 @@ import org.junit.Assert;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VehicleTableView_StepDefs {
+public class VehicleTableView_StepDefs extends BasePage {
 
     LoginPage loginPage = new LoginPage();
     Dashboard dashboard = new Dashboard();
@@ -40,6 +46,7 @@ public class VehicleTableView_StepDefs {
     @When("The user navigates to QuickLaunchpad Fleet-Vehicle page")
     public void the_user_navigates_to_quicklaunchpad_fleet_vehicle_page() {
 
+        waitUntilLoaderScreenDisappear();
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         BrowserUtils.sleep(3);
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
@@ -52,6 +59,7 @@ public class VehicleTableView_StepDefs {
     @When("The user navigates to Dashboard Fleet-Vehicle page")
     public void the_user_navigates_to_dashboard_fleet_vehicle_page() {
 
+        waitUntilLoaderScreenDisappear();
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         BrowserUtils.sleep(3);
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
