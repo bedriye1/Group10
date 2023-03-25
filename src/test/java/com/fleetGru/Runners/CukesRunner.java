@@ -1,6 +1,5 @@
 package com.fleetGru.Runners;
-
-
+import io.cucumber.junit.CucumberOptions;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -18,7 +17,8 @@ import org.junit.runner.RunWith;
         features ="src/test/resources/features",
         glue     ="com/fleetGru/StepDefinitions",
         dryRun = false,
-        tags = ""
+
+        tags =    
 
 
 )
