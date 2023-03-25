@@ -9,11 +9,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 
-public class AddEventStepDefinitions extends BasePage {
+public class AddEvent_2StepDefinitions extends BasePage {
     Dashboard dashboard = new Dashboard();
     FleetVehicles fleetVehicles = new FleetVehicles();
     @When("User can go to fleet dropdown")
