@@ -31,4 +31,19 @@ public class Dashboard {
 
     @FindBy(xpath ="//th[.=*]")
     public WebElement tableHeaders;
+
+    @FindBy (xpath = "//a[@title=\"Edit Car\"]")
+    public WebElement editButtonGeneralInformationPage;
+
+    @FindBy (xpath = "//a[@title=\"Delete Car\"]")
+    public WebElement deleteButtonGeneralInformationPage;
+
+    @FindBy (xpath = "//a[@title=\"Add an event to this record\"]")
+    public WebElement addEventButtonGeneralInformationPage;
+
+    @FindBy (xpath = "//table[@class=\"grid table-hover table table-bordered table-condensed\"]//tr[1]//td//div//div//a[@data-toggle=\"dropdown\"]")
+    public WebElement firstThreePoint;
+
+    @FindBy (xpath = "//a[@title=\"View\"]")
+    public WebElement threePointView;
 }

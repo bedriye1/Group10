@@ -41,4 +41,18 @@ public class QuickLaunchPad {
     @FindBy(xpath ="//th[.=*]")
     public WebElement tableHeaders;
 
+    @FindBy (xpath = "//table[@class=\"grid table-hover table table-bordered table-condensed\"]//tbody//tr//td[.=\"25LLZS\"]")
+    public WebElement firstCell;
+
+    @FindBy (xpath = "//table[@class=\"grid table-hover table table-bordered table-condensed\"]//tbody//tr//td[.=\"92TMBJ\"]")
+    public WebElement secondCell;
+    @FindBy(xpath = "//span[.=\"General Information\"]")
+    public WebElement generalInformationPage;
+
+    @FindBy (xpath = "//a[@data-id=\"605\"]")
+    public WebElement addEventGeneralInformationPage;
+
+    @FindBy(xpath = "//div[@class=\"control-group attribute-row\"]")
+    public WebElement generalInformationPageRow;
+
 }

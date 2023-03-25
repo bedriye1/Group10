@@ -1,7 +1,4 @@
 
-Feature: As a user, I should be able to use "Tags" filter under 'Fleet-Vehicles' page
-
-
 @FLEET10-927
 
 Feature: As a user, I should be able to use "Tags" filter under 'Fleet-Vehicles' page
