@@ -1,10 +1,12 @@
 package com.fleetGru.Pages;
 
 import com.fleetGru.Utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FleetVehicles {
@@ -60,6 +62,30 @@ public class FleetVehicles {
 
     @FindBy(xpath = "(//*[@class='fa-refresh'])[2]")
     public WebElement resetBtn;
+
+    @FindBy (xpath = "//a[@title='Filters']")
+    public WebElement filtersIcon;
+
+    @FindBy (css = "a.add-filter-button")
+    public WebElement manageFiltersButton;
+
+
+    @FindBy (xpath = "//label[@title='Tags']")
+    public WebElement tagsFilter;
+
+    @FindBy (xpath = "//input[@type='search']")
+    public WebElement manageFiltersSearchBar;
+
+    @FindBy (xpath = "//label[@title='Driver']")
+    public WebElement driverFilter;
+
+    @FindBy (xpath = "(//i[@class='fa-refresh'])[2]")
+    public WebElement resetIcon;
+
+    @FindBy (xpath = "//div[@class='filter-container']")
+    public WebElement filterContainer;
+
+
 
 
 
