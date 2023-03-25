@@ -20,14 +20,6 @@ Feature: Create button functionality test
     When user logs in create car page after clicking crate car button
     Then After clicking Create Car button should land on Create Car page
 
-
-Feature: Create Car Functionality
-
-  Scenario: Authorized user can navigate to Create Car page
-    Given I am an authorized user
-    When I click on the "Create Car" button
-    Then I should be redirected to the "Create Car" page
-
   Scenario: Create Car with valid data
     Given I am on the "Create Car" page
     When I fill in the following fields with valid data:

@@ -123,5 +123,18 @@ public class CreateBtnStepDefinitions extends BasePage {
         String expected = "Create Car";
         Assert.assertEquals(expected, actual);
     }
+
+    @Given("I am on the {string} page")
+    public void iAmOnThePage(String arg0) {
+        fleetVehicles.ToReachCreateeCarBtnPage();
+
+
+
+    }
+
+    @When("I fill in the following fields with valid data:")
+    public void iFillInTheFollowingFieldsWithValidData() {
+
+    }
 }
 

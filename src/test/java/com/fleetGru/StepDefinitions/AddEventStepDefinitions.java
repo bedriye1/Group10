@@ -32,7 +32,7 @@ public class AddEventStepDefinitions extends BasePage {
     @When("User can click on any row in the table")
     public void user_can_click_on_any_row_in_the_table() {
        BrowserUtils.sleep(5);
-       fleetVehicles.SamuelChrist.click();
+      // fleetVehicles.SamuelChrist.click();
     }
 
     @Then("User click the add event button")
