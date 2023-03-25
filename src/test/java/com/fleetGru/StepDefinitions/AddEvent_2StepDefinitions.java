@@ -17,6 +17,7 @@ public class AddEvent_2StepDefinitions extends BasePage {
     @When("User can go to fleet dropdown")
     public void userCanGoToFleetDropdown() {
         waitUntilLoaderScreenDisappear();
+        BrowserUtils.sleep(5);
         dashboard.FleetDropDown.click();
 
     }
@@ -30,13 +31,13 @@ public class AddEvent_2StepDefinitions extends BasePage {
     @When("User can click on any row in the table")
     public void user_can_click_on_any_row_in_the_table() {
        BrowserUtils.sleep(5);
-       fleetVehicles.SamuelChrist.click();
+       fleetVehicles.firstRow.click();
     }
 
     @Then("User click the add event button")
     public void user_click_the_add_event_button() {
       BrowserUtils.sleep(5);
-      WebElement addEvent = Driver.getDriver().findElement(By.xpath("(//div[@class='pull-left btn-group icons-holder'])[3]"));
+      WebElement addEvent = Driver.getDriver().findElement(By.xpath("//a[@title='Add an event to this record']"));
       addEvent.click();
       BrowserUtils.sleep(5);
 
