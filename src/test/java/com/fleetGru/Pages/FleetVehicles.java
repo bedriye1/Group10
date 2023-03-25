@@ -99,9 +99,6 @@ public class FleetVehicles {
     @FindBy(xpath = "//span[.='Compact']")
     public WebElement compactOption;
 
-    @FindBy(xpath = "//td[.='Samuel Christiansen']")
-    public WebElement SamuelChrist;
-
 
     @FindBy(xpath = "//div[@class='column-manager dropdown']")
     public WebElement gridButton;
