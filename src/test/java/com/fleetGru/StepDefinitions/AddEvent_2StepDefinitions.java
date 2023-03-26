@@ -40,9 +40,20 @@ public class AddEvent_2StepDefinitions extends BasePage {
       WebElement addEvent = Driver.getDriver().findElement(By.xpath("//a[@title='Add an event to this record']"));
       addEvent.click();
       BrowserUtils.sleep(5);
-
+    }
+    @When("user clicks add event button and add event page pop up")
+    public void userClicksAddEventButtonAndAddEventPagePopUp() {
 
     }
+    @And("User can mark the event with any color")
+    public void userCanMarkTheEventWithAnyColor() {
 
+    }
+    @And("User can click Add event check box")
+    public void userCanClickAddEventCheckBox() {
 
+    }
+    @Then("time box will disappear")
+    public void timeBoxWillDissappear() {
+    }
 }
