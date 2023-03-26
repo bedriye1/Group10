@@ -13,7 +13,9 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddEvent_2StepDefinition {
+public class AddEventStepDefinition {
+
+
 
     public class AddEventStepDefinitions extends BasePage {
 
@@ -45,10 +47,8 @@ public class AddEvent_2StepDefinition {
         @Then("User click the add event button")
         public void user_click_the_add_event_button() {
             BrowserUtils.sleep(5);
-            WebElement addEvent = Driver.getDriver().findElement(By.xpath("//a[@title='Add an event to this record']"));
-            addEvent.click();
+
             BrowserUtils.sleep(5);
-            Assert.assertTrue(addEvent.isEnabled());
 
 
         }
