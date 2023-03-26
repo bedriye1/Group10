@@ -183,7 +183,7 @@ public class VehicleGeneralInformation {
 
             Boolean compare = generalInformationPage.equals(fleetVehiclePage);
             System.out.println(compare);
-            //Assert.assertTrue(compare);
+            Assert.assertTrue(compare);
 
             fleetVehiclePage.clear();
             generalInformationPage.clear();

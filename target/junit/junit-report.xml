@@ -1,8 +1,101 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="100.571">
-    <testcase classname="User able to see detailed information of specific vehicle" name="_2" time="100.462">
+<testsuite errors="0" failures="3" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="6" time="119.804">
+    <testcase classname="User able to see detailed information of specific vehicle" name="User can see the &quot;General Information&quot; page by clicking on any vehicle (row), under 'Fleet-Vehicle' module" time="15.758">
         <system-out><![CDATA[Given User on the Fleet-Vehicle page........................................passed
-Then User sees same information about vehicle Fleet-Vehicle page and General Information Page.passed
+When User clicks any vehicle (row)..........................................passed
+Then User can see the General Information page..............................passed
 ]]></system-out>
+    </testcase>
+    <testcase classname="User able to see detailed information of specific vehicle" name="User can see the &quot;General Information&quot; page clicking on the &quot;Eye (View)&quot; icon at the end of each row, under 'Fleet-Vehicle' module" time="16.549">
+        <system-out><![CDATA[Given User on the Fleet-Vehicle page........................................passed
+When User clicks on the Eye (View) icon at the end of each row..............passed
+Then User can see the General Information page..............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="User able to see detailed information of specific vehicle" name="Sales manager  should see &quot;Edit&quot;, &quot;Delete&quot; and &quot;Add Event&quot; buttons on the &quot;General Information&quot; page" time="14.801">
+        <system-out><![CDATA[Given Sales manager on the Fleet-Vehicle page...............................passed
+When Sales manager clicks a row for go to General Information page..........passed
+Then Sales manager can see "Edit", "Delete" and "Add Event" buttons on the General Information page.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="User able to see detailed information of specific vehicle" name="Store manager should see &quot;Edit&quot;, &quot;Delete&quot; and &quot;Add Event&quot; buttons on the &quot;General Information&quot; page" time="23.002">
+        <failure message="element click intercepted: Element &lt;td class=&quot;string-cell grid-cell grid-body-cell grid-body-cell-LicensePlate&quot; data-column-label=&quot;License Plate&quot;&gt;...&lt;/td&gt; is not clickable at point (124, 257). Other element would receive the click: &lt;div class=&quot;loader-mask shown&quot;&gt;...&lt;/div&gt;&#10;  (Session info: chrome=111.0.5563.110)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Seckins-iMac.local', ip: '127.0.0.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.2.1', java.version: '19.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.110, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: /var/folders/1m/d3n23y256vb...}, goog:chromeOptions: {debuggerAddress: localhost:55931}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 2a3554831bea182b027f6bb0706a2125" type="org.openqa.selenium.ElementClickInterceptedException"><![CDATA[Given Store manager on the Fleet-Vehicle page...............................passed
+When Store manager clicks a row for go to General Information page..........failed
+Then Store manager can see "Edit", "Delete" and "Add Event" buttons on the General Information page.skipped
+
+StackTrace:
+org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <td class="string-cell grid-cell grid-body-cell grid-body-cell-LicensePlate" data-column-label="License Plate">...</td> is not clickable at point (124, 257). Other element would receive the click: <div class="loader-mask shown">...</div>
+  (Session info: chrome=111.0.5563.110)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Seckins-iMac.local', ip: '127.0.0.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.2.1', java.version: '19.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.110, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: /var/folders/1m/d3n23y256vb...}, goog:chromeOptions: {debuggerAddress: localhost:55931}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2a3554831bea182b027f6bb0706a2125
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy20.click(Unknown Source)
+	at com.fleetGru.StepDefinitions.VehicleGeneralInformation.store_manager_clicks_a_row_for_go_to_general_information_page(VehicleGeneralInformation.java:120)
+	at ✽.Store manager clicks a row for go to General Information page(file:///Users/selamigungordu/IdeaProjects/Group10/src/test/resources/features/VehicleGeneralInformation.feature:25)
+]]></failure>
+    </testcase>
+    <testcase classname="User able to see detailed information of specific vehicle" name="Driver shouldn't see &quot;Add Event&quot;, &quot;Edit&quot; and &quot;Delete&quot; buttons" time="28.228">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@title=&quot;Edit Car&quot;]&quot;}&#10;  (Session info: chrome=111.0.5563.110)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'Seckins-iMac.local', ip: '127.0.0.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.2.1', java.version: '19.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.110, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: /var/folders/1m/d3n23y256vb...}, goog:chromeOptions: {debuggerAddress: localhost:55957}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 842daa96f305c887234bf88d9d1ab161&#10;*** Element info: {Using=xpath, value=//a[@title=&quot;Edit Car&quot;]}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given Driver on the Fleet-Vehicle page......................................passed
+When Driver clicks a row for go to General Information page.................passed
+Then Driver can't see "Edit", "Delete" and "Add Event" buttons on the General Information page.failed
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@title="Edit Car"]"}
+  (Session info: chrome=111.0.5563.110)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Seckins-iMac.local', ip: '127.0.0.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.2.1', java.version: '19.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.110, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: /var/folders/1m/d3n23y256vb...}, goog:chromeOptions: {debuggerAddress: localhost:55957}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 842daa96f305c887234bf88d9d1ab161
+*** Element info: {Using=xpath, value=//a[@title="Edit Car"]}
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy20.isDisplayed(Unknown Source)
+	at com.fleetGru.StepDefinitions.VehicleGeneralInformation.driver_can_t_see_and_buttons_on_the_general_information_page(VehicleGeneralInformation.java:154)
+	at ✽.Driver can't see "Edit", "Delete" and "Add Event" buttons on the General Information page(file:///Users/selamigungordu/IdeaProjects/Group10/src/test/resources/features/VehicleGeneralInformation.feature:31)
+]]></failure>
+    </testcase>
+    <testcase classname="User able to see detailed information of specific vehicle" name="Vehicle information displayed on the &quot;General Information&quot; page and &quot;Fleet-Vehicle&quot; page should be the same" time="21.301">
+        <failure message="" type="java.lang.AssertionError"><![CDATA[Given User on the Fleet-Vehicle page........................................passed
+Then User sees same information about vehicle Fleet-Vehicle page and General Information Page.failed
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.fleetGru.StepDefinitions.VehicleGeneralInformation.userSeesSameInformationAboutVehicleFleetVehiclePageAndGeneralInformationPage(VehicleGeneralInformation.java:186)
+	at ✽.User sees same information about vehicle Fleet-Vehicle page and General Information Page(file:///Users/selamigungordu/IdeaProjects/Group10/src/test/resources/features/VehicleGeneralInformation.feature:35)
+]]></failure>
     </testcase>
 </testsuite>
