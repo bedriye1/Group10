@@ -2,10 +2,8 @@ package com.fleetGru.StepDefinitions;
 
 import com.fleetGru.Pages.*;
 import com.fleetGru.Utilities.BrowserUtils;
-import com.fleetGru.Utilities.ConfigurationReader;
 import com.fleetGru.Utilities.Driver;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -15,7 +13,7 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddEventStepDefinition {
+public class AddEvent_2StepDefinition {
 
     public class AddEventStepDefinitions extends BasePage {
 
