@@ -142,4 +142,12 @@ public class FleetVehicles {
     public List<WebElement> gridSettingsColumns;
 
 
+    @FindBy(xpath = "//*[@id=\"grid-custom-entity-grid-1581275997\"]/div[2]/div[2]/div[2]/div/table/tbody/tr[1]/td[3]/ul/li")
+    public WebElement firstRow;
+
+@FindBy(xpath = "//i[.='Add Event']")
+
+public WebElement addEventButton;
+
+
 }
