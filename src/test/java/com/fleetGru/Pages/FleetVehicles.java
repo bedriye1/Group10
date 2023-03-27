@@ -144,6 +144,7 @@ public class FleetVehicles {
     @FindBy(xpath = "//label[starts-with(@for, 'column-c')]")
     public List<WebElement> gridSettingsColumns;
 
+
     public ArrayList<String> expectedTags(){
 
         String  str = ConfigurationReader.getProperty("vehicleGridSettingsTags");
@@ -243,6 +244,28 @@ public class FleetVehicles {
     return true;
     }
 
+
+
+    @FindBy(xpath = "(//a[@class='dropdown-toggle'])[4]")
+    public WebElement threeDotsEndOfRaw;
+
+    @FindBy(xpath = "(//i[@class='fa-trash-o hide-text'])[1]")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "//*[@class='modal-header']//h3")
+    public WebElement actualPopupForDelete;
+
+    @FindBy(xpath = "//a[.='Yes, Delete']")
+    public WebElement yesDeleteButton;
+
+    @FindBy(xpath= "//div[@class='message']")
+    public WebElement deleteWarningMessage;
+
+    @FindBy(xpath = "(//i[@class='fa-eye hide-text'])[1]")
+    public WebElement viewButton;
+
+    @FindBy(xpath = "(//table//tr)[3]//td[2]")
+    public WebElement firstLineCarPlate;
 
 
 }
