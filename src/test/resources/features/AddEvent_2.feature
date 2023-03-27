@@ -1,4 +1,5 @@
-Feature: As a store manager and sales manager, I should be able to add an event
+@FLEET10-1069
+Feature:As a store manager and sales manager, I should be able to add an event
   Background:
     Given The user is on the login page
 
