@@ -51,10 +51,60 @@ Feature:User Story :
     When User clicks on the gear icon
     Then User checks all the visible tags by name
 
+@surhay
+Scenario: Testing checkboxes
+
+  When The user logs in as "sales manager"
+  And The user navigates to Dashboard Fleet-Vehicle page
+  When User clicks on the gear icon
+  When user searches for a random tag
+  Then the random tag user searched for will be displayed
+
+
+Scenario: Testing checkboxes
+
+  When The user logs in as "sales manager"
+  And The user navigates to Dashboard Fleet-Vehicle page
+  When User clicks on the gear icon
+  When User selects and moves 4 random tags by dragging and dropping
+  Then User confirms all the grid changes are applied
+
+
+  @surhay
   Scenario: Testing checkboxes
+
     When The user logs in as "sales manager"
     And The user navigates to Dashboard Fleet-Vehicle page
     When User clicks on the gear icon
-    Then User checks all the visible tags by name
+    Then User confirms all the tags can be selected
+
+  @surhay
+  Scenario: Testing all checkboxes
+
+    When The user logs in as "sales manager"
+    And The user navigates to Dashboard Fleet-Vehicle page
+    When User clicks on the gear icon
+    When User selects all grid tags
+    Then User confirms all the grid changes are applied
+
+
+
+
+
+
+
+
+  Scenario: Testing random selected tags
+
+    When The user logs in as "sales manager"
+    And The user navigates to Dashboard Fleet-Vehicle page
+    When User clicks on the gear icon
+    When User selects 8 random grid tags
+    Then User confirms all the grid tags selected are on the table
+
+
+
+
+
 
 
