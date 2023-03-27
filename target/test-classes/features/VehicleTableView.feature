@@ -1,4 +1,5 @@
-  Feature: Vehicle Table View
+@FLEET10-1009
+Feature: Vehicle Table View
 
   Background:
     Given The user is on the login page
@@ -9,10 +10,7 @@
     And The user navigates to QuickLaunchpad Fleet-Vehicle page
     Then The user sees all the vehicle information in a table
 
-
   @FLEET10-937
-
-  @FLEET10-937  @deneme
 
   Scenario: All user types can see vehicle table
     When The user logs in as "sales manager"
@@ -35,9 +33,6 @@
 
   Scenario: Verify < and > buttons of the vehicle table work properly
     When The user logs in as "driver"
-
-  Scenario: Verify < and > buttons of the vehicle table work propeWhen The user logs in as "driver"
-
     And The user navigates to QuickLaunchpad Fleet-Vehicle page
     And The user clicks on the forward ">" button
     Then Verify seeing the next page of the table
