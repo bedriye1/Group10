@@ -48,6 +48,9 @@ public class AddEvent_2StepeDefinitions extends AddEventStepDefinition{
     }
         @When("user clicks add event button and sees add event page pop up")
     public void userClicksAddEventButtonAndSeesAddEventPagePopUp() {
+        addevent_2Page.addEventButton.click();
+        BrowserUtils.sleep(3);
+
        addevent_2Page.AddEventPopUp.isDisplayed();
 
     }
