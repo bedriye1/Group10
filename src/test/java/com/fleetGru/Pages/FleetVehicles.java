@@ -3,12 +3,17 @@ package com.fleetGru.Pages;
 
 import com.fleetGru.Utilities.Driver;
 
+import org.openqa.selenium.By;
+
+
 import com.fleetGru.Utilities.*;
+
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FleetVehicles {
@@ -81,6 +86,29 @@ public class FleetVehicles {
     @FindBy(xpath = "(//*[@class='fa-refresh'])[2]")
     public WebElement resetBtn;
 
+
+    @FindBy (xpath = "//a[@title='Filters']")
+    public WebElement filtersIcon;
+
+    @FindBy (css = "a.add-filter-button")
+    public WebElement manageFiltersButton;
+
+
+    @FindBy (xpath = "//label[@title='Tags']")
+    public WebElement tagsFilter;
+
+    @FindBy (xpath = "//input[@type='search']")
+    public WebElement manageFiltersSearchBar;
+
+    @FindBy (xpath = "//label[@title='Driver']")
+    public WebElement driverFilter;
+
+    @FindBy (xpath = "(//i[@class='fa-refresh'])[2]")
+    public WebElement resetIcon;
+
+    @FindBy (xpath = "//div[@class='filter-container']")
+    public WebElement filterContainer;
+
     @FindBy(id = "s2id_autogen2")
     public WebElement chooseValuesInputBox;
 
@@ -99,9 +127,6 @@ public class FleetVehicles {
     @FindBy(xpath = "//span[.='Compact']")
     public WebElement compactOption;
 
-    @FindBy(xpath = "//td[.='Samuel Christiansen']")
-    public WebElement SamuelChrist;
-
 
     @FindBy(xpath = "//div[@class='column-manager dropdown']")
     public WebElement gridButton;
@@ -113,8 +138,25 @@ public class FleetVehicles {
     @FindBy(xpath = "//label[starts-with(@for, 'column-c')]")
     public List<WebElement> gridSettingsColumns;
 
+    @FindBy(xpath = "(//a[@class='dropdown-toggle'])[4]")
+    public WebElement threeDotsEndOfRaw;
 
+    @FindBy(xpath = "(//i[@class='fa-trash-o hide-text'])[1]")
+    public WebElement deleteButton;
 
+    @FindBy(xpath = "//*[@class='modal-header']//h3")
+    public WebElement actualPopupForDelete;
 
+    @FindBy(xpath = "//a[.='Yes, Delete']")
+    public WebElement yesDeleteButton;
+
+    @FindBy(xpath= "//div[@class='message']")
+    public WebElement deleteWarningMessage;
+
+    @FindBy(xpath = "(//i[@class='fa-eye hide-text'])[1]")
+    public WebElement viewButton;
+
+    @FindBy(xpath = "(//table//tr)[3]//td[2]")
+    public WebElement firstLineCarPlate;
 
 }
