@@ -164,7 +164,7 @@ public class TagsFilerStepDefinitions {
             webElement.click();
             BrowserUtils.sleep(1);
         }
-    }
+    } //Methods for steps
 
     public void assertionInLoop(List<WebElement> takenList, String takenString) {
         BrowserUtils.sleep(3);
