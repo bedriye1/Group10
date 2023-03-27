@@ -79,7 +79,7 @@ addevent_2Page.organizerName.sendKeys("Mustafa BAZ");
     public void user_clicks_repeat_button() {
 addevent_2Page.repeatButton.click();
     }
-    @Then("user sees repearts dropdown menu")
+    @Then("user sees repeats dropdown menu")
     public void user_sees_repearts_dropdown_menu() {
         addevent_2Page.repeartsDropdown.click();
     }
