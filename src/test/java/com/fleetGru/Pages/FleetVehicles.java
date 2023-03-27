@@ -138,6 +138,26 @@ public class FleetVehicles {
     @FindBy(xpath = "//label[starts-with(@for, 'column-c')]")
     public List<WebElement> gridSettingsColumns;
 
+    @FindBy(xpath = "(//a[@class='dropdown-toggle'])[4]")
+    public WebElement threeDotsEndOfRaw;
+
+    @FindBy(xpath = "(//i[@class='fa-trash-o hide-text'])[1]")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "//*[@class='modal-header']//h3")
+    public WebElement actualPopupForDelete;
+
+    @FindBy(xpath = "//a[.='Yes, Delete']")
+    public WebElement yesDeleteButton;
+
+    @FindBy(xpath= "//div[@class='message']")
+    public WebElement deleteWarningMessage;
+
+    @FindBy(xpath = "(//i[@class='fa-eye hide-text'])[1]")
+    public WebElement viewButton;
+
+    @FindBy(xpath = "(//table//tr)[3]//td[2]")
+    public WebElement firstLineCarPlate;
 
     @FindBy(xpath = "//*[@id=\"grid-custom-entity-grid-1581275997\"]/div[2]/div[2]/div[2]/div/table/tbody/tr[1]/td[3]/ul/li")
     public WebElement firstRow;
