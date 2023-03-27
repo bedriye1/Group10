@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Addevent_2Page extends BasePage {
     public Addevent_2Page() {
-        PageFactory.initElements(Driver.getDriver(),this);
+       PageFactory.initElements(Driver.getDriver(),this);
     }
     @FindBy(xpath = "//a[@title='Add an event to this record']")
     public WebElement addEventButton;
