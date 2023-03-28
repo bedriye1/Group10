@@ -32,16 +32,15 @@ Feature: Create button functionality test
     And I fill in the Immatriculation Date field with "Jun 21, 2021"
     And I fill in the First Contract Date field with "Jun 24, 2023"
     And I fill in the Catalog Value $ field with "20000"
-
-  Scenario: aaaaaa
-
-
-
     And I fill in the Seat Number field with "5"
     And I fill in the Doors Number field with "4"
     And I fill in the Colour field with "Red"
     And I select "Automatic" in the Transmission field
-    And I select "Gasoline" in the Fuel Type field
+    And I select "Electric" in the Fuel Type field
+
+
+  Scenario: aaaaaa
+
     And I fill in the CO2 Emissions field with "150"
     And I fill in the Horsepower field with "200"
     And I fill in the Horsepower Taxation field with "1000"

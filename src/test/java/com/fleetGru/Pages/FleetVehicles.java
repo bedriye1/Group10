@@ -139,8 +139,25 @@ public class FleetVehicles extends BasePage {
     @FindBy(xpath = "//input[@name='date_selector_custom_entity_type_FirstContractDate-uid-6421db52923de']")
     public WebElement firstContactdate;
 
-    @FindBy(name = "custom_entity_type[CatalogValue")
+    @FindBy(xpath = "//input[@name='custom_entity_type[CatalogValue]']")
     public WebElement catalogValue;
+
+    @FindBy(xpath = "//input[@name='custom_entity_type[SeatsNumber]']")
+    public WebElement seatNumber;
+
+    @FindBy(xpath = "//input[@name='custom_entity_type[DoorsNumber]']")
+    public WebElement doorNumber;
+
+    @FindBy(xpath = "//input[@name='custom_entity_type[Color]']")
+    public WebElement colour;
+
+    @FindBy(xpath ="(//span[@class='select2-chosen'])[1]")
+    public WebElement transmission;
+
+    @FindBy(xpath = "(//span[@class='select2-chosen'])[2]")
+    public WebElement gasoline;
+
+
 
 
     @FindBy(xpath = "//table[@class='ui-datepicker-calendar']")
@@ -159,6 +176,8 @@ public class FleetVehicles extends BasePage {
 
     @FindBy(xpath = "//button[@class='ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all']")
     public WebElement date2Btn;
+
+
 
 }
 

@@ -8,20 +8,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.messages.internal.com.fasterxml.jackson.annotation.JsonAutoDetect;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CreateBtnStepDefinitions extends BasePage {
@@ -211,7 +204,6 @@ public class CreateBtnStepDefinitions extends BasePage {
 */
 
 
-
     @And("I fill in the Immatriculation Date field with {string}")
     public void iFillInTheImmatriculationDateFieldWith(String date) {
         fleetVehicles.ımmactriculation.click();
@@ -225,6 +217,64 @@ public class CreateBtnStepDefinitions extends BasePage {
         fleetVehicles.date2Btn.click();
 
     }
+
+    @And("I fill in the Catalog Value $ field with {string}")
+    public void iFillInTheCatalogValue$FieldWith(String value) {
+        fleetVehicles.catalogValue.sendKeys(value);
+    }
+
+    @And("I fill in the Seat Number field with {string}")
+    public void iFillInTheSeatNumberFieldWith(String seatNumber) {
+        fleetVehicles.seatNumber.sendKeys(seatNumber);
+    }
+
+    @And("I fill in the Doors Number field with {string}")
+    public void iFillInTheDoorsNumberFieldWith(String doorNum) {
+        fleetVehicles.doorNumber.sendKeys(doorNum);
+    }
+
+    @And("I fill in the Colour field with {string}")
+    public void iFillInTheColourFieldWith(String colour) {
+        fleetVehicles.colour.sendKeys(colour);
+    }
+
+    @And("I select {string} in the Transmission field")
+    public void iSelectInTheTransmissionField(String automatic) {
+        BrowserUtils.waitFor(2);
+        fleetVehicles.transmission.click();
+        /*
+         Select select = new Select(Driver.getDriver().findElement(By.xpath("//select[@class='ui-datepicker-month']")));
+        List<WebElement> months = select.getOptions();
+        for (WebElement each : months) {
+            if (each.getText().equals(month)) {
+                each.click();
+            }
+         */
+        BrowserUtils.waitFor(2);
+        // Select select = new Select( Driver.getDriver().findElements(By.xpath("//select[@id='custom_entity_type_Transmission-uid-64232c9200dbb']")));
+        List<WebElement> transmission1 = Driver.getDriver().findElements(By.xpath("//select[@name='custom_entity_type[Transmission]']/option"));
+        for (WebElement each1 : transmission1) {
+            if (each1.getText().equals(automatic)) {
+                each1.click();
+            }
+        }
+
+    }
+
+    @And("I select {string} in the Fuel Type field")
+    public void iSelectInTheFuelTypeField(String fuelType) {
+        fleetVehicles.gasoline.click();
+
+        List<WebElement> fuel = Driver.getDriver().findElements(By.xpath("//select[@name='custom_entity_type[FuelType]']/option"));
+        for (WebElement each : fuel) {
+            if (each.getText().equals(fuelType)) {
+                each.click();
+            }
+        }
+    }
+
+
+
 
 
 
@@ -281,8 +331,7 @@ public class CreateBtnStepDefinitions extends BasePage {
 */
 
 
-
-    }
+}
 
 
 
