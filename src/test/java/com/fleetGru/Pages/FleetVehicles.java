@@ -128,7 +128,13 @@ public class FleetVehicles extends BasePage {
     public WebElement lastOdometre;
 
     @FindBy(xpath = "//input[@class='datepicker-input hasDatepicker']")
-    public WebElement ımmactriculationDate;
+    public WebElement ımmactriculation;
+
+    @FindBy(xpath = "//select[@class='ui-datepicker-month']/option")
+    public WebElement month;
+
+    @FindBy(xpath = "//select[@class='ui-datepicker-year']/option")
+    public WebElement year;
 
     @FindBy(xpath = "//input[@name='date_selector_custom_entity_type_FirstContractDate-uid-6421db52923de']")
     public WebElement firstContactdate;
@@ -137,14 +143,22 @@ public class FleetVehicles extends BasePage {
     public WebElement catalogValue;
 
 
-
     @FindBy(xpath = "//table[@class='ui-datepicker-calendar']")
     public WebElement taple;
 
 
-    @FindBy(xpath = "//select[@class='ui-datepicker-month']")
-    public WebElement month;
 
+    @FindBy(css = "input[id^='custom_entity_type_ImmatriculationDate']")
+    public WebElement date;
+
+    @FindBy(xpath = "//input[starts-with(@id,'date_selector_custom_entity_type_FirstContractDate')]")
+    public WebElement firstContactDate;
+
+    @FindBy(xpath = "//button[@class='ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all']")
+    public WebElement date1Btn;
+
+    @FindBy(xpath = "//button[@class='ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all']")
+    public WebElement date2Btn;
 
 }
 

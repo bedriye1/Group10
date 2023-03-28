@@ -29,12 +29,14 @@ Feature: Create button functionality test
     And I fill in the Chassis Number field with "ABC123456"
     And I fill in the Model Year field with "2022"
     And I fill in the Last Odometer field with "10000"
-    And I fill in the Immatriculation Date field with "Mar 21,2020"
-    And I fill in the First Contract Date field with "03 24, 2023"
+    And I fill in the Immatriculation Date field with "Jun 21, 2021"
+    And I fill in the First Contract Date field with "Jun 24, 2023"
     And I fill in the Catalog Value $ field with "20000"
 
-
   Scenario: aaaaaa
+
+
+
     And I fill in the Seat Number field with "5"
     And I fill in the Doors Number field with "4"
     And I fill in the Colour field with "Red"

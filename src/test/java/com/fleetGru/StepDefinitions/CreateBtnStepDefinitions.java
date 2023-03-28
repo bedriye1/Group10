@@ -41,6 +41,7 @@ public class CreateBtnStepDefinitions extends BasePage {
         //based on input enter that user information
 
     }
+
     @Given("The user is on the login page")
     public void the_user_is_on_the_login_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
@@ -173,7 +174,6 @@ public class CreateBtnStepDefinitions extends BasePage {
 
     @And("I fill in the Location field with {string}")
     public void iFillInTheLocationFieldWith(String location) {
-        BrowserUtils.waitFor(5);
         fleetVehicles.location.sendKeys(location);
     }
 
@@ -191,52 +191,39 @@ public class CreateBtnStepDefinitions extends BasePage {
     public void iFillInTheLastOdometerFieldWith(String odoMeter) {
         fleetVehicles.lastOdometre.sendKeys(odoMeter);
     }
-
-    @And("I fill in the Immatriculation Date field with {int} {int}, {int}")
-    public void iFillInTheImmatriculationDateFieldWith(int month, int date, int year) {
-
-
-        Select month1 = new Select(fleetVehicles.month);
-        List<WebElement> monthselect = new ArrayList<>();
-        //Select(Driver.getDriver().findElement(By.xpath("//select[@class='ui-datepicker-month']");
-        Select date1 = (Select) Driver.getDriver().findElement(By.xpath("//select[@class='ui-datepicker-month']"));
-        Select year1 = (Select) Driver.getDriver().findElement(By.xpath("//select[@class='ui-datepicker-year']"));
-
-        month1.selectByVisibleText(String.valueOf(month));
-        for (WebElement selectMonth : monthselect) {
-            if (selectMonth.getText().equals(month)){
-                selectMonth.click();
+/*
+    @And("I fill in the Immatriculation Date field with {string} {string} {string}")
+    public void iFillInTheImmatriculationDateFieldWith(String month, String day, String year) {
+        fleetVehicles.ımmactriculation.click();
+        List<WebElement> month1 = Driver.getDriver().findElements(By.xpath("//select[@class='ui-datepicker-month']/option"));
+        for (WebElement each1 : month1) {
+            if (each1.getText().equals(month)) {
+                each1.click();
             }
         }
-
-        List<WebElement> dateSelector = Driver.getDriver().findElements(By.xpath("//table[@class='ui-datepicker-calendar']"));
-        //List<WebElement>monthSelector = Driver.getDriver().findElements(By.xpath("//select[@class='ui-datepicker-month']"));
-        //List<WebElement>yearSelector = Driver.getDriver().findElements(By.xpath("//select[@class='ui-datepicker-year']"));
-
-        if (dateSelector.equals(date)) {
-            dateSelector.get(date).click();
-            BrowserUtils.waitFor(5);
+        List<WebElement>year1 = Driver.getDriver().findElements(By.xpath("//select[@class='ui-datepicker-year']/option"));
+        for (WebElement each : year1) {
+            if (each.getText().equals(year)){
+                each.click();
+            }
         }
-
-
-        //monthSelector.get(month);
-        //yearSelector.get(year);
-
-
-        //date1.selectByValue(String.valueOf(date));
-        year1.selectByValue(String.valueOf(year));
-
-
     }
+*/
+
+
 
     @And("I fill in the Immatriculation Date field with {string}")
-    public void iFillInTheImmatriculationDateFieldWith(String d) {
-       fleetVehicles.ımmactriculationDate.sendKeys(d);
+    public void iFillInTheImmatriculationDateFieldWith(String date) {
+        fleetVehicles.ımmactriculation.click();
+        fleetVehicles.date1Btn.click();
+
     }
 
     @And("I fill in the First Contract Date field with {string}")
-    public void iFillInTheFirstContractDateFieldWith(String f) {
-      //  fleetVehicles.firstContactdate.sendKeys(f+Keys.ESCAPE);
+    public void iFillInTheFirstContractDateFieldWith(String arg0) {
+        fleetVehicles.firstContactDate.click();
+        fleetVehicles.date2Btn.click();
+
     }
 
 
@@ -244,9 +231,58 @@ public class CreateBtnStepDefinitions extends BasePage {
 
 
 
-    @And("I fill in the Catalog Value $ field with {string}")
-    public void iFillInTheCatalogValue$FieldWith(String arg0) {
-        fleetVehicles.catalogValue.sendKeys(arg0);
+
+
+/*
+    @And("I fill in the Immatriculation Date field with {string} {string} {string}")
+    public void iFillInTheImmatriculationDateFieldWith(String month, String date, String year) {
+
+
+
+        Select select = new Select(Driver.getDriver().findElement(By.xpath("//select[@class='ui-datepicker-month']")));
+        List<WebElement> months = select.getOptions();
+        for (WebElement each : months) {
+            if (each.getText().equals(month)) {
+                each.click();
+            }
+        }
+
+        Select select1 = new Select(Driver.getDriver().findElement(By.xpath("//select[@class='ui-datepicker-year']")));
+        List<WebElement> years = select1.getOptions();
+        for (WebElement each1 : years) {
+            if (each1.getText().equals(year)) {
+                each1.click();
+            }
+
+        }
+
+
+        List<WebElement> month1 = Driver.getDriver().findElements(By.xpath("//select[@class='ui-datepicker-month']/option"));
+        for (WebElement each1 : month1) {
+            if (each1.getText().equals(month)) {
+                each1.click();
+            }
+        }
+        //BrowserUtils.waitFor(5);
+        //Select select = new Select(Driver.getDriver().findElement(By.xpath("//select[@class='ui-datepicker-year']/option")));
+        List<WebElement> year1 = Driver.getDriver().findElements(By.xpath("//select[@class='ui-datepicker-year']/option"));
+        // select.selectByValue(year);
+        for (WebElement each : year1) {
+            //  System.out.println(each.getText());
+
+            if (each.getText().equals(year)) {
+                System.out.println(each.getText());
+                // each.click();
+
+            }
+
+        }
+
+*/
+
+
+
     }
-}
+
+
 
