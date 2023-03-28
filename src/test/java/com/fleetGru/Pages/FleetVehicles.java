@@ -3,6 +3,8 @@ package com.fleetGru.Pages;
 
 import com.fleetGru.Utilities.Driver;
 
+import com.github.javafaker.Faker;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 
 
@@ -14,9 +16,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class FleetVehicles {
+
+    Faker faker=new Faker();
 
     public FleetVehicles() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -138,6 +144,118 @@ public class FleetVehicles {
     @FindBy(xpath = "//label[starts-with(@for, 'column-c')]")
     public List<WebElement> gridSettingsColumns;
 
+    @FindBy (css = "[class=add-filter-button]")
+    public WebElement ManageFiltersButton;
+
+    @FindBy (xpath = "//label[@title='Driver']//span[contains(text(),'Driver')]")
+    public WebElement driverFilterButton;
+@FindBy (xpath = "//li[@class='driver']/button[contains(text(),'Driver:All')]")
+public WebElement driverAllButton;
+
+@FindBy (xpath = "//button[@class='btn dropdown-toggle']")
+    public WebElement containsdropDownButton;
+
+    public ArrayList<String> expectedTags(){
+
+        String  str = ConfigurationReader.getProperty("vehicleGridSettingsTags");
+        String[] strSplit = str.split(",");
+
+        ArrayList<String> expected = new ArrayList<String>();
+        expected.addAll(Arrays.asList(strSplit));
+
+
+
+
+
+        return expected;
+
+
+    }
+
+    public ArrayList<String> actualTags(){
+        ArrayList<String> actual = new ArrayList<>();
+        for (WebElement gridSettingsColumn : gridSettingsColumns) {
+            actual.add(gridSettingsColumn.getText());
+        }
+
+        return actual;
+    }
+
+
+    @FindBy(xpath = "//input[starts-with(@id, 'column-c')]")
+    public List<WebElement> gridSettingCheckBoxes;
+
+    public HashMap<String,Boolean> getCheckboxes() {
+
+
+        ArrayList<String> actual=actualTags();
+        ArrayList<Boolean> isSelected=new ArrayList<>();
+        for (WebElement gridSettingTag : gridSettingCheckBoxes) {
+            isSelected.add(gridSettingTag.isSelected());
+        }
+        HashMap<String, Boolean> checkboxes = new HashMap<String, Boolean>();
+        for (int i = 0; i < actual.size(); i++) {
+            checkboxes.put(actual.get(i), gridSettingCheckBoxes.get(i).isSelected());
+
+
+        }
+
+        return checkboxes;
+    }
+
+    public void selectAllGridTags(){
+        for (WebElement gridSettingTag : gridSettingCheckBoxes) {
+            gridSettingTag.click();
+
+        }
+
+
+    }
+
+    @FindBy(xpath = "//input[@placeholder='Quick Search']")
+    public WebElement quickSearcBox;
+
+
+
+    String res, randomTag;
+    public void quickSearchRandom(){
+        ArrayList<String> actualTags=actualTags();
+         res="";
+
+       randomTag=actualTags.get(faker.number().numberBetween(0,actualTags.size()-1));
+        quickSearcBox.sendKeys(randomTag);
+
+
+
+
+
+    }
+
+    public boolean verifyQuickSearch(){
+
+        for (WebElement gridSettingsColumn : gridSettingsColumns) {
+            if (gridSettingsColumn.isDisplayed()){
+                res=gridSettingsColumn.getText();
+
+
+
+
+            }
+
+        }
+
+        return (randomTag.equals(res));
+
+    }
+
+    public boolean verifyGridChanges(){
+
+
+    return true;
+    }
+
+
+
     @FindBy(xpath = "(//a[@class='dropdown-toggle'])[4]")
     public WebElement threeDotsEndOfRaw;
 
@@ -158,5 +276,6 @@ public class FleetVehicles {
 
     @FindBy(xpath = "(//table//tr)[3]//td[2]")
     public WebElement firstLineCarPlate;
+
 
 }
