@@ -1,105 +1,139 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="3" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="8" time="186.15">
-    <testcase classname="Vehicle Table View" name="All user types can see vehicle table" time="31.322">
-        <failure message="" type="java.lang.AssertionError"><![CDATA[Given The user is on the login page.........................................passed
-When The user logs in as "driver"...........................................passed
-And The user navigates to QuickLaunchpad Fleet-Vehicle page.................passed
-Then The user sees all the vehicle information in a table...................failed
-
-StackTrace:
-java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at com.fleetGru.StepDefinitions.VehicleTableView_StepDefs.the_user_sees_all_the_vehicle_information_in_a_table(VehicleTableView_StepDefs.java:81)
-	at ✽.The user sees all the vehicle information in a table(file:///C:/Users/Administrator/Desktop/IdeaProjects/Group10/src/test/resources/features/VehicleTableView.feature:11)
-]]></failure>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="13" time="435.362">
+    <testcase classname="Delete a car" name="All users can see the delete button by hovering over the three dots at the end of each row" time="48.86">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "user1" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+Then The user hover over the three dots and able to see delete button.......passed
+]]>
+        </system-out>
     </testcase>
-    <testcase classname="Vehicle Table View" name="All user types can see vehicle table 2" time="14.186">
-        <failure message="element click intercepted: Element &lt;li class=&quot;dropdown dropdown-level-1&quot;&gt;...&lt;/li&gt; is not clickable at point (164, 56). Other element would receive the click: &lt;div class=&quot;loader-mask shown&quot;&gt;...&lt;/div&gt;&#10;  (Session info: chrome=111.0.5563.66)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'EMRE-HP-I3-11TH', ip: '192.168.1.33', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.66, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:53393}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: b9287888ef18d4111b2eaa65503bb4dd" type="org.openqa.selenium.ElementClickInterceptedException"><![CDATA[Given The user is on the login page.........................................passed
-When The user logs in as "sales manager"....................................passed
-And The user navigates to Dashboard Fleet-Vehicle page......................failed
-Then The user sees all the vehicle information in a table...................skipped
-
-StackTrace:
-org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <li class="dropdown dropdown-level-1">...</li> is not clickable at point (164, 56). Other element would receive the click: <div class="loader-mask shown">...</div>
-  (Session info: chrome=111.0.5563.66)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'EMRE-HP-I3-11TH', ip: '192.168.1.33', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.66, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:53393}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b9287888ef18d4111b2eaa65503bb4dd
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy19.click(Unknown Source)
-	at com.fleetGru.StepDefinitions.VehicleTableView_StepDefs.the_user_navigates_to_dashboard_fleet_vehicle_page(VehicleTableView_StepDefs.java:59)
-	at ✽.The user navigates to Dashboard Fleet-Vehicle page(file:///C:/Users/Administrator/Desktop/IdeaProjects/Group10/src/test/resources/features/VehicleTableView.feature:16)
-]]></failure>
+    <testcase classname="Delete a car" name="All users can see the delete button by hovering over the three dots at the end of each row 2" time="38.752">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "storemanager51" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+Then The user hover over the three dots and able to see delete button.......passed
+]]>
+        </system-out>
     </testcase>
-    <testcase classname="Vehicle Table View" name="All user types can see vehicle table 3" time="18.036">
-        <failure message="" type="java.lang.AssertionError"><![CDATA[Given The user is on the login page.........................................passed
-When The user logs in as "store manager"....................................passed
-And The user navigates to Dashboard Fleet-Vehicle page......................passed
-Then The user sees all the vehicle information in a table...................failed
-
-StackTrace:
-java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at com.fleetGru.StepDefinitions.VehicleTableView_StepDefs.the_user_sees_all_the_vehicle_information_in_a_table(VehicleTableView_StepDefs.java:81)
-	at ✽.The user sees all the vehicle information in a table(file:///C:/Users/Administrator/Desktop/IdeaProjects/Group10/src/test/resources/features/VehicleTableView.feature:23)
-]]></failure>
+    <testcase classname="Delete a car" name="All users can see the delete button by hovering over the three dots at the end of each row 3" time="40.903">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "salesmanager101" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+Then The user hover over the three dots and able to see delete button.......passed
+]]>
+        </system-out>
     </testcase>
-    <testcase classname="Vehicle Table View" name="Verify total page number of the vehicle table is displayed" time="25.336">
-        <system-out><![CDATA[Given The user is on the login page.........................................passed
-When The user logs in as "driver"...........................................passed
-And The user navigates to QuickLaunchpad Fleet-Vehicle page.................passed
-Then User can see the total page number.....................................passed
-]]></system-out>
+    <testcase classname="Delete a car" name="&quot;Delete Confirmation&quot; pop up should be displayed when the user clicks on the delete button" time="61.902">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "user1" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the delete button.......................................passed
+Then The user able to see "Delete Confirmation" pop up......................passed
+]]>
+        </system-out>
     </testcase>
-    <testcase classname="Vehicle Table View" name="Verify &lt; and &gt; buttons of the vehicle table work properly" time="24.781">
-        <system-out><![CDATA[Given The user is on the login page.........................................passed
-When The user logs in as "driver"...........................................passed
-And The user navigates to QuickLaunchpad Fleet-Vehicle page.................passed
-And The user clicks on the forward ">" button...............................passed
-Then Verify seeing the next page of the table...............................passed
-]]></system-out>
+    <testcase classname="Delete a car" name="&quot;Delete Confirmation&quot; pop up should be displayed when the user clicks on the delete button 2" time="29.189">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "storemanager51" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the delete button.......................................passed
+Then The user able to see "Delete Confirmation" pop up......................passed
+]]>
+        </system-out>
     </testcase>
-    <testcase classname="Vehicle Table View" name="Verify &lt; and &gt; buttons of the vehicle table work properly 2" time="37.671">
-        <system-out><![CDATA[Given The user is on the login page.........................................passed
-When The user logs in as "driver"...........................................passed
-And The user navigates to QuickLaunchpad Fleet-Vehicle page.................passed
-And The user clicks on the forward ">" button...............................passed
-And The user clicks on the back "<" button..................................passed
-Then Verify seeing the previous page of the table...........................passed
-]]></system-out>
+    <testcase classname="Delete a car" name="&quot;Delete Confirmation&quot; pop up should be displayed when the user clicks on the delete button 3" time="24.115">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "salesmanager101" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the delete button.......................................passed
+Then The user able to see "Delete Confirmation" pop up......................passed
+]]>
+        </system-out>
     </testcase>
-    <testcase classname="Vehicle Table View" name="Verify total recordings of vehicles is displayed" time="15.501">
-        <system-out><![CDATA[Given The user is on the login page.........................................passed
-When The user logs in as "driver"...........................................passed
-And The user navigates to QuickLaunchpad Fleet-Vehicle page.................passed
-Then Verify user can see total recordings of vehicles.......................passed
-]]></system-out>
+    <testcase classname="Delete a car" name="If the driver clicks on the &quot;Yes, Delete&quot; button, &quot;You do not have permission to perform this action.&quot; message should be displayed" time="24.951">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "user1" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the delete button.......................................passed
+And The user clicks the Yes, Delete button..................................passed
+Then The user should see "You do not have permission to perform this action." message.passed
+]]>
+        </system-out>
     </testcase>
-    <testcase classname="Vehicle Table View" name="Verify user can download table data in XLS or CSV format from &quot;Export Grid&quot;" time="19.035">
-        <system-out><![CDATA[Given The user is on the login page.........................................passed
-When The user logs in as "driver"...........................................passed
-And The user navigates to QuickLaunchpad Fleet-Vehicle page.................passed
-And The user clicks on the "Export Grid" link...............................passed
-Then Verify table data is downloaded in XLS or CSV format...................passed
-]]></system-out>
+    <testcase classname="Delete a car" name="'Sales Manager' and 'Store Manager' can delete any car by clicking on the delete button at the end of each row and the &quot;Item deleted&quot; message should be displayed." time="24.878">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "storemanager51" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the delete button.......................................passed
+And The user clicks the Yes, Delete button..................................passed
+Then The user should see "Item deleted" message.............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Delete a car" name="'Sales Manager' and 'Store Manager' can delete any car by clicking on the delete button at the end of each row and the &quot;Item deleted&quot; message should be displayed. 2" time="23.728">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "salesmanager101" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the delete button.......................................passed
+And The user clicks the Yes, Delete button..................................passed
+Then The user should see "Item deleted" message.............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' go to the 'General Information' page by clicking on any vehicle/row, they can delete any vehicle by clicking on the 'Delete' button and the &quot;Car deleted&quot; message should be displayed" time="27.952">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "storemanager51" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the View button.........................................passed
+And The user clicks the Delete Button on General Information Page...........passed
+And The user clicks the Yes, Delete button..................................passed
+Then The user should see "Car deleted" message..............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' go to the 'General Information' page by clicking on any vehicle/row, they can delete any vehicle by clicking on the 'Delete' button and the &quot;Car deleted&quot; message should be displayed 2" time="27.035">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "salesmanager101" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the View button.........................................passed
+And The user clicks the Delete Button on General Information Page...........passed
+And The user clicks the Yes, Delete button..................................passed
+Then The user should see "Car deleted" message..............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' delete a car, the corresponding car should also be removed from the Fleet-Vehicle page." time="31.105">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "storemanager51" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the View button.........................................passed
+And The user clicks the Delete Button on General Information Page...........passed
+Then The user clicks the Yes, Delete button and can not see deleted car on Fleet-Vehicles page anymore.passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' delete a car, the corresponding car should also be removed from the Fleet-Vehicle page. 2" time="31.378">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "salesmanager101" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the View button.........................................passed
+And The user clicks the Delete Button on General Information Page...........passed
+Then The user clicks the Yes, Delete button and can not see deleted car on Fleet-Vehicles page anymore.passed
+]]>
+        </system-out>
     </testcase>
 </testsuite>

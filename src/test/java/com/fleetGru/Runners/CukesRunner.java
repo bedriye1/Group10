@@ -7,10 +7,15 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin =
-                {    "json:target/cucumber.json",
+                {       "json:target/cucumber.json",
                         "html:target/cucumber/report.html",
                         "junit:target/junit/junit-report.xml",
                         "rerun:target/rerun.txt",
+
+
+
+
+
                 },
 
 
@@ -22,7 +27,7 @@ import org.junit.runner.RunWith;
 
 
         dryRun = false,
-        tags = ""
+        tags = "@FLEET10-1092"
 
 
 
