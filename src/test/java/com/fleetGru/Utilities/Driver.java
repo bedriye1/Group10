@@ -6,8 +6,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -128,4 +130,51 @@ public class Driver {
             driverPool.remove();
         }
     }
+
+    private static WebDriver driver;
+
+    public static WebDriver sGetDriver(){
+        if (driver==null){
+
+            switch (ConfigurationReader.getProperty("browser"))
+            {
+
+                case "safari":
+                    WebDriverManager.safaridriver().setup();
+                    driver= new SafariDriver();
+                    driver.manage().window().maximize();
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    break;
+                case "chrome":
+                    WebDriverManager.chromedriver().setup();
+                    driver=new ChromeDriver();
+                    driver.manage().window().maximize();
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    break;
+                case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    driver=new FirefoxDriver();
+                    driver.manage().window().maximize();
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    break;
+                case "opera":
+                    WebDriverManager.operadriver().setup();
+                    driver=new OperaDriver();
+                    driver.manage().window().maximize();
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    break;
+
+
+            }
+
+        }
+
+
+        return driver;
+    }
+
+
+
+
+
 }
