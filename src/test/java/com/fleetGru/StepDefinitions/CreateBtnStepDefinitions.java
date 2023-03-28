@@ -41,6 +41,11 @@ public class CreateBtnStepDefinitions extends BasePage {
         //based on input enter that user information
 
     }
+    @Given("The user is on the login page")
+    public void the_user_is_on_the_login_page() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+    }
+
 
     @When("When The user logs in as {string}")
     public void whenTheUserLogsInAs(String userType) throws InterruptedException {
@@ -226,7 +231,7 @@ public class CreateBtnStepDefinitions extends BasePage {
 
     @And("I fill in the Immatriculation Date field with {string}")
     public void iFillInTheImmatriculationDateFieldWith(String d) {
-       // fleetVehicles.ımmactriculationDate.sendKeys(d+Keys.ESCAPE);
+       fleetVehicles.ımmactriculationDate.sendKeys(d);
     }
 
     @And("I fill in the First Contract Date field with {string}")
