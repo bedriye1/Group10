@@ -20,28 +20,32 @@ Feature: Create button functionality test
     When user logs in create car page after clicking crate car button
     Then After clicking Create Car button should land on Create Car page
 
-  Scenario: Create Car with valid data
-    Given I am on the "Create Car" page
-    When I fill in the following fields with valid data:
-      | License Plate        | ABC123          |
-      | Tags                 | Junior, Compact |
-      | Driver               | John Smith      |
-      | Location             | New York        |
-      | Chassis Number       | ABC123456       |
-      | Model Year           | 2022            |
-      | Last Odometer        | 10000           |
-      | Immatriculation Date | 03 24, 2023     |
-      | First Contract Date  | 03 24, 2023     |
-      | Catalog Value ($)    | 20000           |
-      | Seat Number          | 5               |
-      | Doors Number         | 4               |
-      | Colour               | Red             |
-      | Transmission         | Automatic       |
-      | Fuel Type            | Gasoline        |
-      | CO2 Emissions        | 150             |
-      | Horsepower           | 200             |
-      | Horsepower Taxation  | 1000            |
-      | Power (KW)           | 147             |
+  Scenario: User creates a car with valid data
+    Given I am on the Create Car page
+    When I fill in the License Plate field with "ABC123"
+    And Checked  the  all Tags
+    And I fill in the Driver field with "Veli KARA"
+    And I fill in the Location field with "New York"
+    And I fill in the Chassis Number field with "ABC123456"
+    And I fill in the Model Year field with "2022"
+    And I fill in the Last Odometer field with "10000"
+    And I fill in the Immatriculation Date field with "Mar 21,2020"
+    And I fill in the First Contract Date field with "03 24, 2023"
+    And I fill in the Catalog Value $ field with "20000"
+
+
+  Scenario: aaaaaa
+    And I fill in the Seat Number field with "5"
+    And I fill in the Doors Number field with "4"
+    And I fill in the Colour field with "Red"
+    And I select "Automatic" in the Transmission field
+    And I select "Gasoline" in the Fuel Type field
+    And I fill in the CO2 Emissions field with "150"
+    And I fill in the Horsepower field with "200"
+    And I fill in the Horsepower Taxation field with "1000"
+    And I fill in the Power (KW) field with "147"
+    And I click the "Create Car" button
+    Then the car with the valid data should be created successfully
     And I select a JPEG or PNG file for the Logo field, or leave it blank
     And I click on the "Save and Close" button
     Then I should be redirected to the "General Information" page

@@ -16,22 +16,23 @@ public class FleetVehicles extends BasePage {
 
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 
-    public FleetVehicles () {PageFactory.initElements(Driver.getDriver(), this);}
-
-
+    public FleetVehicles() {
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
 
 
     @FindBy(xpath = "//ul[@class='nav-multilevel main-menu']/li[1]")
     public WebElement element_Fleet_Menu;
 
-    public void moveToFleetMenu(){
+    public void moveToFleetMenu() {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(element_Fleet_Menu).build().perform();
     }
+
     @FindBy(xpath = "//a[@href='entity/Extend_Entity_Carreservation']/span")
     public WebElement click_vehicle;
 
-    public void click_vehicle_menu(){
+    public void click_vehicle_menu() {
         click_vehicle.click();
 
     }
@@ -39,29 +40,30 @@ public class FleetVehicles extends BasePage {
     @FindBy(xpath = "//*[@id='main-menu']/ul/li[2]")
     public WebElement Fleet_Menu_Store_Manager;
 
-    public void hoverOverFleetMenu(){
+    public void hoverOverFleetMenu() {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(Fleet_Menu_Store_Manager).build().perform();
 
     }
+
     @FindBy(xpath = "//a[@title='Create Car']")
     public WebElement createCarBtn;
 
-    public String  createCarBtnText(){
-        return  createCarBtn.getText();
+    public String createCarBtnText() {
+        return createCarBtn.getText();
 
     }
 
     @FindBy(className = "user-name")
     public WebElement createCarPAge;
 
-    @FindBy(id ="prependedInput")
+    @FindBy(id = "prependedInput")
     public WebElement username;
 
-    @FindBy(id ="prependedInput2")
+    @FindBy(id = "prependedInput2")
     public WebElement password;
 
-    @FindBy(id ="_submit")
+    @FindBy(id = "_submit")
     public WebElement loginButton;
 
     public void login(String usernameStr, String passwordStr) {
@@ -70,24 +72,78 @@ public class FleetVehicles extends BasePage {
         loginButton.click();
     }
 
-    public void ToReachCreateeCarBtnPage(){
+    public void ToReachCreateCarBtnPage() throws InterruptedException {
+
         login("storemanager51", "UserUser123");
+        wait.until(ExpectedConditions.visibilityOf(Fleet_Menu_Store_Manager));
         hoverOverFleetMenu();
         click_vehicle.click();
-        wait.until(ExpectedConditions.visibilityOf(createCarBtn));
+
+        waitUntilLoaderScreenDisappear();
+        //BrowserUtils.waitForStaleElement(createCarBtn);
+        //BrowserUtils.clickWithJS(createCarBtn);
         createCarBtn.click();
-        /*
-        loginPage.login("storemanager51", "UserUser123");
-        fleetVehicles.hoverOverFleetMenu();
-        fleetVehicles.click_vehicle.click();
-        Thread.sleep(5000);
-        wait.until(ExpectedConditions.visibilityOf(fleetVehicles.createCarBtn));
-        fleetVehicles.createCarBtn.click();*/
+
     }
 
+    @FindBy(xpath = "//input[@name='custom_entity_type[LicensePlate]']")
+    public WebElement licencePlate;
+
+    @FindBy(xpath = "//div[@class='controls']/div[1]/div[1]")
+    //input[@id='custom_entity_type_Tags_0-uid-642035123a63b']
+
+    public WebElement junior;
+
+    @FindBy(xpath = "//div[@class='controls']/div[1]/div[2]")
+    public WebElement senior;
+
+    @FindBy(xpath = "//div[@class='controls']/div[1]/div[3]")
+    public WebElement employeeCar;
+
+    @FindBy(xpath = "//div[@class='controls']/div[1]/div[4]")
+    public WebElement purchased;
+
+    @FindBy(xpath = "//div[@class='controls']/div[1]/div[5]")
+    public WebElement compact;
+
+    @FindBy(xpath = "//div[@class='controls']/div[1]/div[6]")
+    public WebElement sedan;
+
+    @FindBy(xpath = "//div[@class='controls']/div[1]/div[7]")
+    public WebElement convertible;
+
+    @FindBy(xpath = "//input[@name='custom_entity_type[Driver]']")
+    public WebElement driver;
+
+    @FindBy(xpath = "//input[@name='custom_entity_type[Location]']")
+    public WebElement location;
+
+    @FindBy(xpath = "//input[@name='custom_entity_type[ChassisNumber]']")
+    public WebElement chasisNumber;
+
+    @FindBy(xpath = "//input[@name='custom_entity_type[ModelYear]']")
+    public WebElement modelYear;
+
+    @FindBy(xpath = "//input[@name='custom_entity_type[LastOdometer]']")
+    public WebElement lastOdometre;
+
+    @FindBy(xpath = "//input[@class='datepicker-input hasDatepicker']")
+    public WebElement ımmactriculationDate;
+
+    @FindBy(xpath = "//input[@name='date_selector_custom_entity_type_FirstContractDate-uid-6421db52923de']")
+    public WebElement firstContactdate;
+
+    @FindBy(name = "custom_entity_type[CatalogValue")
+    public WebElement catalogValue;
 
 
 
+    @FindBy(xpath = "//table[@class='ui-datepicker-calendar']")
+    public WebElement taple;
+
+
+    @FindBy(xpath = "//select[@class='ui-datepicker-month']")
+    public WebElement month;
 
 
 }
