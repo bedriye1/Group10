@@ -10,9 +10,7 @@
     Then The user sees all the vehicle information in a table
 
 
-  @FLEET10-937
-
-  @FLEET10-937  @deneme
+   @FLEET10-937
 
   Scenario: All user types can see vehicle table
     When The user logs in as "sales manager"
@@ -35,9 +33,6 @@
 
   Scenario: Verify < and > buttons of the vehicle table work properly
     When The user logs in as "driver"
-
-  Scenario: Verify < and > buttons of the vehicle table work propeWhen The user logs in as "driver"
-
     And The user navigates to QuickLaunchpad Fleet-Vehicle page
     And The user clicks on the forward ">" button
     Then Verify seeing the next page of the table
