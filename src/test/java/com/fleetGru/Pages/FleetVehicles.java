@@ -65,7 +65,7 @@ public class FleetVehicles {
     @FindBy(xpath = "//div[@class='btn filter-criteria-selector oro-drop-opener oro-dropdown-toggle filter-default-value']")
     public WebElement tagsAll;
 
-    @FindBy(xpath = "//button[@class='btn dropdown-toggle']")
+    @FindBy(xpath = "//button[@class='btn dropdown-toggle' and @data-toggle='dropdown']")
     public WebElement dropDownToggleButton;
 
     @FindBy(xpath = "//label[@class='control-label']/../div/button")

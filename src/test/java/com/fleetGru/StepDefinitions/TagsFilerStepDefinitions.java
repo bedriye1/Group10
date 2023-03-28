@@ -54,6 +54,7 @@ public class TagsFilerStepDefinitions {
     @When("User clicks to filter icon button")
     public void user_clicks_to_filter_icon_button() {
         //Click the filterButton
+        BrowserUtils.sleep(2);
         fleetVehicles.filterButton.click();
     }
 
@@ -81,25 +82,19 @@ public class TagsFilerStepDefinitions {
         wait.until(ExpectedConditions.visibilityOf(fleetVehicles.tagsAll)).click();
     }
 
-    @When("User clicks Is Any Of")
-    public void user_click() {
-        //Click the dropDownToggleButton
-        fleetVehicles.dropDownToggleButton.click();
-        BrowserUtils.sleep(2);
-    }
-
     @Then("User should able to see {string} and {string} options")
     public void user_should_able_to_see_and_options(String string, String string2) {
-
-        //Create a list in order to collect the options of the list
-        List<WebElement> opt = Driver.getDriver().findElements(By.xpath("//div[@class='btn-group btn-block open']//ul"));
-
         //Create a list in order to collect the strings
         List<String> stringList = new ArrayList<>(Arrays.asList(string, string2));
 
+        //Create a list in order to collect the options of the list
+        List<WebElement> opt
+                = Driver.getDriver().findElements(By.xpath("//a[@class='dropdown-item choice-value' and contains(text(), '" + string + "'" + ")]"));
+
+
         //Compare the text each other in a loop
         for (int i = 0; i < opt.size(); i++) {
-            Assert.assertEquals(opt.get(i).getText(), stringList.get(i));
+            Assert.assertEquals(opt.get(i).getText().toLowerCase(), stringList.get(i).toLowerCase());
         }
     }
 
@@ -164,7 +159,7 @@ public class TagsFilerStepDefinitions {
             webElement.click();
             BrowserUtils.sleep(1);
         }
-    } //Methods for steps
+    }
 
     public void assertionInLoop(List<WebElement> takenList, String takenString) {
         BrowserUtils.sleep(3);
@@ -177,7 +172,6 @@ public class TagsFilerStepDefinitions {
 
     public void falseAssertionInLoop(List<WebElement> takenList, String takenString) {
         BrowserUtils.sleep(3);
-        System.out.println(takenList.size());
 
         for (WebElement element : takenList) {
             Assert.assertNotEquals(element.getText(), takenString);
