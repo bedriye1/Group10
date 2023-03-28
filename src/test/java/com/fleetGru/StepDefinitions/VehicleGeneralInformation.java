@@ -87,6 +87,7 @@ public class VehicleGeneralInformation {
         dashboard.FleetDropDown.click();
         BrowserUtils.sleep(1);
         dashboard.Vehicles.click();
+        BrowserUtils.waitForPageToLoad(10);
 
     }
     @When("Sales manager clicks a row for go to General Information page")
@@ -114,11 +115,13 @@ public class VehicleGeneralInformation {
         dashboard.FleetDropDown.click();
         BrowserUtils.sleep(1);
         dashboard.Vehicles.click();
+        BrowserUtils.waitForPageToLoad(10);
     }
     @When("Store manager clicks a row for go to General Information page")
     public void store_manager_clicks_a_row_for_go_to_general_information_page() {
         quickLaunchPad.firstCell.click();
     }
+
     @Then("Store manager can see {string}, {string} and {string} buttons on the General Information page")
     public void store_manager_can_see_and_buttons_on_the_general_information_page(String string, String string2, String string3) {
         dashboard.editButtonGeneralInformationPage.isDisplayed();
@@ -140,8 +143,9 @@ public class VehicleGeneralInformation {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOf(quickLaunchPad.FleetsQuichLaunch));
         quickLaunchPad.FleetsQuichLaunch.click();
-        BrowserUtils.sleep(1);
+        BrowserUtils.waitForPageToLoad(10);
         quickLaunchPad.Vehicles.click();
+        BrowserUtils.waitForPageToLoad(10);
     }
     @When("Driver clicks a row for go to General Information page")
     public void driver_clicks_a_row_for_go_to_general_information_page() {
