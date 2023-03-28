@@ -53,6 +53,53 @@ public class VehiclesGridSettings extends BasePage {
 
     }
 
+    @Then("User confirms all the tags can be selected")
+    public void user_confirms_all_the_tags_can_be_selected() {
+        for (WebElement gridSettingTag : fleetVehicles.gridSettingCheckBoxes) {
+            if (!gridSettingTag.isSelected()){
+                gridSettingTag.click();
+            }
+
+        }
+
+
+
+        ArrayList<String> tags=fleetVehicles.actualTags();
+        boolean a=true;
+        for (WebElement gridSettingCheckBox : fleetVehicles.gridSettingCheckBoxes) {
+            if (!gridSettingCheckBox.isSelected()){
+                a=false;
+            }
+        }
+
+
+
+    }
+
+    @When("user searches for a random tag")
+    public void user_searches_for_a_random_tag() {
+fleetVehicles.quickSearchRandom();
+    }
+
+    @Then("the random tag user searched for will be displayed")
+    public void the_random_tag_user_searched_for_will_be_displayed() {
+      Assert.assertTrue(fleetVehicles.verifyQuickSearch());
+    }
+
+    @When("User selects all grid tags")
+    public void user_selects_all_grid_tags() {
+       fleetVehicles.selectAllGridTags();
+    }
+
+    @Then("User confirms all the grid changes are applied")
+    public void user_confirms_all_the_grid_changes_are_applied() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+
+
+
 }
 
 
