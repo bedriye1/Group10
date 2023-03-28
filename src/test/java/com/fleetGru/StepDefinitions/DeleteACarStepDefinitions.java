@@ -89,7 +89,7 @@ public class DeleteACarStepDefinitions {
         fleetVehicles.viewButton.click();
     }
 
-    @And("The user click the Delete Button on General Information Page")
+    @And("The user clicks the Delete Button on General Information Page")
     public void theUserClickTheDeleteButtonOnGeneralInformationPage() {
 
         BrowserUtils.sleep(3);
