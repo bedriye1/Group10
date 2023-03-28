@@ -21,38 +21,32 @@ public class AddEvent_2StepeDefinitions extends AddEventStepDefinition{
     public void userCanGoToFleetDropdown() {
         BrowserUtils.sleep(5);
         dashboard.FleetDropDown.click();
-
     }
-
     @And("User click the Vehicles modules")
     public void userClickTheVehiclesModules() {
         dashboard.Vehicles.click();
         BrowserUtils.sleep(5);
     }
-
     @When("User can click on any row in the table")
     public void user_can_click_on_any_row_in_the_table() {
         BrowserUtils.sleep(5);
-        addEventPage.firstRow.click();
+        addEventPage.anyVehicles.click();
     }
 
-    @Then("User click the add event button")
-    public void user_click_the_add_event_button() {
+    @And("user can click add event button")
+    public void userCanClickAddEventButton() {
         BrowserUtils.sleep(5);
         WebElement addEvent = Driver.getDriver().findElement(By.xpath("//a[@title='Add an event to this record']"));
         addEvent.click();
         BrowserUtils.sleep(5);
         Assert.assertTrue(addEvent.isEnabled());
-
-
     }
-        @When("user clicks add event button and sees add event page pop up")
-    public void userClicksAddEventButtonAndSeesAddEventPagePopUp() {
-        addevent_2Page.addEventButton.click();
+
+
+    @Then("user should be able to see add event pop up")
+    public void userShouldBeAbleToSeeAddEventPopUp() {
+       addevent_2Page.addEventButton.click();
         BrowserUtils.sleep(3);
-
-       addevent_2Page.AddEventPopUp.isDisplayed();
-
     }
     @And("User enters event title")
     public void userEntersEventTitle() {
@@ -67,14 +61,12 @@ addevent_2Page.organizerName.sendKeys("Mustafa BAZ");
 
 
     }
-    @And("User can click Add event check box")
+    @And("User can click  All-day event check box")
     public void userCanClickAddEventCheckBox() {
         addevent_2Page.allDayEventCheckBox.click();
     }
-
-
-    @Then("time box will disappear")
-    public void timeBoxWillDisappear() {
+    @And("Time boxes will disappear")
+    public void timeBoxesWillDisappear() {
      addevent_2Page.timerDisappear.click();
 
     }
@@ -86,9 +78,9 @@ addevent_2Page.repeatButton.click();
     public void user_sees_repearts_dropdown_menu() {
         addevent_2Page.repeartsDropdown.click();
     }
-    @Then("user can repeat action by selecting daily,weekly,montlyand yearly")
-    public void user_can_repeat_action_by_selecting_daily_weekly_montlyand_yearly() {
-      addevent_2Page.dailyEvent.click();
+    @And("user can repeat action by selecting Daily,Weekly,Montly and Yearly")
+    public void userCanRepeatActionBySelectingDailyWeeklyMontlyAndYearly() {
+          addevent_2Page.dailyEvent.click();
       addevent_2Page.weeklyEvent.click();
       addevent_2Page.montlyEvent.click();
       addevent_2Page.yearlyEvent.click();
@@ -97,13 +89,15 @@ addevent_2Page.repeatButton.click();
     public void user_sholud_see_ending_options_as_never_after_and_should_be_clickable() {
 addevent_2Page.neverButton.isDisplayed();
 addevent_2Page.neverCheckBox.click();
-
 addevent_2Page .afterButton.isDisplayed();
 addevent_2Page.afterCheckBox.click();
 addevent_2Page.byButton.isDisplayed();
 addevent_2Page.byCheckbox.click();
 addevent_2Page.saveButton.click();
+//Assert.assertFalse();//saati locate et ve is visible
+
     }
-
-
+    @Then("All Users can see all events on the General information page")
+    public void allUsersCanSeeAllEventsOnTheGeneralInformationPage() {
+    }
 }
