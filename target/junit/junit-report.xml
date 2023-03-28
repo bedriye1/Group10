@@ -1,42 +1,139 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="195.964">
-    <testcase classname="As a user, I should be able to use &quot;Tags&quot; filter under 'Fleet-Vehicles' page" name="User can select Tags filter under Fleet-Vehicles page" time="29.273">
-        <system-out><![CDATA[Given The user logs in with credential username "user1" and password "UserUser123".passed
-Then The user navigates to Fleet-Vehicle page...............................passed
-When User clicks to filter icon button......................................passed
-And User able to see "Manage filters".......................................passed
-Then User able to clicks to Tags............................................passed
-]]></system-out>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="13" time="435.362">
+    <testcase classname="Delete a car" name="All users can see the delete button by hovering over the three dots at the end of each row" time="48.86">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "user1" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+Then The user hover over the three dots and able to see delete button.......passed
+]]>
+        </system-out>
     </testcase>
-    <testcase classname="As a user, I should be able to use &quot;Tags&quot; filter under 'Fleet-Vehicles' page" name="User should able to see provided tags" time="43.462">
-        <system-out><![CDATA[Given The user logs in with credential username "user1" and password "UserUser123".passed
-Then The user navigates to Fleet-Vehicle page...............................passed
-When User click Tags: All...................................................passed
-Then User should able to see "Is Any Of" and "Is Not Any Of" options........passed
-]]></system-out>
+    <testcase classname="Delete a car" name="All users can see the delete button by hovering over the three dots at the end of each row 2" time="38.752">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "storemanager51" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+Then The user hover over the three dots and able to see delete button.......passed
+]]>
+        </system-out>
     </testcase>
-    <testcase classname="As a user, I should be able to use &quot;Tags&quot; filter under 'Fleet-Vehicles' page" name="User should able to see corresponding value" time="42.461">
-        <system-out><![CDATA[Given The user logs in with credential username "user1" and password "UserUser123".passed
-Then The user navigates to Fleet-Vehicle page...............................passed
-When User selects Is Any Of method..........................................passed
-And User entries "Compact" to search box....................................passed
-Then User able to see "Compact" corresponding value on the table............passed
-]]></system-out>
+    <testcase classname="Delete a car" name="All users can see the delete button by hovering over the three dots at the end of each row 3" time="40.903">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "salesmanager101" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+Then The user hover over the three dots and able to see delete button.......passed
+]]>
+        </system-out>
     </testcase>
-    <testcase classname="As a user, I should be able to use &quot;Tags&quot; filter under 'Fleet-Vehicles' page" name="User should not able to see corresponding value" time="39.133">
-        <system-out><![CDATA[Given The user logs in with credential username "user1" and password "UserUser123".passed
-Then The user navigates to Fleet-Vehicle page...............................passed
-When User selects Is Not Any Of method......................................passed
-And User entries "Compact" to search box....................................passed
-Then User should not able to see "Compact" corresponding value on the table.passed
-]]></system-out>
+    <testcase classname="Delete a car" name="&quot;Delete Confirmation&quot; pop up should be displayed when the user clicks on the delete button" time="61.902">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "user1" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the delete button.......................................passed
+Then The user able to see "Delete Confirmation" pop up......................passed
+]]>
+        </system-out>
     </testcase>
-    <testcase classname="As a user, I should be able to use &quot;Tags&quot; filter under 'Fleet-Vehicles' page" name="User should not able to see corresponding value 2" time="41.355">
-        <system-out><![CDATA[Given The user logs in with credential username "user1" and password "UserUser123".passed
-Then The user navigates to Fleet-Vehicle page...............................passed
-When User selects Is Not Any Of method......................................passed
-And User entries "Compact" to search box....................................passed
-Then User should not able to see "Compact" and "Sedan" corresponding value on the table.passed
-]]></system-out>
+    <testcase classname="Delete a car" name="&quot;Delete Confirmation&quot; pop up should be displayed when the user clicks on the delete button 2" time="29.189">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "storemanager51" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the delete button.......................................passed
+Then The user able to see "Delete Confirmation" pop up......................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Delete a car" name="&quot;Delete Confirmation&quot; pop up should be displayed when the user clicks on the delete button 3" time="24.115">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "salesmanager101" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the delete button.......................................passed
+Then The user able to see "Delete Confirmation" pop up......................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Delete a car" name="If the driver clicks on the &quot;Yes, Delete&quot; button, &quot;You do not have permission to perform this action.&quot; message should be displayed" time="24.951">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "user1" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the delete button.......................................passed
+And The user clicks the Yes, Delete button..................................passed
+Then The user should see "You do not have permission to perform this action." message.passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Delete a car" name="'Sales Manager' and 'Store Manager' can delete any car by clicking on the delete button at the end of each row and the &quot;Item deleted&quot; message should be displayed." time="24.878">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "storemanager51" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the delete button.......................................passed
+And The user clicks the Yes, Delete button..................................passed
+Then The user should see "Item deleted" message.............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Delete a car" name="'Sales Manager' and 'Store Manager' can delete any car by clicking on the delete button at the end of each row and the &quot;Item deleted&quot; message should be displayed. 2" time="23.728">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "salesmanager101" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the delete button.......................................passed
+And The user clicks the Yes, Delete button..................................passed
+Then The user should see "Item deleted" message.............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' go to the 'General Information' page by clicking on any vehicle/row, they can delete any vehicle by clicking on the 'Delete' button and the &quot;Car deleted&quot; message should be displayed" time="27.952">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "storemanager51" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the View button.........................................passed
+And The user clicks the Delete Button on General Information Page...........passed
+And The user clicks the Yes, Delete button..................................passed
+Then The user should see "Car deleted" message..............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' go to the 'General Information' page by clicking on any vehicle/row, they can delete any vehicle by clicking on the 'Delete' button and the &quot;Car deleted&quot; message should be displayed 2" time="27.035">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "salesmanager101" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the View button.........................................passed
+And The user clicks the Delete Button on General Information Page...........passed
+And The user clicks the Yes, Delete button..................................passed
+Then The user should see "Car deleted" message..............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' delete a car, the corresponding car should also be removed from the Fleet-Vehicle page." time="31.105">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "storemanager51" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the View button.........................................passed
+And The user clicks the Delete Button on General Information Page...........passed
+Then The user clicks the Yes, Delete button and can not see deleted car on Fleet-Vehicles page anymore.passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' delete a car, the corresponding car should also be removed from the Fleet-Vehicle page. 2" time="31.378">
+        <system-out>
+            <![CDATA[Given The user is on the login page.........................................passed
+When The user enters with valid "salesmanager101" and password and clicks login button.passed
+And The user navigates to Fleet-Vehicles page-for all users.................passed
+And The user clicks the View button.........................................passed
+And The user clicks the Delete Button on General Information Page...........passed
+Then The user clicks the Yes, Delete button and can not see deleted car on Fleet-Vehicles page anymore.passed
+]]>
+        </system-out>
     </testcase>
 </testsuite>

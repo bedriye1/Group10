@@ -1,9 +1,13 @@
 package com.fleetGru.Pages;
 
+import com.fleetGru.Utilities.BrowserUtils;
 import com.fleetGru.Utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class Dashboard {
 
@@ -31,4 +35,22 @@ public class Dashboard {
 
     @FindBy(xpath ="//th[.=*]")
     public WebElement tableHeaders;
+
+    @FindBy(xpath = "//li[@class='dropdown dropdown-level-1']")
+    List<WebElement> menuBar;
+
+    @FindBy(xpath = "//a//span[.='Vehicles']")
+    public WebElement vehiclesInMenuBar;
+
+    public void goVehiclePage(){
+        BrowserUtils.sleep(5);
+        for (WebElement each : menuBar) {
+            if (each.getText().contains("Fleet")) {
+                each.click();
+            }
+        }
+        vehiclesInMenuBar.click();
+    }
+
+
 }

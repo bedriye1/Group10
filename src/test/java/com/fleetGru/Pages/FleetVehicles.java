@@ -3,6 +3,8 @@ package com.fleetGru.Pages;
 
 import com.fleetGru.Utilities.Driver;
 
+import com.github.javafaker.Faker;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 
 
@@ -10,10 +12,12 @@ import com.fleetGru.Utilities.*;
 
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class FleetVehicles {
@@ -21,6 +25,9 @@ public class FleetVehicles {
     public FleetVehicles() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
+
+    Faker faker=new Faker();
+    Actions actions=new Actions(Driver.getDriver());
 
     @FindBy(xpath ="//th[.=*]")
     public List<WebElement> tableHeaders;
@@ -137,6 +144,166 @@ public class FleetVehicles {
 
     @FindBy(xpath = "//label[starts-with(@for, 'column-c')]")
     public List<WebElement> gridSettingsColumns;
+
+
+    public ArrayList<String> expectedTags(){
+
+        String  str = ConfigurationReader.getProperty("vehicleGridSettingsTags");
+        String[] strSplit = str.split(",");
+
+        ArrayList<String> expected = new ArrayList<String>();
+        expected.addAll(Arrays.asList(strSplit));
+
+
+
+
+
+        return expected;
+
+
+    }
+
+    public ArrayList<String> actualTags(){
+        ArrayList<String> actual = new ArrayList<>();
+        for (WebElement gridSettingsColumn : gridSettingsColumns) {
+            actual.add(gridSettingsColumn.getText());
+        }
+
+        return actual;
+    }
+
+
+    @FindBy(xpath = "//input[starts-with(@id, 'column-c')]")
+    public List<WebElement> gridSettingCheckBoxes;
+
+
+    public void selectAllGridTags(){
+        for (WebElement gridSettingTag : gridSettingCheckBoxes) {
+            if (!gridSettingTag.isSelected()){
+                gridSettingTag.click();
+            }
+
+        }
+
+
+    }
+
+    @FindBy(xpath = "//input[@placeholder='Quick Search']")
+    public WebElement quickSearcBox;
+
+
+
+    String res, randomTag;
+    public void quickSearchRandom(){
+        ArrayList<String> actualTags=actualTags();
+        res="";
+
+        randomTag=actualTags.get(faker.number().numberBetween(0,actualTags.size()-1));
+        quickSearcBox.sendKeys(randomTag);
+
+
+
+
+
+    }
+
+    public boolean verifyQuickSearch(){
+
+        for (WebElement gridSettingsColumn : gridSettingsColumns) {
+            if (gridSettingsColumn.isDisplayed()){
+                res=gridSettingsColumn.getText();
+
+
+
+
+            }
+
+        }
+
+        return (randomTag.equals(res));
+
+    }
+
+
+
+
+
+    @FindBy(xpath = "//i[@class='fa-arrows-v handle ui-sortable-handle']")
+    public List<WebElement> dragAndDropsList;
+    public void dragAndDropRandomTag(){
+
+        WebElement random=dragAndDropsList.get(faker.number().numberBetween(0,dragAndDropsList.size()-1));
+        WebElement random2=dragAndDropsList.get(faker.number().numberBetween(0,dragAndDropsList.size()-1));
+        actions.clickAndHold(random).moveToElement(random2).release().perform();
+
+
+
+    }
+
+
+    @FindBy(xpath = "//tr[@class='renderable']/td[1]")
+    public List<WebElement> selectedTagTexts;
+
+
+    @FindBy(xpath = "//thead[1]//span[@class='grid-header-cell__label']")
+    public List<WebElement> gridHeaders;
+
+    public ArrayList<String> getSelectedTagTexts(){
+
+        ArrayList<String> res=new ArrayList<>();
+        for (WebElement selectedTagText : selectedTagTexts) {
+            res.add(selectedTagText.getText());
+        }
+
+        return res;
+    }
+
+
+
+
+    public void confirmsAllTheGridTagsSelectedAreApplied() {
+        ArrayList<String> selectedTags=getSelectedTagTexts();
+        ArrayList<String> gridHeads=new ArrayList<>();
+
+        ArrayList<String> selectedTags1=new ArrayList<>();
+        ArrayList<String> gridHeads1=new ArrayList<>();
+
+        for (WebElement gridHeader : gridHeaders) {
+            gridHeads.add(gridHeader.getText());}
+
+
+        for (String selectedTag : selectedTags) {
+
+            if (selectedTag.equals("Catalog Value (VAT Incl.)")){
+                selectedTags1.add("CVVI");
+            }
+            else{
+                if (selectedTag.contains("i")){
+                    selectedTags1.add(selectedTag.replace('i','I').toUpperCase());}
+                else selectedTags1.add(selectedTag.toUpperCase());
+            }
+
+        }
+        for (String gridHead : gridHeads) {
+
+
+            if (gridHead.equals("Catalog Value (VAT Incl.)")){
+                gridHeads1.add(("CVVI"));
+            }
+            else { if (gridHead.contains("i")){gridHeads1.add(gridHead.replace('i','I').toUpperCase());}
+            else gridHeads1.add(gridHead.toUpperCase());}
+
+        }
+
+        Assert.assertEquals(selectedTags1, gridHeads1);
+
+    }
+
+
+
+
+
+
 
 
 }
