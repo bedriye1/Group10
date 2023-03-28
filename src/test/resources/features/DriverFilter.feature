@@ -34,16 +34,19 @@ Feature: User Story :
   Background:
     Given The user logs in as "sales manager"
 
-    Scenario:  User can select "Driver" filter under 'Fleet-Vehicles' module
-      When The user navigates to "Dashboard Fleet-Vehicle" page
-      And User clicks to filter "icon" button
-      And User able to see "Manage filters"
-      Then User able to clicks to "Driver" button
+
+    Scenario: User can select "Driver" filter under 'Fleet-Vehicles' module
+     When The user navigates to Dashboard Fleet-Vehicle page
+     And User clicks "Manage filters"
+     Then Verify user able to click to "Driver" button
 
       Scenario: User should able to see provided tags
-      When  The user clicks "Driver:All"
+        When The user navigates to Dashboard Fleet-Vehicle page
+        And User clicks "Manage filters"
+        And Verify user able to click to "Driver" button
+        And  The user clicks "Driver:All"
       And The user sees the "Contains" module and click
-      Then The user should see tags the with the order below
+      Then Verify user should see tags the with the order below
       | Contains |
       | Does Not Contain |
       | Is Equal To |
