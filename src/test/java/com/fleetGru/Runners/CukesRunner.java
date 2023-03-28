@@ -18,7 +18,7 @@ import org.junit.runner.RunWith;
         glue     ="com/fleetGru/StepDefinitions",
         dryRun = false,
 
-        tags =    
+        tags = ""
 
 
 )

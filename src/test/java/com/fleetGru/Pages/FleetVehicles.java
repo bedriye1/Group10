@@ -138,5 +138,15 @@ public class FleetVehicles {
     @FindBy(xpath = "//label[starts-with(@for, 'column-c')]")
     public List<WebElement> gridSettingsColumns;
 
+    @FindBy (css = "[class=add-filter-button]")
+    public WebElement ManageFiltersButton;
+
+    @FindBy (xpath = "//label[@title='Driver']//span[contains(text(),'Driver')]")
+    public WebElement driverFilterButton;
+@FindBy (xpath = "//li[@class='driver']/button[contains(text(),'Driver:All')]")
+public WebElement driverAllButton;
+
+@FindBy (xpath = "//button[@class='btn dropdown-toggle']")
+    public WebElement containsdropDownButton;
 
 }
