@@ -10,11 +10,15 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.swing.text.html.FormSubmitEvent;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.List;
 
 public class CreateBtnStepDefinitions extends BasePage {
@@ -272,6 +276,43 @@ public class CreateBtnStepDefinitions extends BasePage {
             }
         }
     }
+
+    @And("I fill in the CO{int} Emissions field with {string}")
+    public void iFillInTheCOEmissionsFieldWith(int arg0, String coEmission) {
+        fleetVehicles.cOemission.sendKeys(coEmission);
+    }
+
+    @And("I fill in the Horsepower field with {string}")
+    public void iFillInTheHorsepowerFieldWith(String horsePower) {
+        fleetVehicles.horsePower.sendKeys(horsePower);
+    }
+
+    @And("I fill in the Horsepower Taxation field with {string}")
+    public void iFillInTheHorsepowerTaxationFieldWith(String horsepowerTaxation) {
+        fleetVehicles.horsePowerTaxation.sendKeys(horsepowerTaxation);
+    }
+
+    @And("I fill in the Power \\(KW) field with {string}")
+    public void iFillInThePowerKWFieldWith(String power) {
+        fleetVehicles.power.sendKeys(power);
+    }
+
+    @And("I select a JPEG or PNG file for the Logo field, or leave it blank")
+    public void iSelectAJPEGOrPNGFileForTheLogoFieldOrLeaveItBlank() throws FileNotFoundException {
+
+       String upload=ConfigurationReader.getProperty("uploadFile");
+       // fleetVehicles.uploadFile.click();
+        BrowserUtils.waitFor(2);
+        fleetVehicles.uploadFile.sendKeys(upload+Keys.ENTER);
+
+
+    }
+
+
+
+
+
+
 
 
 

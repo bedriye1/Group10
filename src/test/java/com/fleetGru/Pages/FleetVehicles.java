@@ -1,7 +1,9 @@
 package com.fleetGru.Pages;
 
 import com.fleetGru.Utilities.BrowserUtils;
+import com.fleetGru.Utilities.ConfigurationReader;
 import com.fleetGru.Utilities.Driver;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -10,6 +12,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.lang.module.Configuration;
 
 
 public class FleetVehicles extends BasePage {
@@ -151,22 +155,30 @@ public class FleetVehicles extends BasePage {
     @FindBy(xpath = "//input[@name='custom_entity_type[Color]']")
     public WebElement colour;
 
-    @FindBy(xpath ="(//span[@class='select2-chosen'])[1]")
+    @FindBy(xpath = "(//span[@class='select2-chosen'])[1]")
     public WebElement transmission;
 
     @FindBy(xpath = "(//span[@class='select2-chosen'])[2]")
     public WebElement gasoline;
 
+    @FindBy(xpath = "//input[@name='custom_entity_type[CO2Emissions]']")
+    public WebElement cOemission;
 
+    @FindBy(xpath = "//input[@name='custom_entity_type[Horsepower]']")
+    public WebElement horsePower;
 
+    @FindBy(xpath = "//input[@name='custom_entity_type[HorsepowerTaxation]']")
+    public WebElement horsePowerTaxation;
 
-    @FindBy(xpath = "//table[@class='ui-datepicker-calendar']")
-    public WebElement taple;
+    @FindBy(xpath = "//input[@name='custom_entity_type[Power]']")
+    public WebElement power;
 
+    @FindBy(xpath = "//input[@name='custom_entity_type[Logo][file]']")
+    public WebElement uploadFile;
 
-
-    @FindBy(css = "input[id^='custom_entity_type_ImmatriculationDate']")
-    public WebElement date;
+    public void submit() {
+        uploadFile.sendKeys(ConfigurationReader.getProperty("uploadFile" + Keys.ENTER));
+    }
 
     @FindBy(xpath = "//input[starts-with(@id,'date_selector_custom_entity_type_FirstContractDate')]")
     public WebElement firstContactDate;
@@ -176,7 +188,6 @@ public class FleetVehicles extends BasePage {
 
     @FindBy(xpath = "//button[@class='ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all']")
     public WebElement date2Btn;
-
 
 
 }

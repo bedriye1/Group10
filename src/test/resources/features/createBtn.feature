@@ -37,17 +37,15 @@ Feature: Create button functionality test
     And I fill in the Colour field with "Red"
     And I select "Automatic" in the Transmission field
     And I select "Electric" in the Fuel Type field
-
-
-  Scenario: aaaaaa
-
     And I fill in the CO2 Emissions field with "150"
     And I fill in the Horsepower field with "200"
     And I fill in the Horsepower Taxation field with "1000"
     And I fill in the Power (KW) field with "147"
-    And I click the "Create Car" button
-    Then the car with the valid data should be created successfully
     And I select a JPEG or PNG file for the Logo field, or leave it blank
+
+  Scenario: aaaaaa
+
+
     And I click on the "Save and Close" button
     Then I should be redirected to the "General Information" page
     And I should see the "Entity Saved" message
