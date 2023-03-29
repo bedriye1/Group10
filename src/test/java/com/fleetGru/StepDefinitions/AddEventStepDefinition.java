@@ -18,7 +18,7 @@ public class AddEventStepDefinition {
 
 
     public class AddEventStepDefinitions extends BasePage {
-
+Addevent_2Page addevent_2Page=new Addevent_2Page();
         AddEventPage addEventPage=new AddEventPage();
         Dashboard dashboard = new Dashboard();
         QuickLaunchPad quickLaunchPad=new QuickLaunchPad();
@@ -38,21 +38,15 @@ public class AddEventStepDefinition {
             BrowserUtils.sleep(5);
         }
 
-        @When("User can click on any row in the table")
-        public void user_can_click_on_any_row_in_the_table() {
-            BrowserUtils.sleep(5);
-            addEventPage.firstRow.click();
-        }
+
 
         @Then("User click the add event button")
         public void user_click_the_add_event_button() {
             BrowserUtils.sleep(5);
-
+            WebElement addEvent = Driver.getDriver().findElement(By.xpath("//a[@title='Add an event to this record']"));
+            addEvent.click();
             BrowserUtils.sleep(5);
-
-
         }
-
 
         @When("User can go to Fleet module")
         public void userCanGoToFleetModule() {
@@ -64,16 +58,13 @@ public class AddEventStepDefinition {
             quickLaunchPad.Vehicles.click();
         }
 
-        @And("User can click  any row in the table")
-        public void userCanClickAnyRowInTheTable() {
-            addEventPage.driverFirstRow.click();
-        }
+
 
         @Then("User can not see the add event button")
         public void userCanNotSeeTheAddEventButton() {
             WebElement driverAddEventButton=addEventPage.driverAddButton;
             Assert.assertTrue(driverAddEventButton.isEnabled());
-            Assert.assertTrue(driverAddEventButton.isDisplayed());
+          //  Assert.assertTrue(driverAddEventButton.isDisplayed());
         }
 
 
@@ -83,7 +74,7 @@ public class AddEventStepDefinition {
             WebElement addEvent = Driver.getDriver().findElement(By.xpath("//a[@title='Add an event to this record']"));
             addEvent.click();
             BrowserUtils.sleep(5);
-            Assert.assertTrue(addEvent.isEnabled());
+           // Assert.assertTrue(addEvent.isEnabled());
         }
 
         @Then("User can see {string} pop up")

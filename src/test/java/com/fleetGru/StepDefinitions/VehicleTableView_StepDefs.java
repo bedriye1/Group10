@@ -65,7 +65,7 @@ public class VehicleTableView_StepDefs extends BasePage {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOf(dashboard.FleetDropDown));
         dashboard.FleetDropDown.click();
-        BrowserUtils.sleep(1);
+        BrowserUtils.sleep(4);
         dashboard.Vehicles.click();
     }
 

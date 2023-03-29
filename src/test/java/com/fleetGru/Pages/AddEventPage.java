@@ -13,11 +13,7 @@ public class AddEventPage {
     }
     @FindBy(xpath = "//tr[@class='grid-row row-click-action']")
     public WebElement firstRow;
-    @FindBy(xpath = "(//tbody//tr/td[2])[5]")
-    public WebElement anyVehicles;
 
-    @FindBy(xpath = "")
-    public WebElement driverFirstRow;
 
     @FindBy(xpath = "//button[.='Save']")
     public WebElement saveButton;
