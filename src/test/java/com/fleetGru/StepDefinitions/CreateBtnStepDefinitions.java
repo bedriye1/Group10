@@ -297,34 +297,39 @@ public class CreateBtnStepDefinitions extends BasePage {
         fleetVehicles.power.sendKeys(power);
     }
 
+
+    @And("I select the {string} option")
+    public void iSelectTheOption(String saveType) {
+
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(fleetVehicles.saveDropdown).perform();
+        fleetVehicles.saveDropdown.click();
+        BrowserUtils.waitFor(2);
+        List<WebElement> d = Driver.getDriver().findElements(By.xpath("//button[@type='submit']"));
+        for (WebElement each : d) {
+            if (each.getText().equals(saveType)) {
+                each.click();
+
+            }
+        }
+        BrowserUtils.waitFor(2);
+    }
+
+    @Then("the form data should be saved and the same page should remain the form data should be retained")
+    public void theFormDataShouldBeSavedAndTheSamePageShouldRemainTheFormDataShouldBeRetained() {
+        Assert.assertEquals(fleetVehicles.beforeSave.getText(), fleetVehicles.afterSave.getText());
+    }
+
     @And("I select a JPEG or PNG file for the Logo field, or leave it blank")
     public void iSelectAJPEGOrPNGFileForTheLogoFieldOrLeaveItBlank() throws FileNotFoundException {
 
-       String upload=ConfigurationReader.getProperty("uploadFile");
-       // fleetVehicles.uploadFile.click();
-        BrowserUtils.waitFor(2);
-        fleetVehicles.uploadFile.sendKeys(upload+Keys.ENTER);
+        String upload = ConfigurationReader.getProperty("uploadFile");
+        // fleetVehicles.uploadFile.click();
 
-
+        fleetVehicles.uploadFile.sendKeys(upload + Keys.ENTER);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
+}
+        /*
     @And("I fill in the Immatriculation Date field with {string} {string} {string}")
     public void iFillInTheImmatriculationDateFieldWith(String month, String date, String year) {
 
@@ -371,8 +376,33 @@ public class CreateBtnStepDefinitions extends BasePage {
 
 */
 
+         /*
+    @And("I select a JPEG or PNG file for the Logo field, or leave it blank")
+    public void iSelectAJPEGOrPNGFileForTheLogoFieldOrLeaveItBlank() throws FileNotFoundException {
 
-}
+       String upload=ConfigurationReader.getProperty("uploadFile");
+       // fleetVehicles.uploadFile.click();
+        BrowserUtils.waitFor(2);
+        fleetVehicles.uploadFile.sendKeys(upload+Keys.ENTER);
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -13,7 +13,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.xml.xpath.XPath;
 import java.lang.module.Configuration;
+import java.security.interfaces.XECPrivateKey;
 
 
 public class FleetVehicles extends BasePage {
@@ -173,7 +175,7 @@ public class FleetVehicles extends BasePage {
     @FindBy(xpath = "//input[@name='custom_entity_type[Power]']")
     public WebElement power;
 
-    @FindBy(xpath = "//input[@name='custom_entity_type[Logo][file]']")
+    @FindBy(xpath = "//div[20]/div[2]/div/div/input")
     public WebElement uploadFile;
 
     public void submit() {
@@ -188,6 +190,15 @@ public class FleetVehicles extends BasePage {
 
     @FindBy(xpath = "//button[@class='ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all']")
     public WebElement date2Btn;
+
+    @FindBy(xpath="//a[@class='btn-success btn dropdown-toggle']")
+    public WebElement saveDropdown;
+
+    @FindBy(xpath = "//h1[@class='user-name']")
+    public WebElement beforeSave;
+
+    @FindBy(xpath = "//h1[@class='user-name']")
+    public WebElement afterSave;
 
 
 }

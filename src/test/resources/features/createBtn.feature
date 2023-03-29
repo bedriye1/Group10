@@ -41,18 +41,51 @@ Feature: Create button functionality test
     And I fill in the Horsepower field with "200"
     And I fill in the Horsepower Taxation field with "1000"
     And I fill in the Power (KW) field with "147"
-    And I select a JPEG or PNG file for the Logo field, or leave it blank
+    And  I select the "Save" option
+    Then the form data should be saved and the same page should remain the form data should be retained
 
-  Scenario: aaaaaa
 
+  Scenario: Save and New
 
-    And I click on the "Save and Close" button
-    Then I should be redirected to the "General Information" page
-    And I should see the "Entity Saved" message
+    When I provide valid data
+    And  I select the "Save and New" option
+    Then the form data should be saved
+    And the same page should remain
+    And the form data should be cleared
+    And the message "Entity Saved" should be displayed
+
+  Scenario: Save and Close
+    Given I am on the form page
+    When I select the "Save and Close" option
+    And I provide valid data
+    Then the form data should be saved
+    And the "General Information" page should be displayed
+    And the message "Entity Saved" should be displayed
 
   Scenario: Create Car with invalid data
-    Given I am on the "Create Car" page
-    When I fill in the following fields with invalid data:
+    When I am on the "Create Car" page
+    And I fill in the following fields with invalid data:
+    When I fill in the License Plate field with "$%#"
+    And Checked  the  all Tags
+    And I fill in the Driver field with "123"
+    And I fill in the Location field with "123"
+    And I fill in the Chassis Number field with "$%#"
+    And I fill in the Model Year field with "abc"
+    And I fill in the Last Odometer field with "abc"
+    And I fill in the Immatriculation Date field with "Jun 21, 2021"
+    And I fill in the First Contract Date field with "Jun 24, 2023"
+    And I fill in the Catalog Value $ field with "abc"
+    And I fill in the Seat Number field with "abc"
+    And I fill in the Doors Number field with "abc"
+    And I fill in the Colour field with "123"
+    And I select "Automatic" in the Transmission field
+    And I select "Electric" in the Fuel Type field
+    And I fill in the CO2 Emissions field with "abc"
+    And I fill in the Horsepower field with "123"
+    And I fill in the Horsepower Taxation field with "123"
+    And I fill in the Power (KW) field with "123"
+
+
       | License Plate        | $%#     |
       | Tags                 | Invalid |
       | Driver               | 123     |
@@ -76,6 +109,6 @@ Feature: Create button functionality test
     Then I should see an error message
 
 
-
+   # And I select a JPEG or PNG file for the Logo field, or leave it blank
 
 
