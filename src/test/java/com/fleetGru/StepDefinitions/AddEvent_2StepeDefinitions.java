@@ -103,7 +103,7 @@ addevent_2Page.repeatButton.click();
            Assert.assertTrue(addevent_2Page.endsList.get(i++).getText().contains(each));
 
         }
-        BrowserUtils.sleep(2);
+       BrowserUtils.sleep(2);
         addevent_2Page.saveButton.click();
         }
 
