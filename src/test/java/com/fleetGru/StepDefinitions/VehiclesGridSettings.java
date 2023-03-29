@@ -1,10 +1,12 @@
 package com.fleetGru.StepDefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import com.fleetGru.Pages.*;
 import com.fleetGru.Utilities.*;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
@@ -13,6 +15,9 @@ import java.util.List;
 
 public class VehiclesGridSettings extends BasePage {
     FleetVehicles fleetVehicles = new FleetVehicles();
+
+    Faker faker=new Faker();
+
 
 
     @When("User clicks on the gear icon")
@@ -78,26 +83,47 @@ public class VehiclesGridSettings extends BasePage {
 
     @When("user searches for a random tag")
     public void user_searches_for_a_random_tag() {
-fleetVehicles.quickSearchRandom();
+        fleetVehicles.quickSearchRandom();
     }
 
     @Then("the random tag user searched for will be displayed")
     public void the_random_tag_user_searched_for_will_be_displayed() {
-      Assert.assertTrue(fleetVehicles.verifyQuickSearch());
+        Assert.assertTrue(fleetVehicles.verifyQuickSearch());
     }
 
     @When("User selects all grid tags")
     public void user_selects_all_grid_tags() {
-       fleetVehicles.selectAllGridTags();
+        fleetVehicles.selectAllGridTags();
     }
 
     @Then("User confirms all the grid changes are applied")
     public void user_confirms_all_the_grid_changes_are_applied() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        fleetVehicles.confirmsAllTheGridTagsSelectedAreApplied();
+
+
+    }
+    @When("User selects and moves {int} random tags by dragging and dropping")
+    public void user_selects_and_moves_random_tags_by_dragging_and_dropping(Integer int1) {
+        for (Integer integer = 0; integer < int1; integer++) {
+            fleetVehicles.dragAndDropRandomTag();
+        }
     }
 
+    @When("User selects {int} random grid tags")
+    public void user_selects_random_grid_tags(Integer int1) {
 
+
+        for (Integer integer = 0; integer < int1; integer++) {
+
+
+            fleetVehicles.gridSettingCheckBoxes.get(faker.number().numberBetween(0, fleetVehicles.gridSettingCheckBoxes.size() - 1)).click();
+        }
+    }
+
+    @Then("User confirms all the grid tags selected are on the table")
+    public void user_confirms_all_the_grid_tags_selected_are_on_the_table() {
+        fleetVehicles.confirmsAllTheGridTagsSelectedAreApplied();
+    }
 
 
 }

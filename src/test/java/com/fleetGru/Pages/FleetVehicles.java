@@ -12,21 +12,22 @@ import com.fleetGru.Utilities.*;
 
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 
 public class FleetVehicles {
 
-    Faker faker=new Faker();
-
     public FleetVehicles() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
+
+    Faker faker=new Faker();
+    Actions actions=new Actions(Driver.getDriver());
 
     @FindBy(xpath ="//th[.=*]")
     public List<WebElement> tableHeaders;
@@ -71,7 +72,7 @@ public class FleetVehicles {
     @FindBy(xpath = "//div[@class='btn filter-criteria-selector oro-drop-opener oro-dropdown-toggle filter-default-value']")
     public WebElement tagsAll;
 
-    @FindBy(xpath = "//button[@class='btn dropdown-toggle']")
+    @FindBy(xpath = "//button[@class='btn dropdown-toggle' and @data-toggle='dropdown']")
     public WebElement dropDownToggleButton;
 
     @FindBy(xpath = "//label[@class='control-label']/../div/button")
@@ -144,16 +145,6 @@ public class FleetVehicles {
     @FindBy(xpath = "//label[starts-with(@for, 'column-c')]")
     public List<WebElement> gridSettingsColumns;
 
-    @FindBy (css = "[class=add-filter-button]")
-    public WebElement ManageFiltersButton;
-
-    @FindBy (xpath = "//label[@title='Driver']//span[contains(text(),'Driver')]")
-    public WebElement driverFilterButton;
-@FindBy (xpath = "//li[@class='driver']/button[contains(text(),'Driver:All')]")
-public WebElement driverAllButton;
-
-@FindBy (xpath = "//button[@class='btn dropdown-toggle']")
-    public WebElement containsdropDownButton;
 
     public ArrayList<String> expectedTags(){
 
@@ -185,27 +176,12 @@ public WebElement driverAllButton;
     @FindBy(xpath = "//input[starts-with(@id, 'column-c')]")
     public List<WebElement> gridSettingCheckBoxes;
 
-    public HashMap<String,Boolean> getCheckboxes() {
-
-
-        ArrayList<String> actual=actualTags();
-        ArrayList<Boolean> isSelected=new ArrayList<>();
-        for (WebElement gridSettingTag : gridSettingCheckBoxes) {
-            isSelected.add(gridSettingTag.isSelected());
-        }
-        HashMap<String, Boolean> checkboxes = new HashMap<String, Boolean>();
-        for (int i = 0; i < actual.size(); i++) {
-            checkboxes.put(actual.get(i), gridSettingCheckBoxes.get(i).isSelected());
-
-
-        }
-
-        return checkboxes;
-    }
 
     public void selectAllGridTags(){
         for (WebElement gridSettingTag : gridSettingCheckBoxes) {
-            gridSettingTag.click();
+            if (!gridSettingTag.isSelected()){
+                gridSettingTag.click();
+            }
 
         }
 
@@ -220,9 +196,9 @@ public WebElement driverAllButton;
     String res, randomTag;
     public void quickSearchRandom(){
         ArrayList<String> actualTags=actualTags();
-         res="";
+        res="";
 
-       randomTag=actualTags.get(faker.number().numberBetween(0,actualTags.size()-1));
+        randomTag=actualTags.get(faker.number().numberBetween(0,actualTags.size()-1));
         quickSearcBox.sendKeys(randomTag);
 
 
@@ -248,34 +224,86 @@ public WebElement driverAllButton;
 
     }
 
-    public boolean verifyGridChanges(){
 
 
-    return true;
+
+
+    @FindBy(xpath = "//i[@class='fa-arrows-v handle ui-sortable-handle']")
+    public List<WebElement> dragAndDropsList;
+    public void dragAndDropRandomTag(){
+
+        WebElement random=dragAndDropsList.get(faker.number().numberBetween(0,dragAndDropsList.size()-1));
+        WebElement random2=dragAndDropsList.get(faker.number().numberBetween(0,dragAndDropsList.size()-1));
+        actions.clickAndHold(random).moveToElement(random2).release().perform();
+
+
+
+    }
+
+
+    @FindBy(xpath = "//tr[@class='renderable']/td[1]")
+    public List<WebElement> selectedTagTexts;
+
+
+    @FindBy(xpath = "//thead[1]//span[@class='grid-header-cell__label']")
+    public List<WebElement> gridHeaders;
+
+    public ArrayList<String> getSelectedTagTexts(){
+
+        ArrayList<String> res=new ArrayList<>();
+        for (WebElement selectedTagText : selectedTagTexts) {
+            res.add(selectedTagText.getText());
+        }
+
+        return res;
     }
 
 
 
-    @FindBy(xpath = "(//a[@class='dropdown-toggle'])[4]")
-    public WebElement threeDotsEndOfRaw;
 
-    @FindBy(xpath = "(//i[@class='fa-trash-o hide-text'])[1]")
-    public WebElement deleteButton;
+    public void confirmsAllTheGridTagsSelectedAreApplied() {
+        ArrayList<String> selectedTags=getSelectedTagTexts();
+        ArrayList<String> gridHeads=new ArrayList<>();
 
-    @FindBy(xpath = "//*[@class='modal-header']//h3")
-    public WebElement actualPopupForDelete;
+        ArrayList<String> selectedTags1=new ArrayList<>();
+        ArrayList<String> gridHeads1=new ArrayList<>();
 
-    @FindBy(xpath = "//a[.='Yes, Delete']")
-    public WebElement yesDeleteButton;
+        for (WebElement gridHeader : gridHeaders) {
+            gridHeads.add(gridHeader.getText());}
 
-    @FindBy(xpath= "//div[@class='message']")
-    public WebElement deleteWarningMessage;
 
-    @FindBy(xpath = "(//i[@class='fa-eye hide-text'])[1]")
-    public WebElement viewButton;
+        for (String selectedTag : selectedTags) {
 
-    @FindBy(xpath = "(//table//tr)[3]//td[2]")
-    public WebElement firstLineCarPlate;
+            if (selectedTag.equals("Catalog Value (VAT Incl.)")){
+                selectedTags1.add("CVVI");
+            }
+            else{
+                if (selectedTag.contains("i")){
+                    selectedTags1.add(selectedTag.replace('i','I').toUpperCase());}
+                else selectedTags1.add(selectedTag.toUpperCase());
+            }
+
+        }
+        for (String gridHead : gridHeads) {
+
+
+            if (gridHead.equals("Catalog Value (VAT Incl.)")){
+                gridHeads1.add(("CVVI"));
+            }
+            else { if (gridHead.contains("i")){gridHeads1.add(gridHead.replace('i','I').toUpperCase());}
+            else gridHeads1.add(gridHead.toUpperCase());}
+
+        }
+
+        Assert.assertEquals(selectedTags1, gridHeads1);
+
+    }
+
+
+
+
+
+
 
 
 }
