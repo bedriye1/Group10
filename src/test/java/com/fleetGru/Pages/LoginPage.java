@@ -11,16 +11,30 @@ public class LoginPage {
     public LoginPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
+    public static boolean  popUpMessage(String message) {
+        boolean flag = false;
+        if (username.getText().equals("")){
+            if(username.getAttribute("validationMessage").equals(message)){
+                flag = true;
+            }
+        }
+        if(password.getText().equals("")){
+            if(password.getAttribute("validationMessage").equals(message)){
+                flag = true;
+            }
+        }
+        return flag;
+    }
 
 
     @FindBy(xpath = "//h3")
     public WebElement loading;
 
     @FindBy(id ="prependedInput")
-    public WebElement username;
+    public static WebElement username;
 
     @FindBy(id ="prependedInput2")
-    public WebElement password;
+    public static WebElement password;
 
     @FindBy(id ="_submit")
     public WebElement loginButton;
@@ -30,6 +44,28 @@ public class LoginPage {
         password.sendKeys(passwordStr);
         loginButton.click();
     }
+    @FindBy(xpath = "//div [@class='form-signin__footer control-group form-row']/a")
+    public  WebElement forgotyourpasswordlink;
+
+
+    @FindBy(xpath = "//span [@class='custom-checkbox__text']")
+    public  WebElement remembermeonthiscomputer;
+
+
+
+
+    @FindBy(xpath = "//div [@class = 'alert alert-error']/div")
+    public WebElement invalidusernameorpassworderrormessage;
+
+
+
+
+    @FindBy(xpath = "//input [@type = 'checkbox']")
+    public WebElement checkboxbutton;
+
+
+    @FindBy(xpath = "(//a [@class='dropdown-toggle'])[1]")
+    public WebElement ownusername ;
 
 
 }

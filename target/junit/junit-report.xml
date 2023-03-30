@@ -1,105 +1,117 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="3" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="8" time="186.15">
-    <testcase classname="Vehicle Table View" name="All user types can see vehicle table" time="31.322">
-        <failure message="" type="java.lang.AssertionError"><![CDATA[Given The user is on the login page.........................................passed
-When The user logs in as "driver"...........................................passed
-And The user navigates to QuickLaunchpad Fleet-Vehicle page.................passed
-Then The user sees all the vehicle information in a table...................failed
-
-StackTrace:
-java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at com.fleetGru.StepDefinitions.VehicleTableView_StepDefs.the_user_sees_all_the_vehicle_information_in_a_table(VehicleTableView_StepDefs.java:81)
-	at ✽.The user sees all the vehicle information in a table(file:///C:/Users/Administrator/Desktop/IdeaProjects/Group10/src/test/resources/features/VehicleTableView.feature:11)
-]]></failure>
-    </testcase>
-    <testcase classname="Vehicle Table View" name="All user types can see vehicle table 2" time="14.186">
-        <failure message="element click intercepted: Element &lt;li class=&quot;dropdown dropdown-level-1&quot;&gt;...&lt;/li&gt; is not clickable at point (164, 56). Other element would receive the click: &lt;div class=&quot;loader-mask shown&quot;&gt;...&lt;/div&gt;&#10;  (Session info: chrome=111.0.5563.66)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'EMRE-HP-I3-11TH', ip: '192.168.1.33', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.66, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:53393}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: b9287888ef18d4111b2eaa65503bb4dd" type="org.openqa.selenium.ElementClickInterceptedException"><![CDATA[Given The user is on the login page.........................................passed
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="14" time="157.012">
+    <testcase classname="Login to Dashboard" name="User logins to Dashboard with valid credentials" time="14.74">
+        <system-out>
+            <![CDATA[Given User is on the login page.............................................passed
 When The user logs in as "sales manager"....................................passed
-And The user navigates to Dashboard Fleet-Vehicle page......................failed
-Then The user sees all the vehicle information in a table...................skipped
-
-StackTrace:
-org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <li class="dropdown dropdown-level-1">...</li> is not clickable at point (164, 56). Other element would receive the click: <div class="loader-mask shown">...</div>
-  (Session info: chrome=111.0.5563.66)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'EMRE-HP-I3-11TH', ip: '192.168.1.33', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.66, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:53393}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b9287888ef18d4111b2eaa65503bb4dd
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy19.click(Unknown Source)
-	at com.fleetGru.StepDefinitions.VehicleTableView_StepDefs.the_user_navigates_to_dashboard_fleet_vehicle_page(VehicleTableView_StepDefs.java:59)
-	at ✽.The user navigates to Dashboard Fleet-Vehicle page(file:///C:/Users/Administrator/Desktop/IdeaProjects/Group10/src/test/resources/features/VehicleTableView.feature:16)
-]]></failure>
+]]>
+        </system-out>
     </testcase>
-    <testcase classname="Vehicle Table View" name="All user types can see vehicle table 3" time="18.036">
-        <failure message="" type="java.lang.AssertionError"><![CDATA[Given The user is on the login page.........................................passed
+    <testcase classname="Login to Dashboard" name="User logins to Dashboard with valid credentials 2" time="10.777">
+        <system-out>
+            <![CDATA[Given User is on the login page.............................................passed
 When The user logs in as "store manager"....................................passed
-And The user navigates to Dashboard Fleet-Vehicle page......................passed
-Then The user sees all the vehicle information in a table...................failed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Login to Dashboard" name="User logins to Dashboard with valid credentials 3" time="10.02">
+        <system-out>
+            <![CDATA[Given User is on the login page.............................................passed
+When The user logs in as "driver"...........................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Login to Dashboard" name="Login with invalid username and valid password" time="9.993">
+        <system-out>
+            <![CDATA[Given User is on the login page.............................................passed
+When The user enter invalid username and valid password.....................passed
+Then The user see Invalid user name or password error message...............passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Login to Dashboard" name="Login with valid username and invalid password" time="9.835">
+        <system-out>
+            <![CDATA[Given User is on the login page.............................................passed
+When The user enter valid username and invalid password.....................passed
+Then The user see Invalid user name or password error message...............passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Login to Dashboard" name="Login with empty username and random password" time="13.878">
+        <system-out>
+            <![CDATA[Given User is on the login page.............................................passed
+When The user enter empty username and random password......................passed
+Then The user see Lütfen bu alanı doldurun error message....................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Login to Dashboard" name="Login with random username and empty password" time="13.874">
+        <system-out>
+            <![CDATA[Given User is on the login page.............................................passed
+When The user enter random username and empty password......................passed
+Then The user see Lütfen bu alanı doldurun error message....................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Login to Dashboard" name="Login with empty username and empty password" time="13.916">
+        <system-out>
+            <![CDATA[Given User is on the login page.............................................passed
+When The user enter empty username and empty password.......................passed
+Then The user see Lütfen bu alanı doldurun error message....................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Login to Dashboard" name="Click Forgot your password? link" time="9.37">
+        <system-out>
+            <![CDATA[Given User is on the login page.............................................passed
+When The user click Forgot your password? link..............................passed
+Then The user see Forgot Password page......................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Login to Dashboard" name="&quot;Remember me on this computer&quot; link exists" time="8.606">
+        <system-out>
+            <![CDATA[Given User is on the login page.............................................passed
+Then The user see Forgot Remember me on this computer link..................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Login to Dashboard" name="Clickable &quot;Remember me on this computer&quot; link" time="8.792">
+        <system-out>
+            <![CDATA[Given User is on the login page.............................................passed
+When The user see Remember me on this computer link is clickable............passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Login to Dashboard" name="User should see the password in bullet signs by default (like ****)" time="8.847">
+        <system-out>
+            <![CDATA[Given User is on the login page.............................................passed
+When User type the password.................................................passed
+Then User see the password in bullet signs by default.......................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Login to Dashboard" name="Verify if the ‘Enter’ key of the keyboard is working correctly on the login page" time="8.901">
+        <system-out>
+            <![CDATA[Given User is on the login page.............................................passed
+When User press enter key of the keyboard...................................passed
+Then User see enter key is working..........................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Login to Dashboard" name="All users can see their own usernames in the profile menu, after successful login" time="15.061">
+        <failure message="expected:&lt;[John Doe]&gt; but was:&lt;[user1]&gt;" type="org.junit.ComparisonFailure">
+            <![CDATA[Given User is on the login page.............................................passed
+When User enter valid username and valid password and click.................passed
+Then User see own username in the profile menu..............................failed
 
 StackTrace:
-java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at com.fleetGru.StepDefinitions.VehicleTableView_StepDefs.the_user_sees_all_the_vehicle_information_in_a_table(VehicleTableView_StepDefs.java:81)
-	at ✽.The user sees all the vehicle information in a table(file:///C:/Users/Administrator/Desktop/IdeaProjects/Group10/src/test/resources/features/VehicleTableView.feature:23)
-]]></failure>
-    </testcase>
-    <testcase classname="Vehicle Table View" name="Verify total page number of the vehicle table is displayed" time="25.336">
-        <system-out><![CDATA[Given The user is on the login page.........................................passed
-When The user logs in as "driver"...........................................passed
-And The user navigates to QuickLaunchpad Fleet-Vehicle page.................passed
-Then User can see the total page number.....................................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Vehicle Table View" name="Verify &lt; and &gt; buttons of the vehicle table work properly" time="24.781">
-        <system-out><![CDATA[Given The user is on the login page.........................................passed
-When The user logs in as "driver"...........................................passed
-And The user navigates to QuickLaunchpad Fleet-Vehicle page.................passed
-And The user clicks on the forward ">" button...............................passed
-Then Verify seeing the next page of the table...............................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Vehicle Table View" name="Verify &lt; and &gt; buttons of the vehicle table work properly 2" time="37.671">
-        <system-out><![CDATA[Given The user is on the login page.........................................passed
-When The user logs in as "driver"...........................................passed
-And The user navigates to QuickLaunchpad Fleet-Vehicle page.................passed
-And The user clicks on the forward ">" button...............................passed
-And The user clicks on the back "<" button..................................passed
-Then Verify seeing the previous page of the table...........................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Vehicle Table View" name="Verify total recordings of vehicles is displayed" time="15.501">
-        <system-out><![CDATA[Given The user is on the login page.........................................passed
-When The user logs in as "driver"...........................................passed
-And The user navigates to QuickLaunchpad Fleet-Vehicle page.................passed
-Then Verify user can see total recordings of vehicles.......................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Vehicle Table View" name="Verify user can download table data in XLS or CSV format from &quot;Export Grid&quot;" time="19.035">
-        <system-out><![CDATA[Given The user is on the login page.........................................passed
-When The user logs in as "driver"...........................................passed
-And The user navigates to QuickLaunchpad Fleet-Vehicle page.................passed
-And The user clicks on the "Export Grid" link...............................passed
-Then Verify table data is downloaded in XLS or CSV format...................passed
-]]></system-out>
+org.junit.ComparisonFailure: expected:<[John Doe]> but was:<[user1]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.fleetGru.StepDefinitions.LoginStepDefs.userSeeOwnUsernameInTheProfileMenu(LoginStepDefs.java:172)
+	at ✽.User see own username in the profile menu(file:///C:/Users/melte/IdeaProjects/Group10/src/test/resources/features/login.feature:80)
+]]>
+        </failure>
     </testcase>
 </testsuite>
