@@ -1,29 +1,35 @@
-@wip
+
+  @wip @FLEET10-1155
 Feature: Create button functionality test
+
 
   Background:
     Given The user is on the login page
 
+    @FLEET10-1147
   Scenario: Verify Create Car" button shouldn't be displayed for the driver
     When When The user logs in as "driver"
     Then user should not display "Create Car" button
 
+    @FLEET10-1148
   Scenario: Verify Create car button displayed for authorised user "salesmanager"
     When user logs in as a "salesmanager101" with"UserUser123"
     Then user displays "Create Car" button page
 
+    @FLEET10-1149
   Scenario: Verify Create car button displayed for authorised user "storemanager"
     When user logs in as a store manager with "storemanager51" with "UserUser123" credentials
     Then user displays "Create Car" button page
 
-
+    @FLEET10-1150
   Scenario: Verify user land on the Create car page
     When user logs in create car page after clicking crate car button
     Then After clicking Create Car button should land on Create Car page
 
+    @FLEET10-1151
   Scenario: User creates a car with valid data
-    Given I am on the Create Car page
-    When I fill in the License Plate field with "ABC123"
+    When I am on the Create Car page
+    And I fill in the License Plate field with "ABC123"
     And Checked  the  all Tags
     And I fill in the Driver field with "Veli KARA"
     And I fill in the Location field with "New York"
@@ -46,6 +52,7 @@ Feature: Create button functionality test
     Then the form data should be saved and the same page should remain the form data should be retained
     Then the message "Entity saved" should be displayed
 
+    @FLEET10-1152
   Scenario: Save and New
     Given I am on the form page
     When I fill in the License Plate field with "ABC123"
@@ -53,6 +60,7 @@ Feature: Create button functionality test
     And  I select the "Save And New" option
     Then the message "Entity saved" should be displayed
 
+    @FLEET10-1153
   Scenario: Save and Close
     Given I am on the form page
     When I fill in the License Plate field with "ABC123"
@@ -60,6 +68,7 @@ Feature: Create button functionality test
     Then the "General Information" page should be displayed
     Then the message "Entity saved" should be displayed
 
+    @FLEET10-1154
   Scenario: Create Car with invalid data
     Given I am on the Create Car page
     When I fill in the License Plate field with "$%#"
