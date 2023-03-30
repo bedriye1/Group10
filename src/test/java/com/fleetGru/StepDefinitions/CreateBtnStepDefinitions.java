@@ -164,7 +164,7 @@ public class CreateBtnStepDefinitions extends BasePage {
 
     @And("I fill in the Driver field with {string}")
     public void iFillInTheDriverFieldWith(String driver) {
-        BrowserUtils.waitForPageToLoad(5);
+        BrowserUtils.waitForPageToLoad(1);
         fleetVehicles.driver.sendKeys(driver);
 
     }
@@ -295,6 +295,7 @@ public class CreateBtnStepDefinitions extends BasePage {
     @And("I fill in the Power \\(KW) field with {string}")
     public void iFillInThePowerKWFieldWith(String power) {
         fleetVehicles.power.sendKeys(power);
+        BrowserUtils.waitFor(2);
     }
 
 
@@ -309,7 +310,6 @@ public class CreateBtnStepDefinitions extends BasePage {
         for (WebElement each : d) {
             if (each.getText().equals(saveType)) {
                 each.click();
-
             }
         }
         BrowserUtils.waitFor(2);
@@ -328,7 +328,33 @@ public class CreateBtnStepDefinitions extends BasePage {
 
         fleetVehicles.uploadFile.sendKeys(upload + Keys.ENTER);
     }
+
+    @Given("I am on the form page")
+    public void iAmOnTheFormPage() throws InterruptedException {
+        BrowserUtils.waitForPageToLoad(5);
+        fleetVehicles.ToReachCreateCarBtnPage();
+        BrowserUtils.waitForPageToLoad(5);
+
+
+    }
+
+    @Then("the message {string} should be displayed")
+    public void the_message_should_be_displayed(String string) {
+        Assert.assertEquals(string, fleetVehicles.flashMessage.getText());
+    }
+
+    @Then("the {string} page should be displayed")
+    public void the_page_should_be_displayed(String string) {
+
+        Assert.assertEquals(fleetVehicles.generalInfoPage.getText(), string);
+    }
+
+
 }
+
+
+
+
         /*
     @And("I fill in the Immatriculation Date field with {string} {string} {string}")
     public void iFillInTheImmatriculationDateFieldWith(String month, String date, String year) {

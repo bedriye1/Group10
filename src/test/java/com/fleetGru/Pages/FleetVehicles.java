@@ -3,6 +3,7 @@ package com.fleetGru.Pages;
 import com.fleetGru.Utilities.BrowserUtils;
 import com.fleetGru.Utilities.ConfigurationReader;
 import com.fleetGru.Utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,6 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import javax.xml.xpath.XPath;
 import java.lang.module.Configuration;
 import java.security.interfaces.XECPrivateKey;
+import java.util.List;
 
 
 public class FleetVehicles extends BasePage {
@@ -86,8 +88,7 @@ public class FleetVehicles extends BasePage {
         click_vehicle.click();
 
         waitUntilLoaderScreenDisappear();
-        //BrowserUtils.waitForStaleElement(createCarBtn);
-        //BrowserUtils.clickWithJS(createCarBtn);
+
         createCarBtn.click();
 
     }
@@ -191,7 +192,7 @@ public class FleetVehicles extends BasePage {
     @FindBy(xpath = "//button[@class='ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all']")
     public WebElement date2Btn;
 
-    @FindBy(xpath="//a[@class='btn-success btn dropdown-toggle']")
+    @FindBy(xpath = "//a[@class='btn-success btn dropdown-toggle']")
     public WebElement saveDropdown;
 
     @FindBy(xpath = "//h1[@class='user-name']")
@@ -200,6 +201,24 @@ public class FleetVehicles extends BasePage {
     @FindBy(xpath = "//h1[@class='user-name']")
     public WebElement afterSave;
 
+    @FindBy(xpath = "//*[@id=\"flash-messages\"]/div/div/div/div")
+    public WebElement flashMessage;
 
+    @FindBy(xpath = "//*[@id=\"container\"]/div[2]/div[2]/div[2]/div/div[1]/div[2]/div/div/div/h5/span")
+    public WebElement generalInfoPage;
+
+    public void clickSave(String string){
+        Actions actions = new Actions(Driver.getDriver());
+
+        saveDropdown.click();
+        BrowserUtils.waitFor(2);
+        List<WebElement> d = Driver.getDriver().findElements(By.xpath("//button[@type='submit']"));
+        for (WebElement each : d) {
+            if (each.getText().contains(string)) {
+                each.click();
+            }
+        }
+        BrowserUtils.waitFor(2);
+    }
 }
 
