@@ -27,7 +27,7 @@ public class CreateBtnStepDefinitions extends BasePage {
     Dashboard dashboard = new Dashboard();
     QuickLaunchPad quickLaunchPad = new QuickLaunchPad();
     FleetVehicles fleetVehicles = new FleetVehicles();
-    Actions action = new Actions(Driver.getDriver());
+    Actions actions = new Actions(Driver.getDriver());
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 
     @Given("Verify {string} on the dashboard page")
@@ -61,8 +61,10 @@ public class CreateBtnStepDefinitions extends BasePage {
             password = ConfigurationReader.getProperty("store_manager_password");
         }
         //send username and password and login
-        loginPage.login(username, password);
-        Thread.sleep(5000);
+        BrowserUtils.waitForPageToLoad(5);
+        fleetVehicles.login(username, password);
+        BrowserUtils.waitForPageToLoad(10);
+
     }
 
     @Then("user should not display {string} button")
@@ -85,13 +87,15 @@ public class CreateBtnStepDefinitions extends BasePage {
 
     @When("user logs in as a {string} with{string}")
     public void userLogsInAsAWith(String arg0, String arg1) throws InterruptedException {
-        loginPage.username.sendKeys(arg0);
-        loginPage.password.sendKeys(arg1);
-        loginPage.loginButton.click();
+        //waitUntilLoaderScreenDisappear();
+        BrowserUtils.waitForPageToLoad(10);
+        fleetVehicles.username.sendKeys(arg0);
+        fleetVehicles.password.sendKeys(arg1);
+        fleetVehicles.loginButton.click();
         fleetVehicles.hoverOverFleetMenu();
         fleetVehicles.click_vehicle_menu();
-        Thread.sleep(5000);
-
+        BrowserUtils.waitForPageToLoad(10);
+        //waitUntilLoaderScreenDisappear();
     }
 
     @Then("user displays {string} button page")
@@ -110,7 +114,7 @@ public class CreateBtnStepDefinitions extends BasePage {
         loginPage.loginButton.click();
         fleetVehicles.hoverOverFleetMenu();
         fleetVehicles.click_vehicle_menu();
-        Thread.sleep(5000);
+        Thread.sleep(8000);
 
     }
 
@@ -124,7 +128,7 @@ public class CreateBtnStepDefinitions extends BasePage {
         Thread.sleep(5000);
         BrowserUtils.waitFor(5);
         fleetVehicles.createCarBtn.click();
-
+        waitUntilLoaderScreenDisappear();
     }
 
     @Then("After clicking Create Car button should land on Create Car page")
@@ -136,6 +140,7 @@ public class CreateBtnStepDefinitions extends BasePage {
 
     @Given("I am on the Create Car page")
     public void iAmOnTheCreateCarPage() throws InterruptedException {
+        BrowserUtils.waitForPageToLoad(5);
         fleetVehicles.ToReachCreateCarBtnPage();
         BrowserUtils.waitForPageToLoad(5);
 
@@ -284,6 +289,7 @@ public class CreateBtnStepDefinitions extends BasePage {
 
     @And("I fill in the Horsepower field with {string}")
     public void iFillInTheHorsepowerFieldWith(String horsePower) {
+        actions.moveToElement(fleetVehicles.horsePower).perform();
         fleetVehicles.horsePower.sendKeys(horsePower);
     }
 
@@ -302,7 +308,7 @@ public class CreateBtnStepDefinitions extends BasePage {
     @And("I select the {string} option")
     public void iSelectTheOption(String saveType) {
 
-        Actions actions = new Actions(Driver.getDriver());
+
         actions.moveToElement(fleetVehicles.saveDropdown).perform();
         fleetVehicles.saveDropdown.click();
         BrowserUtils.waitFor(2);

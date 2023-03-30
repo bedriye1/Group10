@@ -1,3 +1,4 @@
+@wip
 Feature: Create button functionality test
 
   Background:
@@ -43,7 +44,7 @@ Feature: Create button functionality test
     And I fill in the Power (KW) field with "147"
     And  I select the "Save" option
     Then the form data should be saved and the same page should remain the form data should be retained
-    Then the message "Entity Saved" should be displayed
+    Then the message "Entity saved" should be displayed
 
   Scenario: Save and New
     Given I am on the form page
@@ -57,7 +58,7 @@ Feature: Create button functionality test
     When I fill in the License Plate field with "ABC123"
     When I select the "Save And Close" option
     Then the "General Information" page should be displayed
-    Then the message "Entity Saved" should be displayed
+    Then the message "Entity saved" should be displayed
 
   Scenario: Create Car with invalid data
     Given I am on the Create Car page

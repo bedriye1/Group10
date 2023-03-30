@@ -1,3 +1,4 @@
+@wip
 Feature: Create button functionality test
 
   Background:
@@ -43,28 +44,24 @@ Feature: Create button functionality test
     And I fill in the Power (KW) field with "147"
     And  I select the "Save" option
     Then the form data should be saved and the same page should remain the form data should be retained
-
+    Then the message "Entity saved" should be displayed
 
   Scenario: Save and New
-
-    When I provide valid data
-    And  I select the "Save and New" option
-    Then the form data should be saved
-    And the same page should remain
-    And the form data should be cleared
-    And the message "Entity Saved" should be displayed
+    Given I am on the form page
+    When I fill in the License Plate field with "ABC123"
+    And I fill in the Driver field with "Veli KARA"
+    And  I select the "Save And New" option
+    Then the message "Entity saved" should be displayed
 
   Scenario: Save and Close
     Given I am on the form page
-    When I select the "Save and Close" option
-    And I provide valid data
-    Then the form data should be saved
-    And the "General Information" page should be displayed
-    And the message "Entity Saved" should be displayed
+    When I fill in the License Plate field with "ABC123"
+    When I select the "Save And Close" option
+    Then the "General Information" page should be displayed
+    Then the message "Entity saved" should be displayed
 
   Scenario: Create Car with invalid data
-    When I am on the "Create Car" page
-    And I fill in the following fields with invalid data:
+    Given I am on the Create Car page
     When I fill in the License Plate field with "$%#"
     And Checked  the  all Tags
     And I fill in the Driver field with "123"
@@ -84,29 +81,7 @@ Feature: Create button functionality test
     And I fill in the Horsepower field with "123"
     And I fill in the Horsepower Taxation field with "123"
     And I fill in the Power (KW) field with "123"
-
-
-      | License Plate        | $%#     |
-      | Tags                 | Invalid |
-      | Driver               | 123     |
-      | Location             | 123     |
-      | Chassis Number       | $%#     |
-      | Model Year           | Invalid |
-      | Last Odometer        | Invalid |
-      | Immatriculation Date | Invalid |
-      | First Contract Date  | Invalid |
-      | Catalog Value ($)    | Invalid |
-      | Seat Number          | Invalid |
-      | Doors Number         | Invalid |
-      | Colour               | 123     |
-      | Transmission         | Invalid |
-      | Fuel Type            | Invalid |
-      | CO2 Emissions        | Invalid |
-      | Horsepower           | Invalid |
-      | Horsepower Taxation  | Invalid |
-      | Power (KW)           | Invalid |
-    And I click on the "Save" button
-    Then I should see an error message
+    When I select the "Save And Close" option
 
 
    # And I select a JPEG or PNG file for the Logo field, or leave it blank

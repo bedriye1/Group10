@@ -51,6 +51,7 @@ public class FleetVehicles extends BasePage {
     public void hoverOverFleetMenu() {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(Fleet_Menu_Store_Manager).build().perform();
+        BrowserUtils.waitForPageToLoad(2);
 
     }
 
@@ -75,6 +76,8 @@ public class FleetVehicles extends BasePage {
     public WebElement loginButton;
 
     public void login(String usernameStr, String passwordStr) {
+
+        BrowserUtils.waitForPageToLoad(5);
         username.sendKeys(usernameStr);
         password.sendKeys(passwordStr);
         loginButton.click();
