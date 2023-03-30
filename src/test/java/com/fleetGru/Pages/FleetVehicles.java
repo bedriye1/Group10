@@ -34,6 +34,7 @@ public class FleetVehicles extends BasePage {
 
     public void moveToFleetMenu() {
         Actions actions = new Actions(Driver.getDriver());
+        BrowserUtils.waitForClickablility(element_Fleet_Menu, 5);
         actions.moveToElement(element_Fleet_Menu).build().perform();
     }
 
@@ -50,8 +51,10 @@ public class FleetVehicles extends BasePage {
 
     public void hoverOverFleetMenu() {
         Actions actions = new Actions(Driver.getDriver());
+        BrowserUtils.waitForClickablility(Fleet_Menu_Store_Manager, 50);
         actions.moveToElement(Fleet_Menu_Store_Manager).build().perform();
-        BrowserUtils.waitForPageToLoad(2);
+        BrowserUtils.waitForClickablility(Fleet_Menu_Store_Manager, 50);
+        BrowserUtils.waitForPageToLoad(10);
 
     }
 
@@ -210,7 +213,7 @@ public class FleetVehicles extends BasePage {
     @FindBy(xpath = "//*[@id=\"container\"]/div[2]/div[2]/div[2]/div/div[1]/div[2]/div/div/div/h5/span")
     public WebElement generalInfoPage;
 
-    public void clickSave(String string){
+    public void clickSave(String string) {
         Actions actions = new Actions(Driver.getDriver());
 
         saveDropdown.click();

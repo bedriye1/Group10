@@ -72,6 +72,7 @@ public class CreateBtnStepDefinitions extends BasePage {
 
         Thread.sleep(5000);
         fleetVehicles.moveToFleetMenu();
+        BrowserUtils.waitForClickablility(fleetVehicles.element_Fleet_Menu,5);
         Thread.sleep(3000);
         fleetVehicles.click_vehicle_menu();
 
@@ -88,10 +89,10 @@ public class CreateBtnStepDefinitions extends BasePage {
     @When("user logs in as a {string} with{string}")
     public void userLogsInAsAWith(String arg0, String arg1) throws InterruptedException {
         //waitUntilLoaderScreenDisappear();
-        BrowserUtils.waitForPageToLoad(10);
         fleetVehicles.username.sendKeys(arg0);
         fleetVehicles.password.sendKeys(arg1);
         fleetVehicles.loginButton.click();
+        BrowserUtils.waitForPageToLoad(10);
         fleetVehicles.hoverOverFleetMenu();
         fleetVehicles.click_vehicle_menu();
         BrowserUtils.waitForPageToLoad(10);
@@ -109,9 +110,10 @@ public class CreateBtnStepDefinitions extends BasePage {
 
     @When("user logs in as a store manager with {string} with {string} credentials")
     public void userLogsInAsAStoreManagerWithWithCredentials(String arg0, String arg1) throws InterruptedException {
-        loginPage.username.sendKeys(arg0);
-        loginPage.password.sendKeys(arg1);
-        loginPage.loginButton.click();
+        fleetVehicles.username.sendKeys(arg0);
+        fleetVehicles.password.sendKeys(arg1);
+        BrowserUtils.waitForClickablility(fleetVehicles.loginButton,5);
+        fleetVehicles.loginButton.click();
         fleetVehicles.hoverOverFleetMenu();
         fleetVehicles.click_vehicle_menu();
         Thread.sleep(8000);
