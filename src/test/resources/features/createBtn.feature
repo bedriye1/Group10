@@ -1,5 +1,5 @@
 
-  @wip @FLEET10-1155
+@FLEET10-1155
 Feature: Create button functionality test
 
 
