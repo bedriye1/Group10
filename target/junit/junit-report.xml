@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="13" time="435.362">
-    <testcase classname="Delete a car" name="All users can see the delete button by hovering over the three dots at the end of each row" time="48.86">
+<testsuite errors="0" failures="5" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="13" time="809.678">
+    <testcase classname="Delete a car" name="All users can see the delete button by hovering over the three dots at the end of each row" time="67.368">
         <system-out>
             <![CDATA[Given The user is on the login page.........................................passed
 When The user enters with valid "user1" and password and clicks login button.passed
@@ -9,7 +9,7 @@ Then The user hover over the three dots and able to see delete button.......pass
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="All users can see the delete button by hovering over the three dots at the end of each row 2" time="38.752">
+    <testcase classname="Delete a car" name="All users can see the delete button by hovering over the three dots at the end of each row 2" time="51.962">
         <system-out>
             <![CDATA[Given The user is on the login page.........................................passed
 When The user enters with valid "storemanager51" and password and clicks login button.passed
@@ -18,7 +18,7 @@ Then The user hover over the three dots and able to see delete button.......pass
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="All users can see the delete button by hovering over the three dots at the end of each row 3" time="40.903">
+    <testcase classname="Delete a car" name="All users can see the delete button by hovering over the three dots at the end of each row 3" time="69.895">
         <system-out>
             <![CDATA[Given The user is on the login page.........................................passed
 When The user enters with valid "salesmanager101" and password and clicks login button.passed
@@ -27,7 +27,7 @@ Then The user hover over the three dots and able to see delete button.......pass
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="&quot;Delete Confirmation&quot; pop up should be displayed when the user clicks on the delete button" time="61.902">
+    <testcase classname="Delete a car" name="&quot;Delete Confirmation&quot; pop up should be displayed when the user clicks on the delete button" time="58.315">
         <system-out>
             <![CDATA[Given The user is on the login page.........................................passed
 When The user enters with valid "user1" and password and clicks login button.passed
@@ -37,38 +37,132 @@ Then The user able to see "Delete Confirmation" pop up......................pass
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="&quot;Delete Confirmation&quot; pop up should be displayed when the user clicks on the delete button 2" time="29.189">
-        <system-out>
+    <testcase classname="Delete a car" name="&quot;Delete Confirmation&quot; pop up should be displayed when the user clicks on the delete button 2" time="130.537">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//a[@class='dropdown-toggle'])[4]&quot;}&#10;  (Session info: chrome=109.0.5414.129)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PC-11391', ip: '192.168.241.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '11.0.8'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.129, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\User\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:58718}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 254f042801331360523be7e4b3da7d9b&#10;*** Element info: {Using=xpath, value=(//a[@class='dropdown-toggle'])[4]}" type="org.openqa.selenium.NoSuchElementException">
             <![CDATA[Given The user is on the login page.........................................passed
 When The user enters with valid "storemanager51" and password and clicks login button.passed
 And The user navigates to Fleet-Vehicles page-for all users.................passed
-And The user clicks the delete button.......................................passed
-Then The user able to see "Delete Confirmation" pop up......................passed
+And The user clicks the delete button.......................................failed
+Then The user able to see "Delete Confirmation" pop up......................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//a[@class='dropdown-toggle'])[4]"}
+  (Session info: chrome=109.0.5414.129)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PC-11391', ip: '192.168.241.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.129, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\User\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:58718}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 254f042801331360523be7e4b3da7d9b
+*** Element info: {Using=xpath, value=(//a[@class='dropdown-toggle'])[4]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
+	at com.fleetGru.Utilities.BrowserUtils.scrollToElement(BrowserUtils.java:352)
+	at com.fleetGru.StepDefinitions.DeleteACarStepDefinitions.theUserClicksTheDeleteButton(DeleteACarStepDefinitions.java:56)
+	at ✽.The user clicks the delete button(file:///C:/Users/User/IdeaProjects/CYDEO/Group10/src/test/resources/features/DeleteACar.feature:23)
 ]]>
-        </system-out>
+        </failure>
     </testcase>
-    <testcase classname="Delete a car" name="&quot;Delete Confirmation&quot; pop up should be displayed when the user clicks on the delete button 3" time="24.115">
-        <system-out>
+    <testcase classname="Delete a car" name="&quot;Delete Confirmation&quot; pop up should be displayed when the user clicks on the delete button 3" time="79.192">
+        <failure message="element click intercepted: Element &lt;li class=&quot;dropdown dropdown-level-1&quot;&gt;...&lt;/li&gt; is not clickable at point (164, 56). Other element would receive the click: &lt;div class=&quot;loader-mask shown&quot;&gt;...&lt;/div&gt;&#10;  (Session info: chrome=109.0.5414.129)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PC-11391', ip: '192.168.241.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '11.0.8'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.129, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\User\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:58838}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: d2c527ad93d2de6eb541beb8ae774502" type="org.openqa.selenium.ElementClickInterceptedException">
             <![CDATA[Given The user is on the login page.........................................passed
 When The user enters with valid "salesmanager101" and password and clicks login button.passed
-And The user navigates to Fleet-Vehicles page-for all users.................passed
-And The user clicks the delete button.......................................passed
-Then The user able to see "Delete Confirmation" pop up......................passed
+And The user navigates to Fleet-Vehicles page-for all users.................failed
+And The user clicks the delete button.......................................skipped
+Then The user able to see "Delete Confirmation" pop up......................skipped
+
+StackTrace:
+org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <li class="dropdown dropdown-level-1">...</li> is not clickable at point (164, 56). Other element would receive the click: <div class="loader-mask shown">...</div>
+  (Session info: chrome=109.0.5414.129)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PC-11391', ip: '192.168.241.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.129, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\User\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:58838}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d2c527ad93d2de6eb541beb8ae774502
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at com.fleetGru.Pages.Dashboard.goVehiclePage(Dashboard.java:50)
+	at com.fleetGru.StepDefinitions.DeleteACarStepDefinitions.theUserNavigatesToFleetVehiclePageForAllUsers(DeleteACarStepDefinitions.java:38)
+	at ✽.The user navigates to Fleet-Vehicles page-for all users(file:///C:/Users/User/IdeaProjects/CYDEO/Group10/src/test/resources/features/DeleteACar.feature:22)
 ]]>
-        </system-out>
+        </failure>
     </testcase>
-    <testcase classname="Delete a car" name="If the driver clicks on the &quot;Yes, Delete&quot; button, &quot;You do not have permission to perform this action.&quot; message should be displayed" time="24.951">
-        <system-out>
+    <testcase classname="Delete a car" name="If the driver clicks on the &quot;Yes, Delete&quot; button, &quot;You do not have permission to perform this action.&quot; message should be displayed" time="41.158">
+        <failure message="element not interactable&#10;  (Session info: chrome=109.0.5414.129)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PC-11391', ip: '192.168.241.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '11.0.8'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.129, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\User\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:58946}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 301d3760cb624f31e9a9096bc248c373" type="org.openqa.selenium.ElementNotInteractableException">
             <![CDATA[Given The user is on the login page.........................................passed
 When The user enters with valid "user1" and password and clicks login button.passed
-And The user navigates to Fleet-Vehicles page-for all users.................passed
-And The user clicks the delete button.......................................passed
-And The user clicks the Yes, Delete button..................................passed
-Then The user should see "You do not have permission to perform this action." message.passed
+And The user navigates to Fleet-Vehicles page-for all users.................failed
+And The user clicks the delete button.......................................skipped
+And The user clicks the Yes, Delete button..................................skipped
+Then The user should see "You do not have permission to perform this action." message.skipped
+
+StackTrace:
+org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=109.0.5414.129)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PC-11391', ip: '192.168.241.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.129, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\User\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:58946}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 301d3760cb624f31e9a9096bc248c373
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy20.click(Unknown Source)
+	at com.fleetGru.Pages.Dashboard.goVehiclePage(Dashboard.java:53)
+	at com.fleetGru.StepDefinitions.DeleteACarStepDefinitions.theUserNavigatesToFleetVehiclePageForAllUsers(DeleteACarStepDefinitions.java:38)
+	at ✽.The user navigates to Fleet-Vehicles page-for all users(file:///C:/Users/User/IdeaProjects/CYDEO/Group10/src/test/resources/features/DeleteACar.feature:35)
 ]]>
-        </system-out>
+        </failure>
     </testcase>
-    <testcase classname="Delete a car" name="'Sales Manager' and 'Store Manager' can delete any car by clicking on the delete button at the end of each row and the &quot;Item deleted&quot; message should be displayed." time="24.878">
+    <testcase classname="Delete a car" name="'Sales Manager' and 'Store Manager' can delete any car by clicking on the delete button at the end of each row and the &quot;Item deleted&quot; message should be displayed." time="51.439">
         <system-out>
             <![CDATA[Given The user is on the login page.........................................passed
 When The user enters with valid "storemanager51" and password and clicks login button.passed
@@ -79,7 +173,7 @@ Then The user should see "Item deleted" message.............................pass
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="'Sales Manager' and 'Store Manager' can delete any car by clicking on the delete button at the end of each row and the &quot;Item deleted&quot; message should be displayed. 2" time="23.728">
+    <testcase classname="Delete a car" name="'Sales Manager' and 'Store Manager' can delete any car by clicking on the delete button at the end of each row and the &quot;Item deleted&quot; message should be displayed. 2" time="47.583">
         <system-out>
             <![CDATA[Given The user is on the login page.........................................passed
 When The user enters with valid "salesmanager101" and password and clicks login button.passed
@@ -90,19 +184,47 @@ Then The user should see "Item deleted" message.............................pass
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' go to the 'General Information' page by clicking on any vehicle/row, they can delete any vehicle by clicking on the 'Delete' button and the &quot;Car deleted&quot; message should be displayed" time="27.952">
-        <system-out>
+    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' go to the 'General Information' page by clicking on any vehicle/row, they can delete any vehicle by clicking on the 'Delete' button and the &quot;Car deleted&quot; message should be displayed" time="49.953">
+        <failure message="element click intercepted: Element &lt;a href=&quot;javascript:void(0);&quot; data-message=&quot;Are you sure you want to delete this Car?&quot; data-success-message=&quot;Car deleted&quot; data-url=&quot;/entity/delete/Extend%5CEntity%5CCarreservation/item/779&quot; data-id=&quot;779&quot; data-redirect=&quot;/entity/Extend%5CEntity%5CCarreservation&quot; class=&quot; btn icons-holder-text no-hash remove-button&quot; title=&quot;Delete Car&quot;&gt;...&lt;/a&gt; is not clickable at point (1320, 136). Other element would receive the click: &lt;div class=&quot;loader-mask shown&quot;&gt;...&lt;/div&gt;&#10;  (Session info: chrome=109.0.5414.129)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PC-11391', ip: '192.168.241.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '11.0.8'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.129, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\User\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:59210}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: d56c21d4e68f80bcafa295530a86e12f" type="org.openqa.selenium.ElementClickInterceptedException">
             <![CDATA[Given The user is on the login page.........................................passed
 When The user enters with valid "storemanager51" and password and clicks login button.passed
 And The user navigates to Fleet-Vehicles page-for all users.................passed
 And The user clicks the View button.........................................passed
-And The user clicks the Delete Button on General Information Page...........passed
-And The user clicks the Yes, Delete button..................................passed
-Then The user should see "Car deleted" message..............................passed
+And The user clicks the Delete Button on General Information Page...........failed
+And The user clicks the Yes, Delete button..................................skipped
+Then The user should see "Car deleted" message..............................skipped
+
+StackTrace:
+org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a href="javascript:void(0);" data-message="Are you sure you want to delete this Car?" data-success-message="Car deleted" data-url="/entity/delete/Extend%5CEntity%5CCarreservation/item/779" data-id="779" data-redirect="/entity/Extend%5CEntity%5CCarreservation" class=" btn icons-holder-text no-hash remove-button" title="Delete Car">...</a> is not clickable at point (1320, 136). Other element would receive the click: <div class="loader-mask shown">...</div>
+  (Session info: chrome=109.0.5414.129)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PC-11391', ip: '192.168.241.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.129, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\User\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:59210}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d56c21d4e68f80bcafa295530a86e12f
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at jdk.internal.reflect.GeneratedMethodAccessor64.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy20.click(Unknown Source)
+	at com.fleetGru.StepDefinitions.DeleteACarStepDefinitions.theUserClickTheDeleteButtonOnGeneralInformationPage(DeleteACarStepDefinitions.java:95)
+	at ✽.The user clicks the Delete Button on General Information Page(file:///C:/Users/User/IdeaProjects/CYDEO/Group10/src/test/resources/features/DeleteACar.feature:58)
 ]]>
-        </system-out>
+        </failure>
     </testcase>
-    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' go to the 'General Information' page by clicking on any vehicle/row, they can delete any vehicle by clicking on the 'Delete' button and the &quot;Car deleted&quot; message should be displayed 2" time="27.035">
+    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' go to the 'General Information' page by clicking on any vehicle/row, they can delete any vehicle by clicking on the 'Delete' button and the &quot;Car deleted&quot; message should be displayed 2" time="51.959">
         <system-out>
             <![CDATA[Given The user is on the login page.........................................passed
 When The user enters with valid "salesmanager101" and password and clicks login button.passed
@@ -114,7 +236,7 @@ Then The user should see "Car deleted" message..............................pass
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' delete a car, the corresponding car should also be removed from the Fleet-Vehicle page." time="31.105">
+    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' delete a car, the corresponding car should also be removed from the Fleet-Vehicle page." time="52.584">
         <system-out>
             <![CDATA[Given The user is on the login page.........................................passed
 When The user enters with valid "storemanager51" and password and clicks login button.passed
@@ -125,15 +247,45 @@ Then The user clicks the Yes, Delete button and can not see deleted car on Fleet
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' delete a car, the corresponding car should also be removed from the Fleet-Vehicle page. 2" time="31.378">
-        <system-out>
+    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' delete a car, the corresponding car should also be removed from the Fleet-Vehicle page. 2" time="56.86">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//i[@class='fa-eye hide-text'])[1]&quot;}&#10;  (Session info: chrome=109.0.5414.129)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PC-11391', ip: '192.168.241.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '11.0.8'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.129, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\User\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:59405}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: d5956a40d19c3299d8be115f3695dc14&#10;*** Element info: {Using=xpath, value=(//i[@class='fa-eye hide-text'])[1]}" type="org.openqa.selenium.NoSuchElementException">
             <![CDATA[Given The user is on the login page.........................................passed
 When The user enters with valid "salesmanager101" and password and clicks login button.passed
 And The user navigates to Fleet-Vehicles page-for all users.................passed
-And The user clicks the View button.........................................passed
-And The user clicks the Delete Button on General Information Page...........passed
-Then The user clicks the Yes, Delete button and can not see deleted car on Fleet-Vehicles page anymore.passed
+And The user clicks the View button.........................................failed
+And The user clicks the Delete Button on General Information Page...........skipped
+Then The user clicks the Yes, Delete button and can not see deleted car on Fleet-Vehicles page anymore.skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//i[@class='fa-eye hide-text'])[1]"}
+  (Session info: chrome=109.0.5414.129)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PC-11391', ip: '192.168.241.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.129, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\User\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:59405}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d5956a40d19c3299d8be115f3695dc14
+*** Element info: {Using=xpath, value=(//i[@class='fa-eye hide-text'])[1]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.click(Unknown Source)
+	at com.fleetGru.StepDefinitions.DeleteACarStepDefinitions.theUserClicksTheButton(DeleteACarStepDefinitions.java:88)
+	at ✽.The user clicks the View button(file:///C:/Users/User/IdeaProjects/CYDEO/Group10/src/test/resources/features/DeleteACar.feature:71)
 ]]>
-        </system-out>
+        </failure>
     </testcase>
 </testsuite>

@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class Dashboard {
+public class Dashboard extends BasePage{
 
     public Dashboard(){
         PageFactory.initElements(Driver.getDriver(), this);
@@ -43,7 +43,8 @@ public class Dashboard {
     public WebElement vehiclesInMenuBar;
 
     public void goVehiclePage(){
-        BrowserUtils.sleep(5);
+        waitUntilLoaderScreenDisappear();
+        BrowserUtils.waitForClickablility(menuBar.get(2),20);
         for (WebElement each : menuBar) {
             if (each.getText().contains("Fleet")) {
                 each.click();

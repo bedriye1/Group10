@@ -1,9 +1,6 @@
 package com.fleetGru.StepDefinitions;
 
-import com.fleetGru.Pages.Dashboard;
-import com.fleetGru.Pages.FleetVehicles;
-import com.fleetGru.Pages.GeneralInformationPage;
-import com.fleetGru.Pages.LoginPage;
+import com.fleetGru.Pages.*;
 import com.fleetGru.Utilities.BrowserUtils;
 import com.fleetGru.Utilities.ConfigurationReader;
 import com.fleetGru.Utilities.Driver;
@@ -13,6 +10,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -58,6 +56,7 @@ public class DeleteACarStepDefinitions {
         BrowserUtils.scrollToElement(fleetVehicles.threeDotsEndOfRaw);
         BrowserUtils.sleep(3);
         BrowserUtils.hover(fleetVehicles.threeDotsEndOfRaw);
+        BrowserUtils.waitForClickablility(fleetVehicles.deleteButton, 10);
         fleetVehicles.deleteButton.click();
     }
 
