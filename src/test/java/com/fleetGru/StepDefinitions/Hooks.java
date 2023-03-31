@@ -32,6 +32,7 @@ public class Hooks {
             Driver.closeDriver();
 
             String v="vahap";
+            String s="Serkan";
 
         }
 }
