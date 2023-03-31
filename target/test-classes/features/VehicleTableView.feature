@@ -3,7 +3,6 @@
   Background:
     Given The user is on the login page
 
-  @FLEET10-935
   Scenario: All user types can see vehicle table
     When The user logs in as "driver"
     And The user navigates to QuickLaunchpad Fleet-Vehicle page
