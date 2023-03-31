@@ -1,0 +1,25 @@
+-------------------------------------------------------------------------------
+Test set: Vehicle Table Arragements
+-------------------------------------------------------------------------------
+Tests run: 42, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 834.401 s <<< FAILURE! - in Vehicle Table Arragements
+Vehicle Table Arragements.Arrange vehicle numbers from 'View Per Page' button  Time elapsed: 9.634 s  <<< ERROR!
+org.openqa.selenium.StaleElementReferenceException: 
+stale element reference: element is not attached to the page document
+  (Session info: chrome=111.0.5563.65)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'HMCNB', ip: '192.168.0.24', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.65, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\HMC\AppData\Local\...}, goog:chromeOptions: {debuggerAddress: localhost:53336}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 50bf4434d6417decdf74510bb73be5d0
+
+Vehicle Table Arragements.Remove all sortings and filterings after clicking reset button #17  Time elapsed: 19.1 s  <<< ERROR!
+org.openqa.selenium.ElementNotInteractableException: 
+element not interactable
+  (Session info: chrome=111.0.5563.65)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'HMCNB', ip: '192.168.0.24', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.65, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\HMC\AppData\Local\...}, goog:chromeOptions: {debuggerAddress: localhost:54267}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 612ebd22d6b06edb6e7ab1df9e45031d
+
