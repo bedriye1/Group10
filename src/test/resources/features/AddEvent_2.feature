@@ -1,6 +1,6 @@
-@FLEET10-1069
+@FLEET10-1096
 Feature:As a store manager and sales manager, I should be able to add an event
-
+@FLEET10-1095
   Scenario: Log in as a sales manager
     When The user logs in as "sales manager"
     And The user navigates to Dashboard Fleet-Vehicle page

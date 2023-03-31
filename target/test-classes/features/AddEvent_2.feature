@@ -1,6 +1,6 @@
-@FLEET10-1069
+@FLEET10-1096
 Feature:As a store manager and sales manager, I should be able to add an event
-
+@FLEET10-1095
   Scenario: Log in as a sales manager
     When The user logs in as "sales manager"
     And The user navigates to Dashboard Fleet-Vehicle page
@@ -11,7 +11,7 @@ Feature:As a store manager and sales manager, I should be able to add an event
     And User can mark the event with any color
     And  User can click  All-day event check box
     And Time boxes will disappear
-    And  user clicks repeat button
+    And user clicks repeat button
     And user sees repeats dropdown menu
     And user can repeat action by selecting Daily,Weekly,Montly and Yearly
       | Daily   |
