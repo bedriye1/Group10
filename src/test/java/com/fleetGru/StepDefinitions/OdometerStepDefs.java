@@ -1,9 +1,6 @@
 package com.fleetGru.StepDefinitions;
 
-import com.fleetGru.Pages.Dashboard;
-import com.fleetGru.Pages.FleetVehicles;
-import com.fleetGru.Pages.LoginPage;
-import com.fleetGru.Pages.QuickLaunchPad;
+import com.fleetGru.Pages.*;
 import com.fleetGru.Utilities.BrowserUtils;
 import com.fleetGru.Utilities.ConfigurationReader;
 import com.fleetGru.Utilities.Driver;
@@ -19,8 +16,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class OdometerStepDefs {
 
+	FleetVehiclesOdometer fleetVehiclesOdometer = new FleetVehiclesOdometer();
 	LoginPage loginPage = new LoginPage();
 	FleetVehicles fleetVehicles = new FleetVehicles();
 	Dashboard dashboard = new Dashboard();
@@ -28,9 +30,11 @@ public class OdometerStepDefs {
 	Faker faker=new Faker();
 	private WebDriver driver;
 	WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+	String str = ConfigurationReader.getProperty("lastOdometerDropdownTags");
+	String[] strSplit = str.split(",");
 
-
-
+	ArrayList<String> expected = new ArrayList<String>(
+			Arrays.asList(strSplit));
 
 
 	@Given("{string} is logged in and clicks Fleet module and Vehicles tab")
@@ -41,8 +45,9 @@ public class OdometerStepDefs {
 
 	}
 
+
 	@And("User clicks on Manage filter options button")
-	public void userClicksOnFilterButton() throws InterruptedException {
+	public void userClicksOnManageFilterOptionsButton() {
 		wait.until(ExpectedConditions.elementToBeClickable(fleetVehicles.filterButton));
 		fleetVehicles.filterButton.click();
 		wait.until(ExpectedConditions.elementToBeClickable(fleetVehicles.manageFilters));
@@ -51,7 +56,7 @@ public class OdometerStepDefs {
 	}
 
 	@Then("user should be able to click the Last Odometer filter")
-	public void userShouldBeAbleToClickTheFilter() {
+	public void userShouldBeAbleToClickTheLastOdometerFilter() {
 		BrowserUtils.sleep(2);
 		fleetVehicles.lastOdometer.click();
 
@@ -60,18 +65,36 @@ public class OdometerStepDefs {
 
 	@When("User clicks on Last Odometer filter checkbox")
 	public void userClicksOnLastOdometerFilterCheckbox() {
+		BrowserUtils.sleep(2);
+		fleetVehicles.lastOdometer.click();
 	}
 
 	@And("User clicks on the Last Odometer dropdown menu")
 	public void userClicksOnTheLastOdometerDropdownMenu() {
+		wait.until(ExpectedConditions.elementToBeClickable(fleetVehicles.lastOdometerAllButton));
+		fleetVehicles.lastOdometerAllButton.click();
+		wait.until(ExpectedConditions.elementToBeClickable(fleetVehicles.betweenDropdownButton));
+		fleetVehicles.betweenDropdownButton.click();
 	}
 
 	@Then("User should be able to see the options as below list")
 	public void userShouldBeAbleToSeeTheOptionsAsBelowList() {
+
+
+
+		List<String> actual = new ArrayList<>();
+		for (WebElement betweenDropdownList : fleetVehicles.betweenDropdownLists) {
+			actual.add(betweenDropdownList.getText());
+		}
+
+		Assert.assertEquals(expected, actual);
 	}
 
 	@And("User selects {string} method")
-	public void userSelectsMethod(String arg0) {
+	public void userSelectsMethod(String listItem) {
+
+		fleetVehicles.betweenDropdownLists.get(fleetVehiclesOdometer.stringToInt(listItem)).click();
+
 	}
 
 	@And("User enters {int} and {int} in the filter fields")
@@ -109,4 +132,6 @@ public class OdometerStepDefs {
 	@Then("User should not to be able to fill with alphabetical characters")
 	public void userShouldNotToBeAbleToFillWithAlphabeticalCharacters() {
 	}
+
+
 }

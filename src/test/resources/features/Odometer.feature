@@ -49,16 +49,7 @@ Feature:
     And User clicks on the Last Odometer dropdown menu
     Then User should be able to see the options as below list
 
-      | Between             |
-      | Not Between         |
-      | Equals              |
-      | Not Equals          |
-      | More Than           |
-      | Less Than           |
-      | Equals Or More Than |
-      | Equals Or Less Than |
-      | Is Empty            |
-      | Is Not Empty        |
+
 
   @FLEET10-1136 #TC-03
   Scenario: User selects Between method with numeric values and see correct values
@@ -88,7 +79,7 @@ Feature:
   Scenario: User selects Less than method with numeric values and see correct values
     When User clicks on Last Odometer filter checkbox
     And User clicks on the Last Odometer dropdown menu
-    And User selects "Less Than" method
+    And User selects "Less Than2" method
     And User enters 25000 in the filter field
     Then User should be able to see the vehicles with last odometer less than 25000
 
