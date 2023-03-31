@@ -35,7 +35,8 @@ public class Hooks {
             String z = "Zafer";
 
 
-
+            String v="vahap";
+            String s="Serkan";
 
             String m = "Mesut";
             String o = "Outdoor";
