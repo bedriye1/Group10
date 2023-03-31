@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class Dashboard extends BasePage{
+
 
     public Dashboard(){
         PageFactory.initElements(Driver.getDriver(), this);
