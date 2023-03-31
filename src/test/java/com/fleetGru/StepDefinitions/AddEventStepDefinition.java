@@ -13,12 +13,10 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddEventStepDefinition {
-
 
 
     public class AddEventStepDefinitions extends BasePage {
-Addevent_2Page addevent_2Page=new Addevent_2Page();
+        Addevent_2Page addevent_2Page=new Addevent_2Page();
         AddEventPage addEventPage=new AddEventPage();
         Dashboard dashboard = new Dashboard();
         QuickLaunchPad quickLaunchPad=new QuickLaunchPad();
