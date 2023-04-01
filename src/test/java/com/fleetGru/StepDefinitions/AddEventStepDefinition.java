@@ -79,23 +79,6 @@ Addevent_2Page addevent_2Page=new Addevent_2Page();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         @Then("User can access the Add Event page")
         public void userCanAccessTheAddEventPage() {
             BrowserUtils.sleep(5);
