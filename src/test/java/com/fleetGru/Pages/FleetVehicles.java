@@ -28,6 +28,22 @@ public class FleetVehicles {
 
     Faker faker=new Faker();
     Actions actions=new Actions(Driver.getDriver());
+/*
+Sedat's Xpath Locators  !!!DO NOT EDIT!!!
+##################################################################################
+*/
+    @FindBy(xpath = "//div [@class='btn filter-criteria-selector oro-drop-opener oro-dropdown-toggle filter-default-value']")
+    public  WebElement lastOdometerAllButton;
+    @FindBy(xpath = "//div [contains (@class, 'btn-group btn-block')]")
+    public WebElement betweenDropdownButton;
+    @FindBy(xpath = "//a[starts-with(@class, 'dropdown-item choice-value')]")
+    public List<WebElement> betweenDropdownLists;
+    @FindBy(xpath = "(//span[contains(text(),'Last Odometer')])[1]")
+    public WebElement lastOdometer;
+    @FindBy (css = "a.add-filter-button")
+    public WebElement manageFiltersButton; // text link
+ /*###################################################################################
+ */
 
     @FindBy(xpath ="//th[.=*]")
     public List<WebElement> tableHeaders;
@@ -61,10 +77,10 @@ public class FleetVehicles {
 
 
     @FindBy(xpath = "//a[@title='Filters']")
-    public WebElement filterButton;
+    public WebElement filterButton; // filter icon
 
     @FindBy(xpath = "//button[@type='button']//a[@class='add-filter-button']")
-    public WebElement manageFilters;
+    public WebElement manageFilters; // text link
 
     @FindBy(xpath = "//ul[@class='ui-multiselect-checkboxes ui-helper-reset fixed-li']//li//label//input[@title='Tags']")
     public WebElement tagsButton;
@@ -96,10 +112,6 @@ public class FleetVehicles {
 
     @FindBy (xpath = "//a[@title='Filters']")
     public WebElement filtersIcon;
-
-    @FindBy (css = "a.add-filter-button")
-    public WebElement manageFiltersButton;
-
 
     @FindBy (xpath = "//label[@title='Tags']")
     public WebElement tagsFilter;
