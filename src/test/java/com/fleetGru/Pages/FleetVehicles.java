@@ -29,7 +29,7 @@ public class FleetVehicles {
     Faker faker=new Faker();
     Actions actions=new Actions(Driver.getDriver());
 /*
-Sedat's Xpath Locators  !!!DO NOT EDIT!!!
+Sedat's xPath Locators  !!!DO NOT EDIT!!!
 ##################################################################################
 */
     @FindBy(xpath = "//div [@class='btn filter-criteria-selector oro-drop-opener oro-dropdown-toggle filter-default-value']")
@@ -42,8 +42,18 @@ Sedat's Xpath Locators  !!!DO NOT EDIT!!!
     public WebElement lastOdometer;
     @FindBy (css = "a.add-filter-button")
     public WebElement manageFiltersButton; // text link
- /*###################################################################################
- */
+    @FindBy(xpath = "//input[@name='value']")
+    public WebElement inputFirst;
+    @FindBy(xpath = "//input[@name='value_end']")
+    public WebElement inputMax;
+    @FindBy(xpath = "//td[@class='number-cell grid-cell grid-body-cell grid-body-cell-LastOdometer' and @data-column-label='Last Odometer']\n")
+    public List<WebElement> resultsOdometerColumn;
+    @FindBy(xpath = "//b[@class='filter-criteria-hint']")
+    public WebElement filterCriteria;
+
+ /**###################################################################################
+  * Sedat's xPaths end.
+  */
 
     @FindBy(xpath ="//th[.=*]")
     public List<WebElement> tableHeaders;
