@@ -1,138 +1,182 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="13" time="435.362">
-    <testcase classname="Delete a car" name="All users can see the delete button by hovering over the three dots at the end of each row" time="48.86">
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="15" time="385.387">
+    <testcase classname="Last Odometer Tests" name="User can select &quot;Last Odometer&quot; filter under 'Fleet-Vehicles' page" time="27.064">
         <system-out>
-            <![CDATA[Given The user is on the login page.........................................passed
-When The user enters with valid "user1" and password and clicks login button.passed
-And The user navigates to Fleet-Vehicles page-for all users.................passed
-Then The user hover over the three dots and able to see delete button.......passed
+            <![CDATA[Given "user1" is logged in and clicks Fleet module and Vehicles tab.........passed
+And User clicks on Manage filter options button.............................passed
+Then user should be able to click the Last Odometer filter..................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="All users can see the delete button by hovering over the three dots at the end of each row 2" time="38.752">
+    <testcase classname="Last Odometer Tests" name="Last Odometer filter provide the methods" time="24.125">
         <system-out>
-            <![CDATA[Given The user is on the login page.........................................passed
-When The user enters with valid "storemanager51" and password and clicks login button.passed
-And The user navigates to Fleet-Vehicles page-for all users.................passed
-Then The user hover over the three dots and able to see delete button.......passed
+            <![CDATA[Given "user1" is logged in and clicks Fleet module and Vehicles tab.........passed
+And User clicks on Manage filter options button.............................passed
+When User clicks on Last Odometer filter checkbox...........................passed
+And User clicks on the Last Odometer dropdown menu..........................passed
+Then User should be able to see the options as below list...................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="All users can see the delete button by hovering over the three dots at the end of each row 3" time="40.903">
+    <testcase classname="Last Odometer Tests" name="User selects Between method with numeric values and see correct values" time="27.372">
         <system-out>
-            <![CDATA[Given The user is on the login page.........................................passed
-When The user enters with valid "salesmanager101" and password and clicks login button.passed
-And The user navigates to Fleet-Vehicles page-for all users.................passed
-Then The user hover over the three dots and able to see delete button.......passed
+            <![CDATA[Given "user1" is logged in and clicks Fleet module and Vehicles tab.........passed
+And User clicks on Manage filter options button.............................passed
+When User clicks on Last Odometer filter checkbox...........................passed
+And User clicks on the Last Odometer dropdown menu..........................passed
+And User selects "Between" method...........................................passed
+And User enters 10000 and 20000 in the filter fields........................passed
+Then User should see the vehicles with last odometer between 10000 and 20000.passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="&quot;Delete Confirmation&quot; pop up should be displayed when the user clicks on the delete button" time="61.902">
+    <testcase classname="Last Odometer Tests" name="User selects Equals method with numeric values and see correct values" time="29.512">
         <system-out>
-            <![CDATA[Given The user is on the login page.........................................passed
-When The user enters with valid "user1" and password and clicks login button.passed
-And The user navigates to Fleet-Vehicles page-for all users.................passed
-And The user clicks the delete button.......................................passed
-Then The user able to see "Delete Confirmation" pop up......................passed
+            <![CDATA[Given "user1" is logged in and clicks Fleet module and Vehicles tab.........passed
+And User clicks on Manage filter options button.............................passed
+When User clicks on Last Odometer filter checkbox...........................passed
+And User clicks on the Last Odometer dropdown menu..........................passed
+And User selects "Equals" method............................................passed
+And User enters 10000 in the filter field...................................passed
+Then User should be able to see the vehicles with last odometer equal to 10000.passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="&quot;Delete Confirmation&quot; pop up should be displayed when the user clicks on the delete button 2" time="29.189">
+    <testcase classname="Last Odometer Tests" name="User selects More than method with numeric values and see correct values" time="28.367">
         <system-out>
-            <![CDATA[Given The user is on the login page.........................................passed
-When The user enters with valid "storemanager51" and password and clicks login button.passed
-And The user navigates to Fleet-Vehicles page-for all users.................passed
-And The user clicks the delete button.......................................passed
-Then The user able to see "Delete Confirmation" pop up......................passed
+            <![CDATA[Given "user1" is logged in and clicks Fleet module and Vehicles tab.........passed
+And User clicks on Manage filter options button.............................passed
+When User clicks on Last Odometer filter checkbox...........................passed
+And User clicks on the Last Odometer dropdown menu..........................passed
+And User selects "More Than" method.........................................passed
+And User enters 25000 in the filter field...................................passed
+Then User should be able to see the vehicles with last odometer more than 25000.passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="&quot;Delete Confirmation&quot; pop up should be displayed when the user clicks on the delete button 3" time="24.115">
+    <testcase classname="Last Odometer Tests" name="User selects Less than method with numeric values and see correct values" time="27.13">
         <system-out>
-            <![CDATA[Given The user is on the login page.........................................passed
-When The user enters with valid "salesmanager101" and password and clicks login button.passed
-And The user navigates to Fleet-Vehicles page-for all users.................passed
-And The user clicks the delete button.......................................passed
-Then The user able to see "Delete Confirmation" pop up......................passed
+            <![CDATA[Given "user1" is logged in and clicks Fleet module and Vehicles tab.........passed
+And User clicks on Manage filter options button.............................passed
+When User clicks on Last Odometer filter checkbox...........................passed
+And User clicks on the Last Odometer dropdown menu..........................passed
+And User selects "Less Than" method.........................................passed
+And User enters 25000 in the filter field...................................passed
+Then User should be able to see the vehicles with last odometer less than 25000.passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="If the driver clicks on the &quot;Yes, Delete&quot; button, &quot;You do not have permission to perform this action.&quot; message should be displayed" time="24.951">
+    <testcase classname="Last Odometer Tests" name="User selects Is Empty method with numeric values and see correct values" time="28.116">
+        <failure message="" type="java.lang.AssertionError">
+            <![CDATA[Given "user1" is logged in and clicks Fleet module and Vehicles tab.........passed
+And User clicks on Manage filter options button.............................passed
+When User clicks on Last Odometer filter checkbox...........................passed
+And User clicks on the Last Odometer dropdown menu..........................passed
+And User selects "Is Empty" method..........................................passed
+Then User should be able to see the vehicles with last odometer is empty....failed
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.fail(Assert.java:96)
+	at com.fleetGru.StepDefinitions.OdometerStepDefs.userShouldBeAbleToSeeTheVehiclesWithLastOdometerIsEmpty(OdometerStepDefs.java:184)
+	at ✽.User should be able to see the vehicles with last odometer is empty(file:///C:/Users/sdaty35/My%20Drive/Desktop/Drive06/IdeaProjects/Group10/src/test/resources/features/Odometer.feature:89)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Last Odometer Tests" name="Methods (&quot;Between&quot;,&quot;Equals&quot;,&quot;More Than&quot;,&quot;Less Than&quot;) shouldn't accept non-numeric values" time="24.334">
         <system-out>
-            <![CDATA[Given The user is on the login page.........................................passed
-When The user enters with valid "user1" and password and clicks login button.passed
-And The user navigates to Fleet-Vehicles page-for all users.................passed
-And The user clicks the delete button.......................................passed
-And The user clicks the Yes, Delete button..................................passed
-Then The user should see "You do not have permission to perform this action." message.passed
+            <![CDATA[Given "user1" is logged in and clicks Fleet module and Vehicles tab.........passed
+And User clicks on Manage filter options button.............................passed
+When User clicks on Last Odometer filter checkbox...........................passed
+And User clicks on the Last Odometer dropdown menu..........................passed
+And User selects "Between" method...........................................passed
+And User enters "onethousand" and "twothousand" in the filter field.........passed
+Then User should see these methods shouldn't accept non-numeric values......passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="'Sales Manager' and 'Store Manager' can delete any car by clicking on the delete button at the end of each row and the &quot;Item deleted&quot; message should be displayed." time="24.878">
+    <testcase classname="Last Odometer Tests" name="Methods (&quot;Between&quot;,&quot;Equals&quot;,&quot;More Than&quot;,&quot;Less Than&quot;) shouldn't accept non-numeric values 2" time="24.395">
         <system-out>
-            <![CDATA[Given The user is on the login page.........................................passed
-When The user enters with valid "storemanager51" and password and clicks login button.passed
-And The user navigates to Fleet-Vehicles page-for all users.................passed
-And The user clicks the delete button.......................................passed
-And The user clicks the Yes, Delete button..................................passed
-Then The user should see "Item deleted" message.............................passed
+            <![CDATA[Given "user1" is logged in and clicks Fleet module and Vehicles tab.........passed
+And User clicks on Manage filter options button.............................passed
+When User clicks on Last Odometer filter checkbox...........................passed
+And User clicks on the Last Odometer dropdown menu..........................passed
+And User selects "Not Between" method.......................................passed
+And User enters "onethousand" and "twothousand" in the filter field.........passed
+Then User should see these methods shouldn't accept non-numeric values......passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="'Sales Manager' and 'Store Manager' can delete any car by clicking on the delete button at the end of each row and the &quot;Item deleted&quot; message should be displayed. 2" time="23.728">
+    <testcase classname="Last Odometer Tests" name="Methods (&quot;Between&quot;,&quot;Equals&quot;,&quot;More Than&quot;,&quot;Less Than&quot;) shouldn't accept non-numeric values 3" time="23.496">
         <system-out>
-            <![CDATA[Given The user is on the login page.........................................passed
-When The user enters with valid "salesmanager101" and password and clicks login button.passed
-And The user navigates to Fleet-Vehicles page-for all users.................passed
-And The user clicks the delete button.......................................passed
-And The user clicks the Yes, Delete button..................................passed
-Then The user should see "Item deleted" message.............................passed
+            <![CDATA[Given "user1" is logged in and clicks Fleet module and Vehicles tab.........passed
+And User clicks on Manage filter options button.............................passed
+When User clicks on Last Odometer filter checkbox...........................passed
+And User clicks on the Last Odometer dropdown menu..........................passed
+And User selects "Equals" method............................................passed
+And User enters "123.asd" and "" in the filter field........................passed
+Then User should see these methods shouldn't accept non-numeric values......passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' go to the 'General Information' page by clicking on any vehicle/row, they can delete any vehicle by clicking on the 'Delete' button and the &quot;Car deleted&quot; message should be displayed" time="27.952">
+    <testcase classname="Last Odometer Tests" name="Methods (&quot;Between&quot;,&quot;Equals&quot;,&quot;More Than&quot;,&quot;Less Than&quot;) shouldn't accept non-numeric values 4" time="23.021">
         <system-out>
-            <![CDATA[Given The user is on the login page.........................................passed
-When The user enters with valid "storemanager51" and password and clicks login button.passed
-And The user navigates to Fleet-Vehicles page-for all users.................passed
-And The user clicks the View button.........................................passed
-And The user clicks the Delete Button on General Information Page...........passed
-And The user clicks the Yes, Delete button..................................passed
-Then The user should see "Car deleted" message..............................passed
+            <![CDATA[Given "user1" is logged in and clicks Fleet module and Vehicles tab.........passed
+And User clicks on Manage filter options button.............................passed
+When User clicks on Last Odometer filter checkbox...........................passed
+And User clicks on the Last Odometer dropdown menu..........................passed
+And User selects "Not Equals" method........................................passed
+And User enters "123.asd" and "" in the filter field........................passed
+Then User should see these methods shouldn't accept non-numeric values......passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' go to the 'General Information' page by clicking on any vehicle/row, they can delete any vehicle by clicking on the 'Delete' button and the &quot;Car deleted&quot; message should be displayed 2" time="27.035">
+    <testcase classname="Last Odometer Tests" name="Methods (&quot;Between&quot;,&quot;Equals&quot;,&quot;More Than&quot;,&quot;Less Than&quot;) shouldn't accept non-numeric values 5" time="25.112">
         <system-out>
-            <![CDATA[Given The user is on the login page.........................................passed
-When The user enters with valid "salesmanager101" and password and clicks login button.passed
-And The user navigates to Fleet-Vehicles page-for all users.................passed
-And The user clicks the View button.........................................passed
-And The user clicks the Delete Button on General Information Page...........passed
-And The user clicks the Yes, Delete button..................................passed
-Then The user should see "Car deleted" message..............................passed
+            <![CDATA[Given "user1" is logged in and clicks Fleet module and Vehicles tab.........passed
+And User clicks on Manage filter options button.............................passed
+When User clicks on Last Odometer filter checkbox...........................passed
+And User clicks on the Last Odometer dropdown menu..........................passed
+And User selects "More Than" method.........................................passed
+And User enters "DoesItWork?" and "" in the filter field....................passed
+Then User should see these methods shouldn't accept non-numeric values......passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' delete a car, the corresponding car should also be removed from the Fleet-Vehicle page." time="31.105">
+    <testcase classname="Last Odometer Tests" name="Methods (&quot;Between&quot;,&quot;Equals&quot;,&quot;More Than&quot;,&quot;Less Than&quot;) shouldn't accept non-numeric values 6" time="23.945">
         <system-out>
-            <![CDATA[Given The user is on the login page.........................................passed
-When The user enters with valid "storemanager51" and password and clicks login button.passed
-And The user navigates to Fleet-Vehicles page-for all users.................passed
-And The user clicks the View button.........................................passed
-And The user clicks the Delete Button on General Information Page...........passed
-Then The user clicks the Yes, Delete button and can not see deleted car on Fleet-Vehicles page anymore.passed
+            <![CDATA[Given "user1" is logged in and clicks Fleet module and Vehicles tab.........passed
+And User clicks on Manage filter options button.............................passed
+When User clicks on Last Odometer filter checkbox...........................passed
+And User clicks on the Last Odometer dropdown menu..........................passed
+And User selects "Less Than" method.........................................passed
+And User enters "15000#" and "" in the filter field.........................passed
+Then User should see these methods shouldn't accept non-numeric values......passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Delete a car" name="When 'Sales Manager' and 'Store Manager' delete a car, the corresponding car should also be removed from the Fleet-Vehicle page. 2" time="31.378">
+    <testcase classname="Last Odometer Tests" name="Methods (&quot;Between&quot;,&quot;Equals&quot;,&quot;More Than&quot;,&quot;Less Than&quot;) shouldn't accept non-numeric values 7" time="23.798">
         <system-out>
-            <![CDATA[Given The user is on the login page.........................................passed
-When The user enters with valid "salesmanager101" and password and clicks login button.passed
-And The user navigates to Fleet-Vehicles page-for all users.................passed
-And The user clicks the View button.........................................passed
-And The user clicks the Delete Button on General Information Page...........passed
-Then The user clicks the Yes, Delete button and can not see deleted car on Fleet-Vehicles page anymore.passed
+            <![CDATA[Given "user1" is logged in and clicks Fleet module and Vehicles tab.........passed
+And User clicks on Manage filter options button.............................passed
+When User clicks on Last Odometer filter checkbox...........................passed
+And User clicks on the Last Odometer dropdown menu..........................passed
+And User selects "Equals Or More Than" method...............................passed
+And User enters "10000o" and "" in the filter field.........................passed
+Then User should see these methods shouldn't accept non-numeric values......passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Last Odometer Tests" name="Methods (&quot;Between&quot;,&quot;Equals&quot;,&quot;More Than&quot;,&quot;Less Than&quot;) shouldn't accept non-numeric values 8" time="23.869">
+        <system-out>
+            <![CDATA[Given "user1" is logged in and clicks Fleet module and Vehicles tab.........passed
+And User clicks on Manage filter options button.............................passed
+When User clicks on Last Odometer filter checkbox...........................passed
+And User clicks on the Last Odometer dropdown menu..........................passed
+And User selects "Equals Or Less Than" method...............................passed
+And User enters "10o00" and "" in the filter field..........................passed
+Then User should see these methods shouldn't accept non-numeric values......passed
 ]]>
         </system-out>
     </testcase>

@@ -1,5 +1,5 @@
-@Test-exec #test-exec
-Feature:
+@FLEET10-1142 #test-exec
+Feature:Last Odometer Tests
 
   User Story :
 
@@ -34,7 +34,7 @@ Feature:
   8- Methods ("Between","Equals","More Than","Less Than") shouldn't accept non-numeric values
 
 
-  Background: #pre-cond
+  Background: Pre-Condition
     Given "user1" is logged in and clicks Fleet module and Vehicles tab
     And User clicks on Manage filter options button
 
@@ -48,8 +48,6 @@ Feature:
     When User clicks on Last Odometer filter checkbox
     And User clicks on the Last Odometer dropdown menu
     Then User should be able to see the options as below list
-
-
 
   @FLEET10-1136 #TC-03
   Scenario: User selects Between method with numeric values and see correct values
@@ -79,7 +77,7 @@ Feature:
   Scenario: User selects Less than method with numeric values and see correct values
     When User clicks on Last Odometer filter checkbox
     And User clicks on the Last Odometer dropdown menu
-    And User selects "Less Than2" method
+    And User selects "Less Than" method
     And User enters 25000 in the filter field
     Then User should be able to see the vehicles with last odometer less than 25000
 
@@ -96,20 +94,17 @@ Feature:
     When User clicks on Last Odometer filter checkbox
     And User clicks on the Last Odometer dropdown menu
     And User selects "<MethodName>" method
-    And User enters "<Values>" in the filter field
-    Then User should not to be able to fill with alphabetical characters
+    And User enters "<Values1>" and "<Values2>" in the filter field
+    Then User should see these methods shouldn't accept non-numeric values
 
     Examples:
-      | MethodName          | Values                   |
-      | Between             | onethousand,twothousand |
-      | Not Between         | onethousand,twothousand |
-      | Equals              | 123.asd                  |
-      | Not Equals          | 123.asd                  |
-      | More Than           | DoesItWork?              |
-      | Less Than           | 15000#                   |
-      | Equals Or More Than | 10000o                   |
-      | Equals Or Less Than | 10o00                    |
-
-
-
+      | MethodName          | Values1     | Values2     |
+      | Between             | onethousand | twothousand |
+      | Not Between         | onethousand | twothousand |
+      | Equals              | 123.asd     |             |
+      | Not Equals          | 123.asd     |             |
+      | More Than           | DoesItWork? |             |
+      | Less Than           | 15000#      |             |
+      | Equals Or More Than | 10000o      |             |
+      | Equals Or Less Than | 10o00       |             |
 

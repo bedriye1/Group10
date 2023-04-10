@@ -19,6 +19,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class OdometerStepDefs {
 
@@ -98,39 +99,112 @@ public class OdometerStepDefs {
 	}
 
 	@And("User enters {int} and {int} in the filter fields")
-	public void userEntersAndInTheFilterFields(int arg0, int arg1) {
+	public void userEntersAndInTheFilterFields(int min, int max) {
+
+		fleetVehicles.inputFirst.sendKeys(Integer.toString(min));
+		fleetVehicles.inputMax.sendKeys(Integer.toString(max));
+		fleetVehicles.updateButton.click();
+		BrowserUtils.sleep(3);
+
+
 	}
 
 	@Then("User should see the vehicles with last odometer between {int} and {int}")
-	public void userShouldSeeTheVehiclesWithLastOdometerBetweenAnd(int arg0, int arg1) {
+	public void userShouldSeeTheVehiclesWithLastOdometerBetweenAnd(int min, int max) {
+		List<WebElement> columns = fleetVehicles.resultsOdometerColumn;
+		for (WebElement column : columns) {
+			int odometerValue = Integer.parseInt(column.getText().replaceAll(",", ""));
+			System.out.println(odometerValue);
+			if (odometerValue < min || odometerValue > max) {
+				Assert.fail();
+			}else{
+				Assert.assertTrue(true);
+			}
+		}
 	}
 
 	@And("User enters {int} in the filter field")
-	public void userEntersInTheFilterField(int arg0) {
+	public void userEntersInTheFilterField(int value) {
+		fleetVehicles.inputFirst.sendKeys(Integer.toString(value));
+		fleetVehicles.updateButton.click();
+		BrowserUtils.sleep(3);
 	}
 
 	@Then("User should be able to see the vehicles with last odometer equal to {int}")
-	public void userShouldBeAbleToSeeTheVehiclesWithLastOdometerEqualTo(int arg0) {
+	public void userShouldBeAbleToSeeTheVehiclesWithLastOdometerEqualTo(int value) {
+		List<WebElement> columns = fleetVehicles.resultsOdometerColumn;
+		for (WebElement column : columns) {
+			int odometerValue = Integer.parseInt(column.getText().replaceAll(",", ""));
+			System.out.println(odometerValue);
+			if (odometerValue == value) {
+				Assert.assertTrue(true);
+			}else{
+				Assert.fail();
+			}
+		}
 	}
 
 	@Then("User should be able to see the vehicles with last odometer more than {int}")
-	public void userShouldBeAbleToSeeTheVehiclesWithLastOdometerMoreThan(int arg0) {
+	public void userShouldBeAbleToSeeTheVehiclesWithLastOdometerMoreThan(int value) {
+		List<WebElement> columns = fleetVehicles.resultsOdometerColumn;
+		for (WebElement column : columns) {
+			int odometerValue = Integer.parseInt(column.getText().replaceAll(",", ""));
+			System.out.println(odometerValue);
+			if (odometerValue > value) {
+				Assert.assertTrue(true);
+			}else{
+				Assert.fail();
+			}
+		}
 	}
 
 	@Then("User should be able to see the vehicles with last odometer less than {int}")
-	public void userShouldBeAbleToSeeTheVehiclesWithLastOdometerLessThan(int arg0) {
+	public void userShouldBeAbleToSeeTheVehiclesWithLastOdometerLessThan(int value) {
+		List<WebElement> columns = fleetVehicles.resultsOdometerColumn;
+		for (WebElement column : columns) {
+			int odometerValue = Integer.parseInt(column.getText().replaceAll(",", ""));
+			System.out.println(odometerValue);
+			if (odometerValue < value) {
+				Assert.assertTrue(true);
+			}else{
+				Assert.fail();
+			}
+		}
 	}
 
 	@Then("User should be able to see the vehicles with last odometer is empty")
 	public void userShouldBeAbleToSeeTheVehiclesWithLastOdometerIsEmpty() {
+		fleetVehicles.updateButton.click();
+		BrowserUtils.sleep(3);
+		List<WebElement> columns = fleetVehicles.resultsOdometerColumn;
+		for (WebElement column : columns) {
+			if (column == null) {
+				Assert.assertTrue(true);
+			}else{
+				Assert.fail();
+			}
+		}
 	}
 
-	@And("User enters {string} in the filter field")
-	public void userEntersInTheFilterField(String arg0) {
+	@And("User enters {string} and {string} in the filter field")
+	public void userEntersInTheFilterField(String values1, String values2) {
+
+		fleetVehicles.inputFirst.sendKeys(values1);
+		if (fleetVehicles.inputMax.isDisplayed()){
+			fleetVehicles.inputMax.sendKeys(values2);
+		}
+		fleetVehicles.updateButton.click();
 	}
 
-	@Then("User should not to be able to fill with alphabetical characters")
+	@Then("User should see these methods shouldn't accept non-numeric values")
 	public void userShouldNotToBeAbleToFillWithAlphabeticalCharacters() {
+		String label = fleetVehicles.filterCriteria.getText();
+		System.out.println(label);
+		if (Objects.equals(label, "All")){
+			Assert.assertTrue(true);
+		}else {
+			Assert.fail();
+		}
 	}
 
 

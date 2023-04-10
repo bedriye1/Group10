@@ -11,10 +11,7 @@ import org.junit.runner.RunWith;
                         "html:target/cucumber/report.html",
                         "junit:target/junit/junit-report.xml",
                         "rerun:target/rerun.txt",
-
-
-
-
+                        "me.jvt.cucumber.report.PrettyReports:target/cucumber"
 
                 },
 
@@ -22,7 +19,7 @@ import org.junit.runner.RunWith;
         features ="src/test/resources/features",
         glue     ="com/fleetGru/StepDefinitions",
         dryRun = false,
-        tags = "@FLEET10-1092"
+        tags = "@FLEET10-1142"
 
 )
 

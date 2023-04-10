@@ -1,8 +1,18 @@
 package com.fleetGru.Pages;
 
+import com.fleetGru.Utilities.Driver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
 import java.lang.invoke.SwitchPoint;
 
 public class FleetVehiclesOdometer {
+	public FleetVehiclesOdometer(){
+		PageFactory.initElements(Driver.getDriver(), this);
+	}
+	@FindBy(xpath = "//h3")
+	public WebElement loading;
 
 	public int stringToInt (String text){
 		int x = 0;
